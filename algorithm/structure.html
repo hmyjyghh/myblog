@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>对数据结构的理解 | 寒梦的博客</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/myblog/logo.png">
+    <meta name="description" content="盛年不重来,一日难再晨,及时当勉励,岁月不待人">
+    
+    <link rel="preload" href="/myblog/assets/css/0.styles.1b9a275a.css" as="style"><link rel="preload" href="/myblog/assets/js/app.6d453d7e.js" as="script"><link rel="preload" href="/myblog/assets/js/7.8c1c7106.js" as="script"><link rel="preload" href="/myblog/assets/js/2.63d4cf60.js" as="script"><link rel="preload" href="/myblog/assets/js/1.0779a93f.js" as="script"><link rel="preload" href="/myblog/assets/js/49.5de9d3ab.js" as="script"><link rel="preload" href="/myblog/assets/js/34.6c011227.js" as="script"><link rel="prefetch" href="/myblog/assets/js/10.2eea7893.js"><link rel="prefetch" href="/myblog/assets/js/100.ce24d15e.js"><link rel="prefetch" href="/myblog/assets/js/101.fe9a9c64.js"><link rel="prefetch" href="/myblog/assets/js/102.79f2fa0a.js"><link rel="prefetch" href="/myblog/assets/js/103.3bd65657.js"><link rel="prefetch" href="/myblog/assets/js/104.2bdbec36.js"><link rel="prefetch" href="/myblog/assets/js/105.96df8123.js"><link rel="prefetch" href="/myblog/assets/js/106.b630f5b6.js"><link rel="prefetch" href="/myblog/assets/js/107.e79cfaa8.js"><link rel="prefetch" href="/myblog/assets/js/11.b1713a91.js"><link rel="prefetch" href="/myblog/assets/js/14.fbbe67a2.js"><link rel="prefetch" href="/myblog/assets/js/15.fabd129b.js"><link rel="prefetch" href="/myblog/assets/js/16.a75762da.js"><link rel="prefetch" href="/myblog/assets/js/17.52d53386.js"><link rel="prefetch" href="/myblog/assets/js/18.4db27d01.js"><link rel="prefetch" href="/myblog/assets/js/19.7ec664ce.js"><link rel="prefetch" href="/myblog/assets/js/20.4d3becdd.js"><link rel="prefetch" href="/myblog/assets/js/21.52432b7c.js"><link rel="prefetch" href="/myblog/assets/js/22.74a3d5cb.js"><link rel="prefetch" href="/myblog/assets/js/23.e37427da.js"><link rel="prefetch" href="/myblog/assets/js/24.cce6e76c.js"><link rel="prefetch" href="/myblog/assets/js/25.9c2608bc.js"><link rel="prefetch" href="/myblog/assets/js/26.f98d65f7.js"><link rel="prefetch" href="/myblog/assets/js/27.07f61f11.js"><link rel="prefetch" href="/myblog/assets/js/28.903ea730.js"><link rel="prefetch" href="/myblog/assets/js/29.48153eff.js"><link rel="prefetch" href="/myblog/assets/js/3.ffd383a2.js"><link rel="prefetch" href="/myblog/assets/js/30.b8eb1a62.js"><link rel="prefetch" href="/myblog/assets/js/31.1d9e1333.js"><link rel="prefetch" href="/myblog/assets/js/32.8cfae0d1.js"><link rel="prefetch" href="/myblog/assets/js/33.0ab00c4f.js"><link rel="prefetch" href="/myblog/assets/js/35.c763ccbb.js"><link rel="prefetch" href="/myblog/assets/js/36.3d1c91e9.js"><link rel="prefetch" href="/myblog/assets/js/37.94c7db86.js"><link rel="prefetch" href="/myblog/assets/js/38.5a93b916.js"><link rel="prefetch" href="/myblog/assets/js/39.c810fcc0.js"><link rel="prefetch" href="/myblog/assets/js/4.16621f4e.js"><link rel="prefetch" href="/myblog/assets/js/40.cc5df847.js"><link rel="prefetch" href="/myblog/assets/js/41.8894a2f9.js"><link rel="prefetch" href="/myblog/assets/js/42.42a90476.js"><link rel="prefetch" href="/myblog/assets/js/43.1f179606.js"><link rel="prefetch" href="/myblog/assets/js/44.d31d5d49.js"><link rel="prefetch" href="/myblog/assets/js/45.e4ff1dc5.js"><link rel="prefetch" href="/myblog/assets/js/46.d9d05fa3.js"><link rel="prefetch" href="/myblog/assets/js/47.ff97eb76.js"><link rel="prefetch" href="/myblog/assets/js/48.ae50e636.js"><link rel="prefetch" href="/myblog/assets/js/5.a36bfdf4.js"><link rel="prefetch" href="/myblog/assets/js/50.d9af6c25.js"><link rel="prefetch" href="/myblog/assets/js/51.94df8cac.js"><link rel="prefetch" href="/myblog/assets/js/52.562bdf1c.js"><link rel="prefetch" href="/myblog/assets/js/53.9dc2c96f.js"><link rel="prefetch" href="/myblog/assets/js/54.dd4e968a.js"><link rel="prefetch" href="/myblog/assets/js/55.3520a3dd.js"><link rel="prefetch" href="/myblog/assets/js/56.052c2970.js"><link rel="prefetch" href="/myblog/assets/js/57.aaf8e1dc.js"><link rel="prefetch" href="/myblog/assets/js/58.a4284495.js"><link rel="prefetch" href="/myblog/assets/js/59.d13d52e2.js"><link rel="prefetch" href="/myblog/assets/js/6.e968d4fe.js"><link rel="prefetch" href="/myblog/assets/js/60.608453f3.js"><link rel="prefetch" href="/myblog/assets/js/61.23c8f270.js"><link rel="prefetch" href="/myblog/assets/js/62.5b05cbee.js"><link rel="prefetch" href="/myblog/assets/js/63.3f7cfd19.js"><link rel="prefetch" href="/myblog/assets/js/64.c4901d4a.js"><link rel="prefetch" href="/myblog/assets/js/65.fd9f9646.js"><link rel="prefetch" href="/myblog/assets/js/66.686af250.js"><link rel="prefetch" href="/myblog/assets/js/67.1e29ef76.js"><link rel="prefetch" href="/myblog/assets/js/68.ac83bb42.js"><link rel="prefetch" href="/myblog/assets/js/69.1ab3ea30.js"><link rel="prefetch" href="/myblog/assets/js/70.46b712aa.js"><link rel="prefetch" href="/myblog/assets/js/71.b23f94ab.js"><link rel="prefetch" href="/myblog/assets/js/72.ec04da25.js"><link rel="prefetch" href="/myblog/assets/js/73.cda8f6c9.js"><link rel="prefetch" href="/myblog/assets/js/74.349efea4.js"><link rel="prefetch" href="/myblog/assets/js/75.50657b33.js"><link rel="prefetch" href="/myblog/assets/js/76.e36be005.js"><link rel="prefetch" href="/myblog/assets/js/77.8d225b39.js"><link rel="prefetch" href="/myblog/assets/js/78.68dc2ad3.js"><link rel="prefetch" href="/myblog/assets/js/79.2d0de9ec.js"><link rel="prefetch" href="/myblog/assets/js/8.836d3617.js"><link rel="prefetch" href="/myblog/assets/js/80.c9c3c463.js"><link rel="prefetch" href="/myblog/assets/js/81.cba01ff6.js"><link rel="prefetch" href="/myblog/assets/js/82.09ee4441.js"><link rel="prefetch" href="/myblog/assets/js/83.5d236a39.js"><link rel="prefetch" href="/myblog/assets/js/84.8a7f1343.js"><link rel="prefetch" href="/myblog/assets/js/85.c3fb7232.js"><link rel="prefetch" href="/myblog/assets/js/86.a50ad3db.js"><link rel="prefetch" href="/myblog/assets/js/87.474c920c.js"><link rel="prefetch" href="/myblog/assets/js/88.706e483e.js"><link rel="prefetch" href="/myblog/assets/js/89.49910025.js"><link rel="prefetch" href="/myblog/assets/js/9.acb95ff1.js"><link rel="prefetch" href="/myblog/assets/js/90.a3a3b647.js"><link rel="prefetch" href="/myblog/assets/js/91.b80835d7.js"><link rel="prefetch" href="/myblog/assets/js/92.05d45f3b.js"><link rel="prefetch" href="/myblog/assets/js/93.a7740f57.js"><link rel="prefetch" href="/myblog/assets/js/94.834cad60.js"><link rel="prefetch" href="/myblog/assets/js/95.dd7f534d.js"><link rel="prefetch" href="/myblog/assets/js/96.3b18eeed.js"><link rel="prefetch" href="/myblog/assets/js/97.36c8cbf8.js"><link rel="prefetch" href="/myblog/assets/js/98.cbfe585b.js"><link rel="prefetch" href="/myblog/assets/js/99.f316eea5.js"><link rel="prefetch" href="/myblog/assets/js/vendors~docsearch.a3a80f00.js">
+    <link rel="stylesheet" href="/myblog/assets/css/0.styles.1b9a275a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-7dd95ae2><div data-v-7dd95ae2><div class="password-shadow password-wrapper-out" style="display:none;" data-v-59e6cb88 data-v-7dd95ae2 data-v-7dd95ae2><h3 class="title" data-v-59e6cb88>寒梦的博客</h3> <p class="description" data-v-59e6cb88>盛年不重来,一日难再晨,及时当勉励,岁月不待人</p> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><!---->
+          
+        <!---->
+        2024
+      </a></span></div></div> <div class="hide" data-v-7dd95ae2><header class="navbar" data-v-7dd95ae2><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/myblog/" class="home-link router-link-active"><!----> <span class="site-name">寒梦的博客</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      JS
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://www.zhihu.com/column/c_1415231566645350400" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  Promise
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://zhuanlan.zhihu.com/p/365044710" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  浏览器对象详解
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/dom.html" class="nav-link"><i class="undefined"></i>
+  DOM操作
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/Closure.html" class="nav-link"><i class="undefined"></i>
+  this指向、闭包、作用域
+</a></li><li class="dropdown-item"><!----> <a href="https://zhuanlan.zhihu.com/p/398609427" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  事件循环
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/bubble-trapping.html" class="nav-link"><i class="undefined"></i>
+  冒泡和捕获
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/throttle-debounce.html" class="nav-link"><i class="undefined"></i>
+  节流防抖
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/clone-deep.html" class="nav-link"><i class="undefined"></i>
+  深浅拷贝
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/es6-esnext.html" class="nav-link"><i class="undefined"></i>
+  ES6及ESNext规范
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/obj-oriented.html" class="nav-link"><i class="undefined"></i>
+  面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/cache.html" class="nav-link"><i class="undefined"></i>
+  前端缓存
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/HTTP.html" class="nav-link"><i class="undefined"></i>
+  前端网络
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/front-security.html" class="nav-link"><i class="undefined"></i>
+  前端安全
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/garbage-collect.html" class="nav-link"><i class="undefined"></i>
+  垃圾回收机制
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/performance-opt.html" class="nav-link"><i class="undefined"></i>
+  前端性能优化
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/if-else-tips.html" class="nav-link"><i class="undefined"></i>
+  减少 if-else 的小技巧
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/fre-questions.html" class="nav-link"><i class="undefined"></i>
+  常见题目
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      工程化
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/webpackstudy/whatIsEngine.html" class="nav-link"><i class="undefined"></i>
+  什么是前端工程化
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/webpackstudy/module.html" class="nav-link"><i class="undefined"></i>
+  前端模块化
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/webpackstudy/webpack-basic.html" class="nav-link"><i class="undefined"></i>
+  webpack基础
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/webpackstudy/webpack.html" class="nav-link"><i class="undefined"></i>
+  webpack构建
+</a></li><li class="dropdown-item"><!----> <a href="https://zhuanlan.zhihu.com/p/408195292" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  webpack 中的module
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://zhuanlan.zhihu.com/p/448738741" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  webpack性能优化
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="/myblog/webpackstudy/principle.html" class="nav-link"><i class="undefined"></i>
+  webpack原理相关
+</a></li><li class="dropdown-item"><!----> <a href="https://zhuanlan.zhihu.com/p/408733746" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  一步步实现webpack打包
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="/myblog/webpackstudy/ts-basics.html" class="nav-link"><i class="undefined"></i>
+  ts基础及使用
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/webpackstudy/husky.html" class="nav-link"><i class="undefined"></i>
+  前端项目husky使用
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Vue
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/vue/basicknowledge.html" class="nav-link"><i class="undefined"></i>
+  Vue2.0基础
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/misnotes.html" class="nav-link"><i class="undefined"></i>
+  Vue2.0进阶
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/ssr.html" class="nav-link"><i class="undefined"></i>
+  Vue ssr
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/vue3.html" class="nav-link"><i class="undefined"></i>
+  Vue3.0
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/vue-router.html" class="nav-link"><i class="undefined"></i>
+  vue-router
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/vuex.html" class="nav-link"><i class="undefined"></i>
+  vuex性能问题
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/compare.html" class="nav-link"><i class="undefined"></i>
+  Vue2.x VS Vue3.x
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      React
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/react/react-basic.html" class="nav-link"><i class="undefined"></i>
+  React 基础
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/react/react-advanced.html" class="nav-link"><i class="undefined"></i>
+  React 进阶
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/react/status-manage.html" class="nav-link"><i class="undefined"></i>
+  React 状态管理
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/react/react-context.html" class="nav-link"><i class="undefined"></i>
+  React Context
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      React Native
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/reactnative/reactnative.html" class="nav-link"><i class="undefined"></i>
+  React Native 环境搭建
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Node.js
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/node/node-basic.html" class="nav-link"><i class="undefined"></i>
+  Node.js基础
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/node/node-frame.html" class="nav-link"><i class="undefined"></i>
+  Node常用框架
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/node/node-network.html" class="nav-link"><i class="undefined"></i>
+  Nodejs网络及部署
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      低代码
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/lowcode/drag.html" class="nav-link"><i class="undefined"></i>
+  拖拽
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/lowcode/lowcode.html" class="nav-link"><i class="undefined"></i>
+  低代码平台
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/lowcode/lowcode-impl.html" class="nav-link"><i class="undefined"></i>
+  低代码平台实现
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/lowcode/visualization.html" class="nav-link"><i class="undefined"></i>
+  可视化
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      算法
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/algorithm/structure.html" aria-current="page" class="nav-link router-link-exact-active router-link-active"><i class="undefined"></i>
+  数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/sort.html" class="nav-link"><i class="undefined"></i>
+  排序算法
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/double-pointer.html" class="nav-link"><i class="undefined"></i>
+  双指针算法
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/binary-tree.html" class="nav-link"><i class="undefined"></i>
+  二叉树
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/receive-rain.html" class="nav-link"><i class="undefined"></i>
+  接雨水
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/dynamic-plan.html" class="nav-link"><i class="undefined"></i>
+  动态规划
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/greedy.html" class="nav-link"><i class="undefined"></i>
+  贪心算法
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/longasc-sequence.html" class="nav-link"><i class="undefined"></i>
+  最长上升子序列
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/binary-search.html" class="nav-link"><i class="undefined"></i>
+  二分查找
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/other.html" class="nav-link"><i class="undefined"></i>
+  其他
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      其他
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/other/browser-principle.html" class="nav-link"><i class="undefined"></i>
+  浏览器原理与pwa
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/redraw-reflow.html" class="nav-link"><i class="undefined"></i>
+  重绘回流
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/compatibility.html" class="nav-link"><i class="undefined"></i>
+  前端兼容性问题
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/virtual-list.html" class="nav-link"><i class="undefined"></i>
+  虚拟列表
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/data-collection.html" class="nav-link"><i class="undefined"></i>
+  数据采集
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/websocket.html" class="nav-link"><i class="undefined"></i>
+  websocket
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/vue-react.html" class="nav-link"><i class="undefined"></i>
+  vue vs react
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/ESLint.html" class="nav-link"><i class="undefined"></i>
+  ESLint规范
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/ES6.html" class="nav-link"><i class="undefined"></i>
+  ES6 实用语法
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/excellentarticles.html" class="nav-link"><i class="undefined"></i>
+  优秀文章
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/personal-summary.html" class="nav-link"><i class="undefined"></i>
+  个人总结
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/uniapp.html" class="nav-link"><i class="undefined"></i>
+  uni-app
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      关于我
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/hmyjyghh" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://gitee.com/ghh_" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.zhihu.com/people/cool-62-29/columns" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  知乎
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://hmyjyghh.github.io/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-7dd95ae2></div> <aside class="sidebar" data-v-7dd95ae2><div class="personal-info-wrapper" data-v-1fad0c41 data-v-7dd95ae2><!----> <!----> <div class="num" data-v-1fad0c41><div data-v-1fad0c41><h3 data-v-1fad0c41>65</h3> <h6 data-v-1fad0c41>Articles</h6></div> <div data-v-1fad0c41><h3 data-v-1fad0c41>17</h3> <h6 data-v-1fad0c41>Tags</h6></div></div> <ul class="social-links" data-v-1fad0c41></ul> <hr data-v-1fad0c41></div> <nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      JS
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://www.zhihu.com/column/c_1415231566645350400" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  Promise
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://zhuanlan.zhihu.com/p/365044710" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  浏览器对象详解
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/dom.html" class="nav-link"><i class="undefined"></i>
+  DOM操作
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/Closure.html" class="nav-link"><i class="undefined"></i>
+  this指向、闭包、作用域
+</a></li><li class="dropdown-item"><!----> <a href="https://zhuanlan.zhihu.com/p/398609427" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  事件循环
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/bubble-trapping.html" class="nav-link"><i class="undefined"></i>
+  冒泡和捕获
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/throttle-debounce.html" class="nav-link"><i class="undefined"></i>
+  节流防抖
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/clone-deep.html" class="nav-link"><i class="undefined"></i>
+  深浅拷贝
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/es6-esnext.html" class="nav-link"><i class="undefined"></i>
+  ES6及ESNext规范
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/obj-oriented.html" class="nav-link"><i class="undefined"></i>
+  面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/cache.html" class="nav-link"><i class="undefined"></i>
+  前端缓存
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/HTTP.html" class="nav-link"><i class="undefined"></i>
+  前端网络
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/front-security.html" class="nav-link"><i class="undefined"></i>
+  前端安全
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/garbage-collect.html" class="nav-link"><i class="undefined"></i>
+  垃圾回收机制
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/performance-opt.html" class="nav-link"><i class="undefined"></i>
+  前端性能优化
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/if-else-tips.html" class="nav-link"><i class="undefined"></i>
+  减少 if-else 的小技巧
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/fre-questions.html" class="nav-link"><i class="undefined"></i>
+  常见题目
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      工程化
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/webpackstudy/whatIsEngine.html" class="nav-link"><i class="undefined"></i>
+  什么是前端工程化
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/webpackstudy/module.html" class="nav-link"><i class="undefined"></i>
+  前端模块化
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/webpackstudy/webpack-basic.html" class="nav-link"><i class="undefined"></i>
+  webpack基础
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/webpackstudy/webpack.html" class="nav-link"><i class="undefined"></i>
+  webpack构建
+</a></li><li class="dropdown-item"><!----> <a href="https://zhuanlan.zhihu.com/p/408195292" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  webpack 中的module
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://zhuanlan.zhihu.com/p/448738741" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  webpack性能优化
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="/myblog/webpackstudy/principle.html" class="nav-link"><i class="undefined"></i>
+  webpack原理相关
+</a></li><li class="dropdown-item"><!----> <a href="https://zhuanlan.zhihu.com/p/408733746" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  一步步实现webpack打包
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="/myblog/webpackstudy/ts-basics.html" class="nav-link"><i class="undefined"></i>
+  ts基础及使用
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/webpackstudy/husky.html" class="nav-link"><i class="undefined"></i>
+  前端项目husky使用
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Vue
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/vue/basicknowledge.html" class="nav-link"><i class="undefined"></i>
+  Vue2.0基础
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/misnotes.html" class="nav-link"><i class="undefined"></i>
+  Vue2.0进阶
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/ssr.html" class="nav-link"><i class="undefined"></i>
+  Vue ssr
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/vue3.html" class="nav-link"><i class="undefined"></i>
+  Vue3.0
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/vue-router.html" class="nav-link"><i class="undefined"></i>
+  vue-router
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/vuex.html" class="nav-link"><i class="undefined"></i>
+  vuex性能问题
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/compare.html" class="nav-link"><i class="undefined"></i>
+  Vue2.x VS Vue3.x
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      React
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/react/react-basic.html" class="nav-link"><i class="undefined"></i>
+  React 基础
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/react/react-advanced.html" class="nav-link"><i class="undefined"></i>
+  React 进阶
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/react/status-manage.html" class="nav-link"><i class="undefined"></i>
+  React 状态管理
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/react/react-context.html" class="nav-link"><i class="undefined"></i>
+  React Context
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      React Native
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/reactnative/reactnative.html" class="nav-link"><i class="undefined"></i>
+  React Native 环境搭建
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Node.js
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/node/node-basic.html" class="nav-link"><i class="undefined"></i>
+  Node.js基础
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/node/node-frame.html" class="nav-link"><i class="undefined"></i>
+  Node常用框架
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/node/node-network.html" class="nav-link"><i class="undefined"></i>
+  Nodejs网络及部署
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      低代码
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/lowcode/drag.html" class="nav-link"><i class="undefined"></i>
+  拖拽
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/lowcode/lowcode.html" class="nav-link"><i class="undefined"></i>
+  低代码平台
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/lowcode/lowcode-impl.html" class="nav-link"><i class="undefined"></i>
+  低代码平台实现
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/lowcode/visualization.html" class="nav-link"><i class="undefined"></i>
+  可视化
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      算法
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/algorithm/structure.html" aria-current="page" class="nav-link router-link-exact-active router-link-active"><i class="undefined"></i>
+  数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/sort.html" class="nav-link"><i class="undefined"></i>
+  排序算法
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/double-pointer.html" class="nav-link"><i class="undefined"></i>
+  双指针算法
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/binary-tree.html" class="nav-link"><i class="undefined"></i>
+  二叉树
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/receive-rain.html" class="nav-link"><i class="undefined"></i>
+  接雨水
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/dynamic-plan.html" class="nav-link"><i class="undefined"></i>
+  动态规划
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/greedy.html" class="nav-link"><i class="undefined"></i>
+  贪心算法
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/longasc-sequence.html" class="nav-link"><i class="undefined"></i>
+  最长上升子序列
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/binary-search.html" class="nav-link"><i class="undefined"></i>
+  二分查找
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/other.html" class="nav-link"><i class="undefined"></i>
+  其他
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      其他
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/other/browser-principle.html" class="nav-link"><i class="undefined"></i>
+  浏览器原理与pwa
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/redraw-reflow.html" class="nav-link"><i class="undefined"></i>
+  重绘回流
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/compatibility.html" class="nav-link"><i class="undefined"></i>
+  前端兼容性问题
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/virtual-list.html" class="nav-link"><i class="undefined"></i>
+  虚拟列表
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/data-collection.html" class="nav-link"><i class="undefined"></i>
+  数据采集
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/websocket.html" class="nav-link"><i class="undefined"></i>
+  websocket
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/vue-react.html" class="nav-link"><i class="undefined"></i>
+  vue vs react
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/ESLint.html" class="nav-link"><i class="undefined"></i>
+  ESLint规范
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/ES6.html" class="nav-link"><i class="undefined"></i>
+  ES6 实用语法
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/excellentarticles.html" class="nav-link"><i class="undefined"></i>
+  优秀文章
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/personal-summary.html" class="nav-link"><i class="undefined"></i>
+  个人总结
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/uniapp.html" class="nav-link"><i class="undefined"></i>
+  uni-app
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      关于我
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/hmyjyghh" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://gitee.com/ghh_" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.zhihu.com/people/cool-62-29/columns" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  知乎
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://hmyjyghh.github.io/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-59e6cb88 data-v-7dd95ae2><h3 class="title" data-v-59e6cb88></h3> <!----> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><!---->
+          
+        <!---->
+        2024
+      </a></span></div></div> <div data-v-7dd95ae2><div data-v-7dd95ae2><main class="page"><section style="display:;"><div class="page-title"><h1 class="title">对数据结构的理解</h1> <div data-v-8a445198><!----> <!----> <!----> <!----></div></div> <div class="theme-reco-content content__default"><h1 id="对数据结构的理解"><a href="#对数据结构的理解" class="header-anchor">#</a> 对数据结构的理解</h1> <h2 id="_1-数据结构是什么"><a href="#_1-数据结构是什么" class="header-anchor">#</a> 1. 数据结构是什么</h2> <ol><li>数据结构是计算机存储、组织数据的方式。</li> <li>数据结构是指相互之间存在一种或多种特定关系的数据元素的集合。</li> <li>通常情况下，精心选择的数据结构可以带来更高的运行或者存储效率。数据结构往往同高效的检索算法和索引技术有关。</li></ol> <h2 id="_2-数据结构有哪些"><a href="#_2-数据结构有哪些" class="header-anchor">#</a> 2. 数据结构有哪些</h2> <ul><li>数组</li> <li>栈</li> <li>队列</li> <li>链表</li> <li>树</li> <li>图</li> <li>堆</li> <li>散列表</li></ul> <h3 id="_2-1-数组"><a href="#_2-1-数组" class="header-anchor">#</a> 2.1 数组</h3> <ol><li>在程序设计中,为了处理方便,一般情况把具有相同类型的若干变量按有序的形式组织起来,这些按序排列的同类数据元素的集合称为数组</li></ol> <h3 id="_2-2-栈"><a href="#_2-2-栈" class="header-anchor">#</a> 2.2 栈</h3> <ol><li>一种特殊的线性表,只能在某一端插入和删除的特殊线性表,按照先进后出的特性存储数据
+先进入的数据被压入栈底,最后的数据在栈顶,需要读数据的时候从栈顶开始弹出数据</li></ol> <h3 id="_2-3-队列"><a href="#_2-3-队列" class="header-anchor">#</a> 2.3 队列</h3> <p>跟栈基本一致,也是一种特殊的线性表,其特性是先进先出,只允许在表的前端进行删除操作,而在表
+的后端进行插入操作</p> <h3 id="_2-4-链表"><a href="#_2-4-链表" class="header-anchor">#</a> 2.4 链表</h3> <ol><li>链表是一种物理存储单元上非连续、非顺序的存储结构,数据元素的逻辑顺序是通过链表中的指针链接次序实现的</li> <li>链表由一系列结点(链表中每一个元素称为结点)组成,结点可以在运行时动态生成</li> <li>一般情况,每个结点包括两个部分:一个是存储数据元素的数据域,另一个是存储下一个结点地址的指针域</li></ol> <h3 id="_2-5-树"><a href="#_2-5-树" class="header-anchor">#</a> 2.5 树</h3> <ol><li>树是一种抽象数据类型或是实作这种抽象数据类型的数据结构,用来模拟具有树状结构性质的数据集合</li> <li>树是典型的非线性结构,在树的结构中,有且仅有一个根结点,该结点没有前驱结点。在树结构中的其
+他结点都有且仅有一个前驱结点,而且可以有两个以上的后继结点</li></ol> <h3 id="_2-6-图"><a href="#_2-6-图" class="header-anchor">#</a> 2.6 图</h3> <ol><li>图是一种比树更复杂的数据结构,在图结构中,数据结点一般称为顶点,而边是顶点的有序偶对</li> <li>图中任意两个数据元素之间都可能相关,顶点之间的逻辑关系用边来表示,边可以是有向的,也可以是无向的</li> <li>一种非线性结构。在图结构中,数据结点一般称为顶点,而边是顶点的有序偶对。如果两个顶点之间存在一条边,那么就表示这两个顶点具有相邻关系</li></ol> <h3 id="_2-7-堆"><a href="#_2-7-堆" class="header-anchor">#</a> 2.7 堆</h3> <ol><li>堆是一种特殊的树形数据结构,每个结点都有一个值,特点是根结点的值最小(或最大),且根结点的两个子树也是一个堆</li></ol> <h3 id="_2-8-散列表"><a href="#_2-8-散列表" class="header-anchor">#</a> 2.8 散列表</h3> <p>若结构中存在关键字和<code>K</code>相等的记录,则必定在<code>f(K)</code>的存储位置上,不需比较便可直接取得所查记录</p> <h3 id="_2-9-区别"><a href="#_2-9-区别" class="header-anchor">#</a> 2.9 区别</h3> <ol><li>数组是一种顺序结构,它利用元素的下标来进行数据的访问</li> <li>栈和队列是一种特殊的线性表,它们都可以用数组来实现</li> <li>链表是一种链式结构,它是通过指针来实现数据元素之间的逻辑关系</li></ol> <p>上述的数据结构,之前的区别可以分成线性结构和非线性结构:</p> <ul><li><p>线性结构有:数组、栈、队列、链表等</p></li> <li><p>非线性结构有:树、图、堆等</p></li></ul> <h2 id="_3-说说你对算法的理解-应用场景"><a href="#_3-说说你对算法的理解-应用场景" class="header-anchor">#</a> 3. 说说你对算法的理解？应用场景</h2> <h3 id="_3-1-是什么"><a href="#_3-1-是什么" class="header-anchor">#</a> 3.1 是什么</h3> <p>算法是独立存在的一种解决问题的方法和思想。</p> <p>算法(Algorithm)是指解题方案的准确而完整的描述,是一系列解决问题的清晰指令,算法代表着用系
+统的方法描述解决问题的策略机制
+算法的五大特性:输入、输出、有穷性、确定性和可行性</p> <ol><li>输入:算法具有0个或多个输入,以刻画运算对象的初始情况,所谓0个输入是指算法本身定出了初始条件</li> <li>输出:算法至少有1个或多个输出,以反映对输入数据加工后的结果。没有输出的算法是毫无意义的</li> <li>有穷性:算法在有限的步骤之后会自动结束而不会无限循环,并且每一个步骤可以在可接受的时间内完成</li> <li>确定性:算法的每一步都有确定的含义,不会出现二义性</li> <li>可行性:算法的每一步都是可行的,也就是说,每一步都能够执行有限的次数完成</li></ol> <ul><li>有限性(Finiteness):一个算法必须保证执行有限步之后结束</li> <li>确切性(Definiteness):一个算法的每一步骤必须有确切的定义</li> <li>输入(Input):一个算法有零个或多个输入,以刻画运算对象的初始情况,所谓零个输入是指算法本身给定了初始条件</li> <li>输出(Output):一个算法有一个或多个输出。没有输出的算法毫无意义</li> <li>可行性(Effectiveness):算法中执行的任何计算步骤都是可以被分解为基本的可执行的操作步骤,即每个计算步骤都可以在有限时间内完成(也称之为有效性)</li></ul> <h3 id="_3-2-应用场景"><a href="#_3-2-应用场景" class="header-anchor">#</a> 3.2 应用场景</h3> <p>在前端领域中,数据结构与算法无法不在,例如现在的 <code>vue</code>或者<code>react</code>项目,实现虚拟<code>DOM</code>或者<code>Fiber</code>结构,本质就是一种数据结构,如下一个简单的虚拟<code>DOM</code></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> vnode <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">tag</span><span class="token operator">:</span> <span class="token string">'div'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">data</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token string">'app'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">style</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">color</span><span class="token operator">:</span> <span class="token string">'red'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">children</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token literal-property property">tag</span><span class="token operator">:</span> <span class="token string">'span'</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">children</span><span class="token operator">:</span> <span class="token string">'hello'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="_3-3-算法中的时间复杂度-空间复杂度"><a href="#_3-3-算法中的时间复杂度-空间复杂度" class="header-anchor">#</a> 3.3 算法中的时间复杂度,空间复杂度？</h3> <ul><li><p>时间复杂度: 用来评估执行程序所需的时间,可以估算出程序对处理器的使用程度</p></li> <li><p>空间复杂度: 用来评估执行程序所需的存储空间,可以估算出程序对计算机内存的使用程度</p> <ul><li>时间维度: 是指执行当前算法所消耗的时间,我们通常用「时间复杂度」来描述。</li> <li>空间维度: 是指执行当前算法需要占用多少内存空间,我们通常用「空间复杂度」来描述</li></ul></li></ul> <p>一个算法花费的时间与算法中语句的「执行次数成正比」,执行次数越多,花费的时间就越多
+算法的复杂度通常用大O符号表述,定义为<code>T(n)=0(f(n))</code>,常见的时间复杂度有:0(1)常数型、
+O(logn)对数型、O(n)线性型、O(nlogn)线性对数型、O(n^2)平方型、O(n^3)立方型、O(nkk:次方型、O(2n)指数
+型,如下图所示:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token constant">O</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">&lt;</span><span class="token constant">O</span><span class="token punctuation">(</span>log<span class="token punctuation">.</span>n<span class="token punctuation">)</span><span class="token operator">&lt;</span><span class="token constant">O</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token operator">&lt;</span><span class="token constant">O</span><span class="token punctuation">(</span>nlog n<span class="token punctuation">)</span><span class="token operator">&lt;</span><span class="token constant">O</span><span class="token punctuation">(</span>n2<span class="token punctuation">)</span><span class="token operator">&lt;</span><span class="token constant">O</span><span class="token punctuation">(</span>n3<span class="token punctuation">)</span><span class="token operator">&lt;</span><span class="token operator">...</span><span class="token operator">&lt;</span><span class="token constant">O</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">^</span>n<span class="token punctuation">)</span><span class="token operator">&lt;</span><span class="token constant">O</span><span class="token punctuation">(</span>n<span class="token operator">!</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="_3-4-如何计算时间复杂度"><a href="#_3-4-如何计算时间复杂度" class="header-anchor">#</a> 3.4 如何计算时间复杂度？</h3> <h3 id="_3-5-空间复杂度"><a href="#_3-5-空间复杂度" class="header-anchor">#</a> 3.5 空间复杂度</h3> <ol><li>空间复杂度主要指执行算法所需内存的大小,用于对程序运行过程中所需要的临时存储空间的度量</li> <li>除了需要存储空间、指令、常数、变量和输入数据外,还包括对数据进行操作的工作单元和存储计算所需信息的辅助空间</li></ol> <p>通常来说,只要算法不涉及到动态分配的空间,以及递归、栈所需的内空间,空间复杂度通常为<code>O(1)</code>,
+一个一维数组<code>a[n]</code>,空间复杂度<code>O(n)</code>,二维数组为<code>O(n^2)</code></p> <h2 id="_4-对集合的理解"><a href="#_4-对集合的理解" class="header-anchor">#</a> 4. 对集合的理解 ？</h2> <ol><li>集合是一种无序且唯一的数据结构,它由一组无序的,相关联的,相等的或不相等的成员构成</li></ol> <h3 id="_4-1-是什么"><a href="#_4-1-是什么" class="header-anchor">#</a> 4.1 是什么</h3> <p>集合(Set),指具有某种特定性质的事物的总体,里面的每一项内容称作元素
+在数学中,我们经常会遇到集合的概念:</p> <ul><li>有限集合:例如一个班集所有的同学构成的集合</li> <li>无限集合:例如全体自然数集合</li></ul> <p>在计算机中集合道理也基本一致,具有三大特性:</p> <ul><li>确定性:于一个给定的集合,集合中的元素是确定的。即一个元素,或者属于该集合,或者不属于该集合,两者必居其一</li> <li>无序性:在一个集合中,不考虑元素之间的顺序,只要元素完全相同,就认为是同一个集合</li> <li>互异性:集合中任意两个元素都是不同的</li></ul> <h2 id="_5-说说你对树的理解"><a href="#_5-说说你对树的理解" class="header-anchor">#</a> 5. 说说你对树的理解？</h2></div></section> <footer class="page-edit"><!----> <!----></footer> <!----> <div class="comments-wrapper"><!----></div></main></div> <!----></div> <ul class="sub-sidebar sub-sidebar-wrapper" style="width:12rem;" data-v-b57cc07c data-v-7dd95ae2><li class="level-2" data-v-b57cc07c><a href="/myblog/algorithm/structure.html#_1-数据结构是什么" class="sidebar-link reco-side-_1-数据结构是什么" data-v-b57cc07c>1. 数据结构是什么</a></li><li class="level-2" data-v-b57cc07c><a href="/myblog/algorithm/structure.html#_2-数据结构有哪些" class="sidebar-link reco-side-_2-数据结构有哪些" data-v-b57cc07c>2. 数据结构有哪些</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/algorithm/structure.html#_2-1-数组" class="sidebar-link reco-side-_2-1-数组" data-v-b57cc07c>2.1 数组</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/algorithm/structure.html#_2-2-栈" class="sidebar-link reco-side-_2-2-栈" data-v-b57cc07c>2.2 栈</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/algorithm/structure.html#_2-3-队列" class="sidebar-link reco-side-_2-3-队列" data-v-b57cc07c>2.3 队列</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/algorithm/structure.html#_2-4-链表" class="sidebar-link reco-side-_2-4-链表" data-v-b57cc07c>2.4 链表</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/algorithm/structure.html#_2-5-树" class="sidebar-link reco-side-_2-5-树" data-v-b57cc07c>2.5 树</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/algorithm/structure.html#_2-6-图" class="sidebar-link reco-side-_2-6-图" data-v-b57cc07c>2.6 图</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/algorithm/structure.html#_2-7-堆" class="sidebar-link reco-side-_2-7-堆" data-v-b57cc07c>2.7 堆</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/algorithm/structure.html#_2-8-散列表" class="sidebar-link reco-side-_2-8-散列表" data-v-b57cc07c>2.8 散列表</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/algorithm/structure.html#_2-9-区别" class="sidebar-link reco-side-_2-9-区别" data-v-b57cc07c>2.9 区别</a></li><li class="level-2" data-v-b57cc07c><a href="/myblog/algorithm/structure.html#_3-说说你对算法的理解-应用场景" class="sidebar-link reco-side-_3-说说你对算法的理解-应用场景" data-v-b57cc07c>3. 说说你对算法的理解？应用场景</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/algorithm/structure.html#_3-1-是什么" class="sidebar-link reco-side-_3-1-是什么" data-v-b57cc07c>3.1 是什么</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/algorithm/structure.html#_3-2-应用场景" class="sidebar-link reco-side-_3-2-应用场景" data-v-b57cc07c>3.2 应用场景</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/algorithm/structure.html#_3-3-算法中的时间复杂度-空间复杂度" class="sidebar-link reco-side-_3-3-算法中的时间复杂度-空间复杂度" data-v-b57cc07c>3.3 算法中的时间复杂度,空间复杂度？</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/algorithm/structure.html#_3-4-如何计算时间复杂度" class="sidebar-link reco-side-_3-4-如何计算时间复杂度" data-v-b57cc07c>3.4 如何计算时间复杂度？</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/algorithm/structure.html#_3-5-空间复杂度" class="sidebar-link reco-side-_3-5-空间复杂度" data-v-b57cc07c>3.5 空间复杂度</a></li><li class="level-2" data-v-b57cc07c><a href="/myblog/algorithm/structure.html#_4-对集合的理解" class="sidebar-link reco-side-_4-对集合的理解" data-v-b57cc07c>4. 对集合的理解 ？</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/algorithm/structure.html#_4-1-是什么" class="sidebar-link reco-side-_4-1-是什么" data-v-b57cc07c>4.1 是什么</a></li><li class="level-2" data-v-b57cc07c><a href="/myblog/algorithm/structure.html#_5-说说你对树的理解" class="sidebar-link reco-side-_5-说说你对树的理解" data-v-b57cc07c>5. 说说你对树的理解？</a></li></ul></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><!----></div></div>
+    <script src="/myblog/assets/js/app.6d453d7e.js" defer></script><script src="/myblog/assets/js/7.8c1c7106.js" defer></script><script src="/myblog/assets/js/2.63d4cf60.js" defer></script><script src="/myblog/assets/js/1.0779a93f.js" defer></script><script src="/myblog/assets/js/49.5de9d3ab.js" defer></script><script src="/myblog/assets/js/34.6c011227.js" defer></script>
+  </body>
+</html>
