@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>React 相关 | 寒梦的博客</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/myblog/logo.png">
+    <meta name="description" content="盛年不重来,一日难再晨,及时当勉励,岁月不待人">
+    
+    <link rel="preload" href="/myblog/assets/css/0.styles.1b9a275a.css" as="style"><link rel="preload" href="/myblog/assets/js/app.d2862463.js" as="script"><link rel="preload" href="/myblog/assets/js/7.8c1c7106.js" as="script"><link rel="preload" href="/myblog/assets/js/2.63d4cf60.js" as="script"><link rel="preload" href="/myblog/assets/js/1.0779a93f.js" as="script"><link rel="preload" href="/myblog/assets/js/91.02d5ca94.js" as="script"><link rel="preload" href="/myblog/assets/js/34.6c011227.js" as="script"><link rel="prefetch" href="/myblog/assets/js/10.2eea7893.js"><link rel="prefetch" href="/myblog/assets/js/100.a2449e8c.js"><link rel="prefetch" href="/myblog/assets/js/101.6ae6de59.js"><link rel="prefetch" href="/myblog/assets/js/102.5cfb0e80.js"><link rel="prefetch" href="/myblog/assets/js/103.7ad3c200.js"><link rel="prefetch" href="/myblog/assets/js/104.585300fc.js"><link rel="prefetch" href="/myblog/assets/js/105.928adf09.js"><link rel="prefetch" href="/myblog/assets/js/106.cfe6d2e2.js"><link rel="prefetch" href="/myblog/assets/js/107.c9a11b9e.js"><link rel="prefetch" href="/myblog/assets/js/108.b49d6b8d.js"><link rel="prefetch" href="/myblog/assets/js/109.982a43f3.js"><link rel="prefetch" href="/myblog/assets/js/11.0257b50f.js"><link rel="prefetch" href="/myblog/assets/js/110.377d88ca.js"><link rel="prefetch" href="/myblog/assets/js/111.5c85d12e.js"><link rel="prefetch" href="/myblog/assets/js/112.7fa892ec.js"><link rel="prefetch" href="/myblog/assets/js/14.fbbe67a2.js"><link rel="prefetch" href="/myblog/assets/js/15.fabd129b.js"><link rel="prefetch" href="/myblog/assets/js/16.a75762da.js"><link rel="prefetch" href="/myblog/assets/js/17.52d53386.js"><link rel="prefetch" href="/myblog/assets/js/18.4db27d01.js"><link rel="prefetch" href="/myblog/assets/js/19.7ec664ce.js"><link rel="prefetch" href="/myblog/assets/js/20.4d3becdd.js"><link rel="prefetch" href="/myblog/assets/js/21.52432b7c.js"><link rel="prefetch" href="/myblog/assets/js/22.74a3d5cb.js"><link rel="prefetch" href="/myblog/assets/js/23.e37427da.js"><link rel="prefetch" href="/myblog/assets/js/24.cce6e76c.js"><link rel="prefetch" href="/myblog/assets/js/25.9c2608bc.js"><link rel="prefetch" href="/myblog/assets/js/26.f98d65f7.js"><link rel="prefetch" href="/myblog/assets/js/27.07f61f11.js"><link rel="prefetch" href="/myblog/assets/js/28.903ea730.js"><link rel="prefetch" href="/myblog/assets/js/29.48153eff.js"><link rel="prefetch" href="/myblog/assets/js/3.ffd383a2.js"><link rel="prefetch" href="/myblog/assets/js/30.b8eb1a62.js"><link rel="prefetch" href="/myblog/assets/js/31.1d9e1333.js"><link rel="prefetch" href="/myblog/assets/js/32.8cfae0d1.js"><link rel="prefetch" href="/myblog/assets/js/33.0ab00c4f.js"><link rel="prefetch" href="/myblog/assets/js/35.c763ccbb.js"><link rel="prefetch" href="/myblog/assets/js/36.3d1c91e9.js"><link rel="prefetch" href="/myblog/assets/js/37.94c7db86.js"><link rel="prefetch" href="/myblog/assets/js/38.5a93b916.js"><link rel="prefetch" href="/myblog/assets/js/39.afa39eec.js"><link rel="prefetch" href="/myblog/assets/js/4.16621f4e.js"><link rel="prefetch" href="/myblog/assets/js/40.cc5df847.js"><link rel="prefetch" href="/myblog/assets/js/41.d1798563.js"><link rel="prefetch" href="/myblog/assets/js/42.9922ccd5.js"><link rel="prefetch" href="/myblog/assets/js/43.7b56eecd.js"><link rel="prefetch" href="/myblog/assets/js/44.d31d5d49.js"><link rel="prefetch" href="/myblog/assets/js/45.7c773855.js"><link rel="prefetch" href="/myblog/assets/js/46.6b26755e.js"><link rel="prefetch" href="/myblog/assets/js/47.5301a690.js"><link rel="prefetch" href="/myblog/assets/js/48.f0982275.js"><link rel="prefetch" href="/myblog/assets/js/49.f14d0716.js"><link rel="prefetch" href="/myblog/assets/js/5.a36bfdf4.js"><link rel="prefetch" href="/myblog/assets/js/50.5f887e21.js"><link rel="prefetch" href="/myblog/assets/js/51.12b7a969.js"><link rel="prefetch" href="/myblog/assets/js/52.3875ac50.js"><link rel="prefetch" href="/myblog/assets/js/53.3d2fe07f.js"><link rel="prefetch" href="/myblog/assets/js/54.13d1d9fe.js"><link rel="prefetch" href="/myblog/assets/js/55.35011435.js"><link rel="prefetch" href="/myblog/assets/js/56.a5c7bb84.js"><link rel="prefetch" href="/myblog/assets/js/57.81140db0.js"><link rel="prefetch" href="/myblog/assets/js/58.67bd80d7.js"><link rel="prefetch" href="/myblog/assets/js/59.e8a48a17.js"><link rel="prefetch" href="/myblog/assets/js/6.e968d4fe.js"><link rel="prefetch" href="/myblog/assets/js/60.f3a7e603.js"><link rel="prefetch" href="/myblog/assets/js/61.2f3e255c.js"><link rel="prefetch" href="/myblog/assets/js/62.5b1d140c.js"><link rel="prefetch" href="/myblog/assets/js/63.8000b783.js"><link rel="prefetch" href="/myblog/assets/js/64.cbb6886f.js"><link rel="prefetch" href="/myblog/assets/js/65.acb989fb.js"><link rel="prefetch" href="/myblog/assets/js/66.9c0ec9ec.js"><link rel="prefetch" href="/myblog/assets/js/67.d702d650.js"><link rel="prefetch" href="/myblog/assets/js/68.d291a141.js"><link rel="prefetch" href="/myblog/assets/js/69.1ec0f097.js"><link rel="prefetch" href="/myblog/assets/js/70.6240be36.js"><link rel="prefetch" href="/myblog/assets/js/71.5fb1626d.js"><link rel="prefetch" href="/myblog/assets/js/72.e2a4909c.js"><link rel="prefetch" href="/myblog/assets/js/73.1a5c8381.js"><link rel="prefetch" href="/myblog/assets/js/74.0a23a67f.js"><link rel="prefetch" href="/myblog/assets/js/75.f83c4804.js"><link rel="prefetch" href="/myblog/assets/js/76.d4cb15ac.js"><link rel="prefetch" href="/myblog/assets/js/77.4beb5b94.js"><link rel="prefetch" href="/myblog/assets/js/78.19b18076.js"><link rel="prefetch" href="/myblog/assets/js/79.e14ea9bd.js"><link rel="prefetch" href="/myblog/assets/js/8.836d3617.js"><link rel="prefetch" href="/myblog/assets/js/80.210591e4.js"><link rel="prefetch" href="/myblog/assets/js/81.953fc439.js"><link rel="prefetch" href="/myblog/assets/js/82.f020d9ca.js"><link rel="prefetch" href="/myblog/assets/js/83.1339f723.js"><link rel="prefetch" href="/myblog/assets/js/84.3b889bc1.js"><link rel="prefetch" href="/myblog/assets/js/85.7a11c167.js"><link rel="prefetch" href="/myblog/assets/js/86.751b2c22.js"><link rel="prefetch" href="/myblog/assets/js/87.e5069b1e.js"><link rel="prefetch" href="/myblog/assets/js/88.cbbf0e41.js"><link rel="prefetch" href="/myblog/assets/js/89.2995403a.js"><link rel="prefetch" href="/myblog/assets/js/9.acb95ff1.js"><link rel="prefetch" href="/myblog/assets/js/90.b7bdeb07.js"><link rel="prefetch" href="/myblog/assets/js/92.73d61eb1.js"><link rel="prefetch" href="/myblog/assets/js/93.4804dc07.js"><link rel="prefetch" href="/myblog/assets/js/94.b327897b.js"><link rel="prefetch" href="/myblog/assets/js/95.92167d88.js"><link rel="prefetch" href="/myblog/assets/js/96.224927b6.js"><link rel="prefetch" href="/myblog/assets/js/97.27937175.js"><link rel="prefetch" href="/myblog/assets/js/98.b444e916.js"><link rel="prefetch" href="/myblog/assets/js/99.37993ae1.js"><link rel="prefetch" href="/myblog/assets/js/vendors~docsearch.a3a80f00.js">
+    <link rel="stylesheet" href="/myblog/assets/css/0.styles.1b9a275a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-7dd95ae2><div data-v-7dd95ae2><div class="password-shadow password-wrapper-out" style="display:none;" data-v-59e6cb88 data-v-7dd95ae2 data-v-7dd95ae2><h3 class="title" data-v-59e6cb88>寒梦的博客</h3> <p class="description" data-v-59e6cb88>盛年不重来,一日难再晨,及时当勉励,岁月不待人</p> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><!---->
+          
+        <!---->
+        2025
+      </a></span></div></div> <div class="hide" data-v-7dd95ae2><header class="navbar" data-v-7dd95ae2><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/myblog/" class="home-link router-link-active"><!----> <span class="site-name">寒梦的博客</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      JS
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://www.zhihu.com/column/c_1415231566645350400" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  Promise
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://zhuanlan.zhihu.com/p/365044710" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  浏览器对象详解
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/dom.html" class="nav-link"><i class="undefined"></i>
+  DOM操作
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/Closure.html" class="nav-link"><i class="undefined"></i>
+  this指向、闭包、作用域
+</a></li><li class="dropdown-item"><!----> <a href="https://zhuanlan.zhihu.com/p/398609427" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  事件循环
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/bubble-trapping.html" class="nav-link"><i class="undefined"></i>
+  冒泡和捕获
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/throttle-debounce.html" class="nav-link"><i class="undefined"></i>
+  节流防抖
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/clone-deep.html" class="nav-link"><i class="undefined"></i>
+  深浅拷贝
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/es6-esnext.html" class="nav-link"><i class="undefined"></i>
+  ES6及ESNext规范
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/obj-oriented.html" class="nav-link"><i class="undefined"></i>
+  面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/cache.html" class="nav-link"><i class="undefined"></i>
+  前端缓存
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/HTTP.html" class="nav-link"><i class="undefined"></i>
+  前端网络
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/front-security.html" class="nav-link"><i class="undefined"></i>
+  前端安全
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/garbage-collect.html" class="nav-link"><i class="undefined"></i>
+  垃圾回收机制
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/performance-opt.html" class="nav-link"><i class="undefined"></i>
+  前端性能优化
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/if-else-tips.html" class="nav-link"><i class="undefined"></i>
+  减少 if-else 的小技巧
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/fre-questions.html" class="nav-link"><i class="undefined"></i>
+  常见题目
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      工程化
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/webpackstudy/whatIsEngine.html" class="nav-link"><i class="undefined"></i>
+  什么是前端工程化
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/webpackstudy/module.html" class="nav-link"><i class="undefined"></i>
+  前端模块化
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/webpackstudy/webpack-basic.html" class="nav-link"><i class="undefined"></i>
+  webpack基础
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/webpackstudy/webpack.html" class="nav-link"><i class="undefined"></i>
+  webpack构建
+</a></li><li class="dropdown-item"><!----> <a href="https://zhuanlan.zhihu.com/p/408195292" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  webpack 中的module
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://zhuanlan.zhihu.com/p/448738741" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  webpack性能优化
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="/myblog/webpackstudy/principle.html" class="nav-link"><i class="undefined"></i>
+  webpack原理相关
+</a></li><li class="dropdown-item"><!----> <a href="https://zhuanlan.zhihu.com/p/408733746" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  一步步实现webpack打包
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="/myblog/webpackstudy/ts-basics.html" class="nav-link"><i class="undefined"></i>
+  ts基础及使用
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/webpackstudy/husky.html" class="nav-link"><i class="undefined"></i>
+  前端项目husky使用
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Vue
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/vue/basicknowledge.html" class="nav-link"><i class="undefined"></i>
+  Vue2.0基础
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/misnotes.html" class="nav-link"><i class="undefined"></i>
+  Vue2.0进阶
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/ssr.html" class="nav-link"><i class="undefined"></i>
+  Vue ssr
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/vue3.html" class="nav-link"><i class="undefined"></i>
+  Vue3.0
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/vue3-impl.html" class="nav-link"><i class="undefined"></i>
+  Vue3.0进阶
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/vue-router.html" class="nav-link"><i class="undefined"></i>
+  vue-router
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/vuex.html" class="nav-link"><i class="undefined"></i>
+  vuex性能问题
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/compare.html" class="nav-link"><i class="undefined"></i>
+  Vue2.x VS Vue3.x
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/vue-principle.html" class="nav-link"><i class="undefined"></i>
+  vue深入理解
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      React
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/react/react-basic.html" class="nav-link"><i class="undefined"></i>
+  React 基础
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/react/react-advanced.html" class="nav-link"><i class="undefined"></i>
+  React 进阶
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/react/status-manage.html" class="nav-link"><i class="undefined"></i>
+  React 状态管理
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/react/react-context.html" class="nav-link"><i class="undefined"></i>
+  React Context
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/react/react-relation.html" aria-current="page" class="nav-link router-link-exact-active router-link-active"><i class="undefined"></i>
+  React 相关
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      React Native
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/reactnative/reactnative.html" class="nav-link"><i class="undefined"></i>
+  React Native 环境搭建
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/reactnative/rn-problem.html" class="nav-link"><i class="undefined"></i>
+  React Native 常见问题
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Node.js
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/node/node-basic.html" class="nav-link"><i class="undefined"></i>
+  Node.js基础
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/node/node-frame.html" class="nav-link"><i class="undefined"></i>
+  Node常用框架
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/node/node-network.html" class="nav-link"><i class="undefined"></i>
+  Nodejs网络及部署
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      低代码
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/lowcode/drag.html" class="nav-link"><i class="undefined"></i>
+  拖拽
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/lowcode/lowcode.html" class="nav-link"><i class="undefined"></i>
+  低代码平台
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/lowcode/lowcode-impl.html" class="nav-link"><i class="undefined"></i>
+  低代码平台实现
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/lowcode/visualization.html" class="nav-link"><i class="undefined"></i>
+  可视化
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      算法
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/algorithm/sort.html" class="nav-link"><i class="undefined"></i>
+  排序算法
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/double-pointer.html" class="nav-link"><i class="undefined"></i>
+  双指针算法
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/binary-tree.html" class="nav-link"><i class="undefined"></i>
+  二叉树
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/receive-rain.html" class="nav-link"><i class="undefined"></i>
+  接雨水
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/dynamic-plan.html" class="nav-link"><i class="undefined"></i>
+  动态规划
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/greedy.html" class="nav-link"><i class="undefined"></i>
+  贪心算法
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/longasc-sequence.html" class="nav-link"><i class="undefined"></i>
+  最长上升子序列
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/binary-search.html" class="nav-link"><i class="undefined"></i>
+  二分查找
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/other.html" class="nav-link"><i class="undefined"></i>
+  其他
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      其他
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/other/browser-principle.html" class="nav-link"><i class="undefined"></i>
+  浏览器原理与pwa
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/redraw-reflow.html" class="nav-link"><i class="undefined"></i>
+  重绘回流
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/compatibility.html" class="nav-link"><i class="undefined"></i>
+  前端兼容性问题
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/virtual-list.html" class="nav-link"><i class="undefined"></i>
+  虚拟列表
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/data-collection.html" class="nav-link"><i class="undefined"></i>
+  数据采集
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/websocket.html" class="nav-link"><i class="undefined"></i>
+  websocket
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/vue-react.html" class="nav-link"><i class="undefined"></i>
+  vue vs react
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/ESLint.html" class="nav-link"><i class="undefined"></i>
+  ESLint规范
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/ES6.html" class="nav-link"><i class="undefined"></i>
+  ES6 实用语法
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/excellentarticles.html" class="nav-link"><i class="undefined"></i>
+  优秀文章
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/personal-summary.html" class="nav-link"><i class="undefined"></i>
+  个人总结
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/uniapp.html" class="nav-link"><i class="undefined"></i>
+  uni-app
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/handwritten-impl.html" class="nav-link"><i class="undefined"></i>
+  手写实现
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/project-broad.html" class="nav-link"><i class="undefined"></i>
+  项目层面
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      关于我
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/hmyjyghh" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://gitee.com/ghh_" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.zhihu.com/people/cool-62-29/columns" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  知乎
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://hmyjyghh.github.io/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-7dd95ae2></div> <aside class="sidebar" data-v-7dd95ae2><div class="personal-info-wrapper" data-v-1fad0c41 data-v-7dd95ae2><!----> <!----> <div class="num" data-v-1fad0c41><div data-v-1fad0c41><h3 data-v-1fad0c41>70</h3> <h6 data-v-1fad0c41>Articles</h6></div> <div data-v-1fad0c41><h3 data-v-1fad0c41>17</h3> <h6 data-v-1fad0c41>Tags</h6></div></div> <ul class="social-links" data-v-1fad0c41></ul> <hr data-v-1fad0c41></div> <nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      JS
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://www.zhihu.com/column/c_1415231566645350400" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  Promise
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://zhuanlan.zhihu.com/p/365044710" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  浏览器对象详解
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/dom.html" class="nav-link"><i class="undefined"></i>
+  DOM操作
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/Closure.html" class="nav-link"><i class="undefined"></i>
+  this指向、闭包、作用域
+</a></li><li class="dropdown-item"><!----> <a href="https://zhuanlan.zhihu.com/p/398609427" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  事件循环
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/bubble-trapping.html" class="nav-link"><i class="undefined"></i>
+  冒泡和捕获
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/throttle-debounce.html" class="nav-link"><i class="undefined"></i>
+  节流防抖
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/clone-deep.html" class="nav-link"><i class="undefined"></i>
+  深浅拷贝
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/es6-esnext.html" class="nav-link"><i class="undefined"></i>
+  ES6及ESNext规范
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/obj-oriented.html" class="nav-link"><i class="undefined"></i>
+  面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/cache.html" class="nav-link"><i class="undefined"></i>
+  前端缓存
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/HTTP.html" class="nav-link"><i class="undefined"></i>
+  前端网络
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/front-security.html" class="nav-link"><i class="undefined"></i>
+  前端安全
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/garbage-collect.html" class="nav-link"><i class="undefined"></i>
+  垃圾回收机制
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/performance-opt.html" class="nav-link"><i class="undefined"></i>
+  前端性能优化
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/if-else-tips.html" class="nav-link"><i class="undefined"></i>
+  减少 if-else 的小技巧
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/fre-questions.html" class="nav-link"><i class="undefined"></i>
+  常见题目
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      工程化
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/webpackstudy/whatIsEngine.html" class="nav-link"><i class="undefined"></i>
+  什么是前端工程化
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/webpackstudy/module.html" class="nav-link"><i class="undefined"></i>
+  前端模块化
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/webpackstudy/webpack-basic.html" class="nav-link"><i class="undefined"></i>
+  webpack基础
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/webpackstudy/webpack.html" class="nav-link"><i class="undefined"></i>
+  webpack构建
+</a></li><li class="dropdown-item"><!----> <a href="https://zhuanlan.zhihu.com/p/408195292" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  webpack 中的module
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://zhuanlan.zhihu.com/p/448738741" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  webpack性能优化
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="/myblog/webpackstudy/principle.html" class="nav-link"><i class="undefined"></i>
+  webpack原理相关
+</a></li><li class="dropdown-item"><!----> <a href="https://zhuanlan.zhihu.com/p/408733746" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  一步步实现webpack打包
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="/myblog/webpackstudy/ts-basics.html" class="nav-link"><i class="undefined"></i>
+  ts基础及使用
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/webpackstudy/husky.html" class="nav-link"><i class="undefined"></i>
+  前端项目husky使用
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Vue
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/vue/basicknowledge.html" class="nav-link"><i class="undefined"></i>
+  Vue2.0基础
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/misnotes.html" class="nav-link"><i class="undefined"></i>
+  Vue2.0进阶
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/ssr.html" class="nav-link"><i class="undefined"></i>
+  Vue ssr
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/vue3.html" class="nav-link"><i class="undefined"></i>
+  Vue3.0
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/vue3-impl.html" class="nav-link"><i class="undefined"></i>
+  Vue3.0进阶
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/vue-router.html" class="nav-link"><i class="undefined"></i>
+  vue-router
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/vuex.html" class="nav-link"><i class="undefined"></i>
+  vuex性能问题
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/compare.html" class="nav-link"><i class="undefined"></i>
+  Vue2.x VS Vue3.x
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/vue-principle.html" class="nav-link"><i class="undefined"></i>
+  vue深入理解
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      React
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/react/react-basic.html" class="nav-link"><i class="undefined"></i>
+  React 基础
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/react/react-advanced.html" class="nav-link"><i class="undefined"></i>
+  React 进阶
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/react/status-manage.html" class="nav-link"><i class="undefined"></i>
+  React 状态管理
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/react/react-context.html" class="nav-link"><i class="undefined"></i>
+  React Context
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/react/react-relation.html" aria-current="page" class="nav-link router-link-exact-active router-link-active"><i class="undefined"></i>
+  React 相关
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      React Native
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/reactnative/reactnative.html" class="nav-link"><i class="undefined"></i>
+  React Native 环境搭建
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/reactnative/rn-problem.html" class="nav-link"><i class="undefined"></i>
+  React Native 常见问题
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Node.js
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/node/node-basic.html" class="nav-link"><i class="undefined"></i>
+  Node.js基础
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/node/node-frame.html" class="nav-link"><i class="undefined"></i>
+  Node常用框架
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/node/node-network.html" class="nav-link"><i class="undefined"></i>
+  Nodejs网络及部署
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      低代码
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/lowcode/drag.html" class="nav-link"><i class="undefined"></i>
+  拖拽
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/lowcode/lowcode.html" class="nav-link"><i class="undefined"></i>
+  低代码平台
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/lowcode/lowcode-impl.html" class="nav-link"><i class="undefined"></i>
+  低代码平台实现
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/lowcode/visualization.html" class="nav-link"><i class="undefined"></i>
+  可视化
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      算法
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/algorithm/sort.html" class="nav-link"><i class="undefined"></i>
+  排序算法
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/double-pointer.html" class="nav-link"><i class="undefined"></i>
+  双指针算法
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/binary-tree.html" class="nav-link"><i class="undefined"></i>
+  二叉树
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/receive-rain.html" class="nav-link"><i class="undefined"></i>
+  接雨水
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/dynamic-plan.html" class="nav-link"><i class="undefined"></i>
+  动态规划
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/greedy.html" class="nav-link"><i class="undefined"></i>
+  贪心算法
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/longasc-sequence.html" class="nav-link"><i class="undefined"></i>
+  最长上升子序列
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/binary-search.html" class="nav-link"><i class="undefined"></i>
+  二分查找
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/other.html" class="nav-link"><i class="undefined"></i>
+  其他
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      其他
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/other/browser-principle.html" class="nav-link"><i class="undefined"></i>
+  浏览器原理与pwa
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/redraw-reflow.html" class="nav-link"><i class="undefined"></i>
+  重绘回流
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/compatibility.html" class="nav-link"><i class="undefined"></i>
+  前端兼容性问题
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/virtual-list.html" class="nav-link"><i class="undefined"></i>
+  虚拟列表
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/data-collection.html" class="nav-link"><i class="undefined"></i>
+  数据采集
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/websocket.html" class="nav-link"><i class="undefined"></i>
+  websocket
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/vue-react.html" class="nav-link"><i class="undefined"></i>
+  vue vs react
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/ESLint.html" class="nav-link"><i class="undefined"></i>
+  ESLint规范
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/ES6.html" class="nav-link"><i class="undefined"></i>
+  ES6 实用语法
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/excellentarticles.html" class="nav-link"><i class="undefined"></i>
+  优秀文章
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/personal-summary.html" class="nav-link"><i class="undefined"></i>
+  个人总结
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/uniapp.html" class="nav-link"><i class="undefined"></i>
+  uni-app
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/handwritten-impl.html" class="nav-link"><i class="undefined"></i>
+  手写实现
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/project-broad.html" class="nav-link"><i class="undefined"></i>
+  项目层面
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      关于我
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/hmyjyghh" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://gitee.com/ghh_" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.zhihu.com/people/cool-62-29/columns" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  知乎
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://hmyjyghh.github.io/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-59e6cb88 data-v-7dd95ae2><h3 class="title" data-v-59e6cb88></h3> <!----> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><!---->
+          
+        <!---->
+        2025
+      </a></span></div></div> <div data-v-7dd95ae2><div data-v-7dd95ae2><main class="page"><section style="display:;"><div class="page-title"><h1 class="title">React 相关</h1> <div data-v-8a445198><!----> <!----> <!----> <!----></div></div> <div class="theme-reco-content content__default"><h2 id="react-相关"><a href="#react-相关" class="header-anchor">#</a> React 相关</h2> <h3 id="_1-react-有什么特点"><a href="#_1-react-有什么特点" class="header-anchor">#</a> 1. React 有什么特点？</h3> <ol><li><p>声明式设计：React 使创建交互式 UI 变得轻而易举。为你应用的每一个状态设计简洁的视图，当 数据变动时 React 能高效更新并渲染合适的组件。</p></li> <li><p>组件化.  构建管理自身状态的封装组件，然后对其组合以构成复杂的 UI。</p></li> <li><p>高效：React 通过对 DOM 的模拟，最大限度地减少与 DOM 的交互。</p></li> <li><p>灵活：无论你现在使用什么技术栈，在无需重写现有代码的前提下，通过引入 React 来开发新功能。</p></li></ol> <p>React 是一个声明式，高效且灵活的用于构建用户界面的 JavaScript 库。使用 React 可以将一些 简短、独立的代码片段组合成复杂的 UI 界面，这些代码片段被称作“组件”。 由于 React 的设计思想极其独特，属于革命性创新，性能出众，代码逻辑却非常简单。所以，越来越 多的人开始关注和使用，认为它可能是将来 Web 开发的主流工具。</p> <p>这个项目本身也越滚越大，从 最早的 UI 引擎 变成了一 整套前后端通吃 的 Web App 解决 方案。衍生的 React Native 项目，目标更是宏伟，希望用写 Web App 的方式去写 Native App。如果能够实现， 整个互联网行业都会被颠覆，因为同一组人只需要写一次 UI ，就能同时运行在服务器、浏览器和手机。</p> <h3 id="_2-react-有什么优缺点"><a href="#_2-react-有什么优缺点" class="header-anchor">#</a> 2. React 有什么优缺点？</h3> <p>React 优点：</p> <ol><li><p>React 速度快、性能好
+它并不直接对 DOM 进行操作，引入了一个叫做虚拟 DOM 的概念，安插在 javascript 逻辑和实际的 DOM 之间，性能好</p></li> <li><p>跨浏览器兼容
+虚拟 DOM 的原因帮助我们解决了跨浏览器问题，它为我们提供了标准化的 API</p></li> <li><p>单向数据流 Flux 随着 React 视图库的开发而被 Facebook 概念化，是一个用于在 JavaScript 应用中创建单 向数据层的架构</p></li> <li><p>React 兼容性好 使用 RequireJS 来加载和打包，而 Browserify 和 Webpack 适用于构建大型应用。</p></li></ol> <p>React 缺点</p> <ol><li>React 并不是一个单独完整的框架，React 是目标是 UI 组件，通常可以和其它框架组合使用，目前并不适合单独做一个完整的框架</li></ol> <h3 id="_3-react-store-的概念"><a href="#_3-react-store-的概念" class="header-anchor">#</a> 3. React store 的概念 ？</h3> <p>React Store 就是把它们联系到一起的对象。
+Store 有以下职责：
+const store = createStore(reducer)</p> <ol><li>维持应用的 state；</li> <li>提供 getState() 方法获取 state；</li> <li>提供 dispatch(action) 方法更新 state；</li> <li>通过 subscribe(listener)注册监听器;</li> <li>通过 subscribe(listener)返回的函数注销监听器;</li></ol> <h3 id="_4-react-中引入-css-的方式"><a href="#_4-react-中引入-css-的方式" class="header-anchor">#</a> 4. React 中引入 css 的方式？</h3> <ul><li>组件中引入 .module.css 文件
+使用.module.css 文件来为组件引入样式，这种方式也被称为 CSS 模块化。</li></ul> <p>在.module.css 文件中定义的样式只能作用于当前组件内部，不会影响到其他组件或全局样式，这样可以避免样式冲突的问题。</p> <ul><li>CSS in JS</li></ul> <p>CSS in JS 是一种前端开发技术，它将 CSS 样式表的定义和 JS 代码紧密结合在一起，以实现更高效、更 灵活的样式控 制。</p> <p>在 CSS in JS 中，开发者可以使用 JS 来编写 CSS 样式， 可以在代码中通过变量或函数等方式来动态生成样式。这种方式可以避免传统 CSS 中的一些问题，如全局作用域、 选择器嵌套、命名冲突等，同时也提供了更高的可重用性和可维护性。</p> <p>在 React 中，有多种支持 CSS in JS 的第三方库，比较常用的有 styled-components、Emotion、 JSS 等。</p> <p>这些库都提供了方便的 API 来定义和应用样式，并且可以自动管理 CSS 的引入和组件的 封装。使用 CSS in JS 可以更好地与组件化开发思想结合，提高代码的可复用性和可维护性</p> <h3 id="_5-react-中的-key-有什么作用"><a href="#_5-react-中的-key-有什么作用" class="header-anchor">#</a> 5. React 中的 key 有什么作用？</h3> <p>在 React 中， key 是用来 给每个组件的元素（Element）做一 个唯一的标识。</p> <p>当 React 更新组件的时候，它会对比新旧两个组件的 key 是否一致，如果一致，则说明是同一个组件，直接更新它的内容即可。
+如 果 不 一 致， 则 说 明 是 不 同的 组 件 ， 需 要先 删 除 旧 组 件 ，再 新 建 一 个 新的 组 件 并 插 入 到 DOM 树中。</p> <p>因 此 ， key 的 作 用 是 帮 助 React 快 速 判 断 出 哪 些 元 素 发 生 了 变 化 ， 从 而 提 高 性 能 ， 避 免 不 必 要 的 DOM 操作。同时，key 也可以用来保证数组渲染时每个元素的稳定性，避免出现类似于数组元素位置发生变化但是内容没变的情况</p> <h3 id="_6-常用的-react-hooks"><a href="#_6-常用的-react-hooks" class="header-anchor">#</a> 6. 常用的 React Hooks ？</h3> <p>useState(): 允许在函数组件中使用状态。使用 useState() 声明一个状态变量，并使用它来存储组件 的状态。每次更改状态时，组件将重新渲染。</p> <p>useEffect():用于处理副作用 。副作用 指在 React 组件之 外进行的 操作，例如从服务 器获取数据 ，处 理 DOM 元素等。使用 useEffect() hook，您可以执行此类操作，而无需在类组件中编写生命周期方法。</p> <p>useContext(): 允许您在 React 中使用上下文。上下文是一种在组件树中传递数据的方法，可以避免 通过 Props 一层层传递数据。使用 useContext() hook，您可以访问整个应用程序中定义的上下文对象。</p> <p>useReducer(): 是 useState() hook 的替代品 ， 用于管理更复杂的状态 。它使用 Reducer 函数来管理组件状态，Reducer 函数接收当前状态和要进行的操作，然后返回新状态。详细使用方式见此文章。</p> <p>useCallback(): 用于避免在每次渲染时重新创建回调函数。当您需要将回调函数传递给子组件时，这 非常有用，因为它可以避免子组件不必要地重新渲染。useMemo(): 用于缓存计算结果，以避免在每次渲染时重新计算。这非常有用，特别是当计算成本很 高时。</p> <p>useRef(): 用于创建对 DOM 元素的引用。它还可以用于存储组件之间共享的变量，这些变量不会在组件重新渲染时发生更改</p> <h3 id="_7-react-和-vue-js-的相似性和差异性"><a href="#_7-react-和-vue-js-的相似性和差异性" class="header-anchor">#</a> 7. React 和 vue.js 的相似性和差异性 ？</h3> <p>相似性如下</p> <ol><li>都是用于创建 UI 的 JavaScript 库。</li> <li>都是快速和轻量级的代码库（这里指 React 核心库）。</li> <li>都有基于组件的架构。</li> <li>都使用虚拟 DOM。</li> <li>都可以放在单独的 HTML 文件中，或者放在 Webpack 设置的一个更复杂的模块中。</li> <li>都有独立但常用的路由器和状态管理库。</li></ol> <p>它 们 最大 的 区 别在 于 Vue. js 通 常 使用 HTML 模 板 文件 ， 而 React 完 全 使用 JavaScript 创 建 虚 拟 DOM。 Vue. js 还具有对于“可变状态”的“ reactivity”的重新渲染的自动化检测系统</p> <h3 id="_8-react-hook-的使用限制有哪些"><a href="#_8-react-hook-的使用限制有哪些" class="header-anchor">#</a> 8. React Hook 的使用限制有哪些？</h3> <p>React Hooks 的限制主要有两条：</p> <p>不要在循环、条件或嵌套函数中调用 Hook； 在 React 的函数组件中调用 Hook。</p> <p>那为什么会有这样的限制呢 ？</p> <p>Hooks 的设计初衷是为了改进 React 组件 的开发模式。 在旧的 开发模式下遇到了三个问题。</p> <ol><li>组件之间难以复用状态逻辑。</li></ol> <p>过去常见的解决方案是高阶组件、render props 及状态管理框架。 复杂的组件变得难以理解。</p> <ol start="2"><li>生命周期函数与业务逻辑耦合太深，导致关联部分难以拆分。</li></ol> <p>人和机器都很容易混淆类。常见的有 this 的问题，但在 React 团队中还有类难以优化的问题，希望在编译优化层面做出一些改进。 这三个问题在一定 程度上阻 碍了 React 的后续发 展， 所以 为了 解决 这三 个问题， Hooks 基于函数组件开始设计。</p> <p>然而第三个问题决定了 Hooks 只支持函数组件。</p> <p>那为什么不要在循环、条件或嵌套函数中调用 Hook 呢？</p> <p>因为 Hooks 的设计是基于数组实现。在调用时按顺序加入数组中，如果使用循环、条件或嵌套函数很有可能导致数组取值错位，执行错误的 Hook。</p> <p>当然，实质上 React 的源码里不是数组，是链表。 这 些 限 制会 在 编 码 上 造成 一 定 程 度 的 心理负担 ， 新手可 能 会 写 错 ， 为了 避 免 这 样 的情 况 ， 可 以 引 入 ESLint 的 Hooks 检查插件进行预防</p> <h3 id="_9-使用-react-router-时-如何获取当前页面的路由或浏览器中地址栏中的地址"><a href="#_9-使用-react-router-时-如何获取当前页面的路由或浏览器中地址栏中的地址" class="header-anchor">#</a> 9. 使用 React Router 时，如何获取当前页面的路由或浏览器中地址栏中的地址？</h3> <p>在当前组件的 props 中，包含 location 属性对象，包含当前页面路由地址信息，在 match 中存储 当前路由的参数等数据信息。可以直接通过 this .props 使用它们</p> <h3 id="_10-react-children-map-和-js-的-map-有什么区别"><a href="#_10-react-children-map-和-js-的-map-有什么区别" class="header-anchor">#</a> 10. React.Children.map 和 js 的 map 有什么区别？</h3> <p>JavaScript 中的 map 不会对为 null 或者 undefined 的数据进行处理，而 React.Children.map 中的 map 可以处理 React.Children 为 null 或者 undefined 的情况。</p> <h3 id="_11-react-router-和-react-router-dom-的有什么区别"><a href="#_11-react-router-和-react-router-dom-的有什么区别" class="header-anchor">#</a> 11. react-router 和 react-router-dom 的有什么区别？</h3> <ol><li>api 方面</li></ol> <ul><li><p>React-router： 提供了路由的核心 api。
+如 Router、Route、Switch 等，但没有提供有关 dom 操 作进行路由跳转的 api；</p></li> <li><p>React-router-dom： 提供了 BrowserRouter、Route、Link 等 api，可以通过 dom 操作触发事
+件控制路由。</p></li> <li><p>Link 组件，会渲染一个 a 标签；BrowserRouter 和 HashRouter 组件，前者使用 pushState 和 popState 事件构建路由，后者使用 hash 和 hashchange 事件构建路由。</p></li></ul> <ol start="2"><li>使用区别</li></ol> <ul><li><p>react-router-dom 在 react-router 的基础上扩展了可操作 dom 的 api。</p></li> <li><p>Swtich 和 Route 都 是从 react-router 中导入了相应的组件并重新导出，没做什么特殊处理。</p></li> <li><p>react-router-dom 中 package.json 依赖中存在对 react-router 的依赖，故此，不需要额外安装 react-router</p></li></ul> <h3 id="_12-react-当调用-setstate-的时候-发生了什么操作"><a href="#_12-react-当调用-setstate-的时候-发生了什么操作" class="header-anchor">#</a> 12. React 当调用 setState 的时候，发生了什么操作？</h3> <p>当调 用 setState 时， React 做的第一件事是将传递 给 setState 的对象合并到组件的当前状态 ，这将启动一个称为和解（ reconciliation）的过程。
+和解的最终目标是，根据这个新的状态以最有效的方式更新 DOM。 为此， React 将构建一个新的 React 虚拟 DOM 树（可以将其视为页面 DOM 元素的对象表示方式）。</p> <p>一旦有了这个DOM 树 ，为了弄清 DOM是如何响应新的状态而改变的， React会将这个新树与 上 一个虚拟 DOM 树比较。 这样做 ， React 会知道 发生的确切 变化，并且通过了解发生的变化后，在绝对必要的情况下进行更新 DOM，即可将因操作 DOM 而占用的空间最小化</p> <h3 id="_13-在-react-中元素-element-和组件-component-有什么区别"><a href="#_13-在-react-中元素-element-和组件-component-有什么区别" class="header-anchor">#</a> 13. 在 React 中元素（ element）和组件（ component）有什么区别？</h3> <ol><li><p>在 React 中元素（虛拟 DOM）描述了你在屏幕上看到的 DOM 元素。 换个说法就是，在 React 中元素是页面中 DOM 元素的对象表示方式。在 React 中组件是一个函数 或一个类，它可以接受输入并返回一个元素。</p></li> <li><p>注意：工作中，为了提高开发效率，通常使用 JSX 语法表示 React 元素（虚拟 DOM）。在编译的时 候，把它转化成一个 React. createElement 调用方法</p></li></ol> <h3 id="_14-react-在哪个生命周期中你会发出-ajax-请求-为什么"><a href="#_14-react-在哪个生命周期中你会发出-ajax-请求-为什么" class="header-anchor">#</a> 14. React 在哪个生命周期中你会发出 Ajax 请求？为什么？</h3> <p>Ajax 请 求应 该 写在 组 件创 建 期 的第 五 个阶 段 ，即 componentDidMount 生 命周 期 方法 中 。</p> <p>原因如下。
+在创建期的其他阶段，组件尚未渲染完成。而在存在期的 5 个阶段，又不能确保生命周期方法一定会 执行（如通过 shouldComponentUpdate 方法优化更新等）。在销毀期，组件即将被销毁，请求数 据变得无意义。因此在这些阶段发岀 Ajax 请求显然不是最好的选择。 在组 件尚 未挂 载之前 ，Ajax 请求 将无 法执 行完毕 ，如 果此 时发出 请求 ，将 意味着 在组 件挂 载之前 更 新状态（如执行 setState），这通常是不起作用的。</p> <ul><li>在 componentDidMount 方法中，执行 Ajax 即可保证组件已经挂载，并且能够正常更新组件</li></ul> <h3 id="_15-react-shouldcomponentupdate-有什么用-为什么它很重要"><a href="#_15-react-shouldcomponentupdate-有什么用-为什么它很重要" class="header-anchor">#</a> 15.  React shouldComponentUpdate 有什么用？为什么它很重要？</h3> <p>组件状态数据或者属性数据发生更新的时候，组件会进入存在期，视图会渲染更新。</p> <p>在生命周期方法 shouldComponentUpdate 中，允许选择退出某些组件（和它们的子组件）的和解过程。</p> <p>和解的最终目标是根据新的状态，以最有效的方式更新用户界面。</p> <p>如果我们知道用户界面的某一部分 不会改变，那么没有理由让 React 弄清楚它是否应该更新渲染。通过在 shouldComponentUpdate 方法中返回 false, React 将让当前组件及其所有子组件保持与当前组件状态相同</p> <h3 id="_16-react-生命周期调用方法的顺序"><a href="#_16-react-生命周期调用方法的顺序" class="header-anchor">#</a> 16. React 生命周期调用方法的顺序 ？</h3> <p>React 生命周期分为三大周期，11 个阶段，</p> <ol><li>生命周期方法调用顺序分别如下。
+（1）在创建期的五大阶段，调用方法的顺序如下。</li></ol> <ul><li>getDetaultProps：定义默认属性数据。</li> <li>getInitialState：初始化默认状态数据。</li> <li>componentWillMount：组件即将被构建。</li> <li>render：渲染组件。</li> <li>componentDidMount：组件构建完成</li></ul> <p>（2）在存在期的五大阶段，调用方法的顺序如下。</p> <ul><li>componentWillReceiveProps：组件即将接收新的属性数据。</li> <li>shouldComponentUpdate：判断组件是否应该更新。</li> <li>componnent WillUpdate：组件即将更新。</li> <li>render：渲染组件。 componentDidUpdate：组件更新完成。</li></ul> <p>（3）在销毁期的一个阶段，调用方法</p> <ul><li>componentWillUnmount，表示组件即将被销毀。</li></ul> <h3 id="_17-react-组件开发中关于作用域的常见问题"><a href="#_17-react-组件开发中关于作用域的常见问题" class="header-anchor">#</a> 17. React 组件开发中关于作用域的常见问题 ？</h3> <p>在 EMAScript5 语法规范中，关于作用域的常见问题如下。</p> <ol><li>在 map 等方法的回调函数中，要绑定作用域 this（通过 bind 方法）。</li> <li>父组件传递给子组件方法的作用域是父组件实例化对象，无法改变。</li> <li>组件事件回调函数方法的作用域是组件实例化对象（绑定父组件提供的方法就是父组件实例化 对象），无法改变。</li></ol> <p>在 EMAScript6 语法规范中，关于作用域的常见问题如下。</p> <ol><li>当使用箭头函数作为 map 等方法的回调函数时，箭头函数的作用域是当前组件的实例化对象（即 箭头函数的作用域是定义时的作用域），无须绑定作用域。</li> <li>事件回调函数要绑定组件作用域。</li> <li>父组件传递方法要绑定父组件作用域。 总之，在 EMAScript6 语法规范中，组件方法的作用域是可以改变的。</li></ol> <h3 id="_18-react-router-有几种形式"><a href="#_18-react-router-有几种形式" class="header-anchor">#</a> 18. React- Router 有几种形式？</h3> <p>解析 有以下几种形式。</p> <ol><li>HashRouter，通过散列实现，路由要带#。</li> <li>BrowerRouter，利用 HTML5 中 history API 实现，需要服务器端支持，兼容性不是很好</li></ol> <h3 id="_19-react-中的-portal-是什么"><a href="#_19-react-中的-portal-是什么" class="header-anchor">#</a> 19. React 中的 Portal 是什么？</h3> <p>Portals 提供了一种很好的将子节点渲染到父组件以外的 DOM 节点的方式。</p> <p>允许你将组件渲染到 DOM 树中一个不同的位置，而不是它的父组件的 DOM 位置。使用 Portal，你可以在应用的不同层次结构中插入内容，比如在模态框、工具提示（tooltip）、下拉菜单等组件中。</p> <ol><li>第一个参数（child）是任何可渲染的 React 子元素，例如一个元素，字符串或碎片。</li> <li>第二个参数（container）则是一个 DOM 元素。</li></ol> <p>ReactDOM.createPortal(child, container)</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> ReactDOM <span class="token keyword">from</span> <span class="token string">'react-dom'</span><span class="token punctuation">;</span>
+ 
+<span class="token keyword">const</span> <span class="token function-variable function">MyPortal</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> children <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> ReactDOM<span class="token punctuation">.</span><span class="token function">createPortal</span><span class="token punctuation">(</span>
+    children<span class="token punctuation">,</span>
+    document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'portal-root'</span><span class="token punctuation">)</span> <span class="token comment">// 目标DOM节点</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="_20-react-中如何避免不必要的-render"><a href="#_20-react-中如何避免不必要的-render" class="header-anchor">#</a> 20. React 中如何避免不必要的 render？</h3> <p>React 基于虚拟 DOM 和高效 Diff 算法的完美配合，实现了对 DOM 最小粒度的更新。</p> <p>大多数情况下，React 对 DOM 的渲染效率足以业务日常。
+但在个别复杂业务场景下，性能问题依然会困扰我们。 此时需要采取一些措施来提升运行性能 ， 其很重要的一个方向 ， 就 是 避 免 不 必 要 的 渲 染 （Render）。</p> <p>这里提下优化的点：</p> <ul><li><code>shouldComponentUpdate</code> 和 <code>PureComponent</code></li></ul> <p>在 React 类组 件中，可以利用 <code>shouldComponentUpdate</code> 或者 PureComponent 来减少因父组件更新而触发子组件的 render，从 而达到目的 。</p> <p><code>shouldComponentUpdate</code> 来决定是否组件是否重新渲染，如果不希望组件重新渲染，返回 false 即可。</p> <ul><li>利用高阶组件</li></ul> <p>在函数组件中， 并没有 <code>shouldComponentUpdate</code> 这 个生命周期， 可以利用高阶组件 ，封 装一个类似 PureComponet 的功能</p> <ul><li>使用 React.memo</li></ul> <p>React.memo 是 React 16.6 新的一个 API，用来缓存组件的渲染，避免不必要的更新，其实也是一个高阶组件，与 PureComponent 十分类似，但不同的是，
+React.memo 只能用于函数组件</p></div></section> <footer class="page-edit"><!----> <!----></footer> <!----> <div class="comments-wrapper"><!----></div></main></div> <!----></div> <ul class="sub-sidebar sub-sidebar-wrapper" style="width:12rem;" data-v-b57cc07c data-v-7dd95ae2><li class="level-2" data-v-b57cc07c><a href="/myblog/react/react-relation.html#react-相关" class="sidebar-link reco-side-react-相关" data-v-b57cc07c>React 相关</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/react/react-relation.html#_1-react-有什么特点" class="sidebar-link reco-side-_1-react-有什么特点" data-v-b57cc07c>1. React 有什么特点？</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/react/react-relation.html#_2-react-有什么优缺点" class="sidebar-link reco-side-_2-react-有什么优缺点" data-v-b57cc07c>2. React 有什么优缺点？</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/react/react-relation.html#_3-react-store-的概念" class="sidebar-link reco-side-_3-react-store-的概念" data-v-b57cc07c>3. React store 的概念 ？</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/react/react-relation.html#_4-react-中引入-css-的方式" class="sidebar-link reco-side-_4-react-中引入-css-的方式" data-v-b57cc07c>4. React 中引入 css 的方式？</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/react/react-relation.html#_5-react-中的-key-有什么作用" class="sidebar-link reco-side-_5-react-中的-key-有什么作用" data-v-b57cc07c>5. React 中的 key 有什么作用？</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/react/react-relation.html#_6-常用的-react-hooks" class="sidebar-link reco-side-_6-常用的-react-hooks" data-v-b57cc07c>6. 常用的 React Hooks ？</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/react/react-relation.html#_7-react-和-vue-js-的相似性和差异性" class="sidebar-link reco-side-_7-react-和-vue-js-的相似性和差异性" data-v-b57cc07c>7. React 和 vue.js 的相似性和差异性 ？</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/react/react-relation.html#_8-react-hook-的使用限制有哪些" class="sidebar-link reco-side-_8-react-hook-的使用限制有哪些" data-v-b57cc07c>8. React Hook 的使用限制有哪些？</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/react/react-relation.html#_9-使用-react-router-时-如何获取当前页面的路由或浏览器中地址栏中的地址" class="sidebar-link reco-side-_9-使用-react-router-时-如何获取当前页面的路由或浏览器中地址栏中的地址" data-v-b57cc07c>9. 使用 React Router 时，如何获取当前页面的路由或浏览器中地址栏中的地址？</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/react/react-relation.html#_10-react-children-map-和-js-的-map-有什么区别" class="sidebar-link reco-side-_10-react-children-map-和-js-的-map-有什么区别" data-v-b57cc07c>10. React.Children.map 和 js 的 map 有什么区别？</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/react/react-relation.html#_11-react-router-和-react-router-dom-的有什么区别" class="sidebar-link reco-side-_11-react-router-和-react-router-dom-的有什么区别" data-v-b57cc07c>11. react-router 和 react-router-dom 的有什么区别？</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/react/react-relation.html#_12-react-当调用-setstate-的时候-发生了什么操作" class="sidebar-link reco-side-_12-react-当调用-setstate-的时候-发生了什么操作" data-v-b57cc07c>12. React 当调用 setState 的时候，发生了什么操作？</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/react/react-relation.html#_13-在-react-中元素-element-和组件-component-有什么区别" class="sidebar-link reco-side-_13-在-react-中元素-element-和组件-component-有什么区别" data-v-b57cc07c>13. 在 React 中元素（ element）和组件（ component）有什么区别？</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/react/react-relation.html#_14-react-在哪个生命周期中你会发出-ajax-请求-为什么" class="sidebar-link reco-side-_14-react-在哪个生命周期中你会发出-ajax-请求-为什么" data-v-b57cc07c>14. React 在哪个生命周期中你会发出 Ajax 请求？为什么？</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/react/react-relation.html#_15-react-shouldcomponentupdate-有什么用-为什么它很重要" class="sidebar-link reco-side-_15-react-shouldcomponentupdate-有什么用-为什么它很重要" data-v-b57cc07c>15.  React shouldComponentUpdate 有什么用？为什么它很重要？</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/react/react-relation.html#_16-react-生命周期调用方法的顺序" class="sidebar-link reco-side-_16-react-生命周期调用方法的顺序" data-v-b57cc07c>16. React 生命周期调用方法的顺序 ？</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/react/react-relation.html#_17-react-组件开发中关于作用域的常见问题" class="sidebar-link reco-side-_17-react-组件开发中关于作用域的常见问题" data-v-b57cc07c>17. React 组件开发中关于作用域的常见问题 ？</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/react/react-relation.html#_18-react-router-有几种形式" class="sidebar-link reco-side-_18-react-router-有几种形式" data-v-b57cc07c>18. React- Router 有几种形式？</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/react/react-relation.html#_19-react-中的-portal-是什么" class="sidebar-link reco-side-_19-react-中的-portal-是什么" data-v-b57cc07c>19. React 中的 Portal 是什么？</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/react/react-relation.html#_20-react-中如何避免不必要的-render" class="sidebar-link reco-side-_20-react-中如何避免不必要的-render" data-v-b57cc07c>20. React 中如何避免不必要的 render？</a></li></ul></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><!----></div></div>
+    <script src="/myblog/assets/js/app.d2862463.js" defer></script><script src="/myblog/assets/js/7.8c1c7106.js" defer></script><script src="/myblog/assets/js/2.63d4cf60.js" defer></script><script src="/myblog/assets/js/1.0779a93f.js" defer></script><script src="/myblog/assets/js/91.02d5ca94.js" defer></script><script src="/myblog/assets/js/34.6c011227.js" defer></script>
+  </body>
+</html>

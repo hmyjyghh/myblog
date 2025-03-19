@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>nodejs网络及部署 | 寒梦的博客</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/myblog/logo.png">
+    <meta name="description" content="盛年不重来,一日难再晨,及时当勉励,岁月不待人">
+    
+    <link rel="preload" href="/myblog/assets/css/0.styles.1b9a275a.css" as="style"><link rel="preload" href="/myblog/assets/js/app.d2862463.js" as="script"><link rel="preload" href="/myblog/assets/js/7.8c1c7106.js" as="script"><link rel="preload" href="/myblog/assets/js/2.63d4cf60.js" as="script"><link rel="preload" href="/myblog/assets/js/1.0779a93f.js" as="script"><link rel="preload" href="/myblog/assets/js/73.1a5c8381.js" as="script"><link rel="preload" href="/myblog/assets/js/34.6c011227.js" as="script"><link rel="prefetch" href="/myblog/assets/js/10.2eea7893.js"><link rel="prefetch" href="/myblog/assets/js/100.a2449e8c.js"><link rel="prefetch" href="/myblog/assets/js/101.6ae6de59.js"><link rel="prefetch" href="/myblog/assets/js/102.5cfb0e80.js"><link rel="prefetch" href="/myblog/assets/js/103.7ad3c200.js"><link rel="prefetch" href="/myblog/assets/js/104.585300fc.js"><link rel="prefetch" href="/myblog/assets/js/105.928adf09.js"><link rel="prefetch" href="/myblog/assets/js/106.cfe6d2e2.js"><link rel="prefetch" href="/myblog/assets/js/107.c9a11b9e.js"><link rel="prefetch" href="/myblog/assets/js/108.b49d6b8d.js"><link rel="prefetch" href="/myblog/assets/js/109.982a43f3.js"><link rel="prefetch" href="/myblog/assets/js/11.0257b50f.js"><link rel="prefetch" href="/myblog/assets/js/110.377d88ca.js"><link rel="prefetch" href="/myblog/assets/js/111.5c85d12e.js"><link rel="prefetch" href="/myblog/assets/js/112.7fa892ec.js"><link rel="prefetch" href="/myblog/assets/js/14.fbbe67a2.js"><link rel="prefetch" href="/myblog/assets/js/15.fabd129b.js"><link rel="prefetch" href="/myblog/assets/js/16.a75762da.js"><link rel="prefetch" href="/myblog/assets/js/17.52d53386.js"><link rel="prefetch" href="/myblog/assets/js/18.4db27d01.js"><link rel="prefetch" href="/myblog/assets/js/19.7ec664ce.js"><link rel="prefetch" href="/myblog/assets/js/20.4d3becdd.js"><link rel="prefetch" href="/myblog/assets/js/21.52432b7c.js"><link rel="prefetch" href="/myblog/assets/js/22.74a3d5cb.js"><link rel="prefetch" href="/myblog/assets/js/23.e37427da.js"><link rel="prefetch" href="/myblog/assets/js/24.cce6e76c.js"><link rel="prefetch" href="/myblog/assets/js/25.9c2608bc.js"><link rel="prefetch" href="/myblog/assets/js/26.f98d65f7.js"><link rel="prefetch" href="/myblog/assets/js/27.07f61f11.js"><link rel="prefetch" href="/myblog/assets/js/28.903ea730.js"><link rel="prefetch" href="/myblog/assets/js/29.48153eff.js"><link rel="prefetch" href="/myblog/assets/js/3.ffd383a2.js"><link rel="prefetch" href="/myblog/assets/js/30.b8eb1a62.js"><link rel="prefetch" href="/myblog/assets/js/31.1d9e1333.js"><link rel="prefetch" href="/myblog/assets/js/32.8cfae0d1.js"><link rel="prefetch" href="/myblog/assets/js/33.0ab00c4f.js"><link rel="prefetch" href="/myblog/assets/js/35.c763ccbb.js"><link rel="prefetch" href="/myblog/assets/js/36.3d1c91e9.js"><link rel="prefetch" href="/myblog/assets/js/37.94c7db86.js"><link rel="prefetch" href="/myblog/assets/js/38.5a93b916.js"><link rel="prefetch" href="/myblog/assets/js/39.afa39eec.js"><link rel="prefetch" href="/myblog/assets/js/4.16621f4e.js"><link rel="prefetch" href="/myblog/assets/js/40.cc5df847.js"><link rel="prefetch" href="/myblog/assets/js/41.d1798563.js"><link rel="prefetch" href="/myblog/assets/js/42.9922ccd5.js"><link rel="prefetch" href="/myblog/assets/js/43.7b56eecd.js"><link rel="prefetch" href="/myblog/assets/js/44.d31d5d49.js"><link rel="prefetch" href="/myblog/assets/js/45.7c773855.js"><link rel="prefetch" href="/myblog/assets/js/46.6b26755e.js"><link rel="prefetch" href="/myblog/assets/js/47.5301a690.js"><link rel="prefetch" href="/myblog/assets/js/48.f0982275.js"><link rel="prefetch" href="/myblog/assets/js/49.f14d0716.js"><link rel="prefetch" href="/myblog/assets/js/5.a36bfdf4.js"><link rel="prefetch" href="/myblog/assets/js/50.5f887e21.js"><link rel="prefetch" href="/myblog/assets/js/51.12b7a969.js"><link rel="prefetch" href="/myblog/assets/js/52.3875ac50.js"><link rel="prefetch" href="/myblog/assets/js/53.3d2fe07f.js"><link rel="prefetch" href="/myblog/assets/js/54.13d1d9fe.js"><link rel="prefetch" href="/myblog/assets/js/55.35011435.js"><link rel="prefetch" href="/myblog/assets/js/56.a5c7bb84.js"><link rel="prefetch" href="/myblog/assets/js/57.81140db0.js"><link rel="prefetch" href="/myblog/assets/js/58.67bd80d7.js"><link rel="prefetch" href="/myblog/assets/js/59.e8a48a17.js"><link rel="prefetch" href="/myblog/assets/js/6.e968d4fe.js"><link rel="prefetch" href="/myblog/assets/js/60.f3a7e603.js"><link rel="prefetch" href="/myblog/assets/js/61.2f3e255c.js"><link rel="prefetch" href="/myblog/assets/js/62.5b1d140c.js"><link rel="prefetch" href="/myblog/assets/js/63.8000b783.js"><link rel="prefetch" href="/myblog/assets/js/64.cbb6886f.js"><link rel="prefetch" href="/myblog/assets/js/65.acb989fb.js"><link rel="prefetch" href="/myblog/assets/js/66.9c0ec9ec.js"><link rel="prefetch" href="/myblog/assets/js/67.d702d650.js"><link rel="prefetch" href="/myblog/assets/js/68.d291a141.js"><link rel="prefetch" href="/myblog/assets/js/69.1ec0f097.js"><link rel="prefetch" href="/myblog/assets/js/70.6240be36.js"><link rel="prefetch" href="/myblog/assets/js/71.5fb1626d.js"><link rel="prefetch" href="/myblog/assets/js/72.e2a4909c.js"><link rel="prefetch" href="/myblog/assets/js/74.0a23a67f.js"><link rel="prefetch" href="/myblog/assets/js/75.f83c4804.js"><link rel="prefetch" href="/myblog/assets/js/76.d4cb15ac.js"><link rel="prefetch" href="/myblog/assets/js/77.4beb5b94.js"><link rel="prefetch" href="/myblog/assets/js/78.19b18076.js"><link rel="prefetch" href="/myblog/assets/js/79.e14ea9bd.js"><link rel="prefetch" href="/myblog/assets/js/8.836d3617.js"><link rel="prefetch" href="/myblog/assets/js/80.210591e4.js"><link rel="prefetch" href="/myblog/assets/js/81.953fc439.js"><link rel="prefetch" href="/myblog/assets/js/82.f020d9ca.js"><link rel="prefetch" href="/myblog/assets/js/83.1339f723.js"><link rel="prefetch" href="/myblog/assets/js/84.3b889bc1.js"><link rel="prefetch" href="/myblog/assets/js/85.7a11c167.js"><link rel="prefetch" href="/myblog/assets/js/86.751b2c22.js"><link rel="prefetch" href="/myblog/assets/js/87.e5069b1e.js"><link rel="prefetch" href="/myblog/assets/js/88.cbbf0e41.js"><link rel="prefetch" href="/myblog/assets/js/89.2995403a.js"><link rel="prefetch" href="/myblog/assets/js/9.acb95ff1.js"><link rel="prefetch" href="/myblog/assets/js/90.b7bdeb07.js"><link rel="prefetch" href="/myblog/assets/js/91.02d5ca94.js"><link rel="prefetch" href="/myblog/assets/js/92.73d61eb1.js"><link rel="prefetch" href="/myblog/assets/js/93.4804dc07.js"><link rel="prefetch" href="/myblog/assets/js/94.b327897b.js"><link rel="prefetch" href="/myblog/assets/js/95.92167d88.js"><link rel="prefetch" href="/myblog/assets/js/96.224927b6.js"><link rel="prefetch" href="/myblog/assets/js/97.27937175.js"><link rel="prefetch" href="/myblog/assets/js/98.b444e916.js"><link rel="prefetch" href="/myblog/assets/js/99.37993ae1.js"><link rel="prefetch" href="/myblog/assets/js/vendors~docsearch.a3a80f00.js">
+    <link rel="stylesheet" href="/myblog/assets/css/0.styles.1b9a275a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-7dd95ae2><div data-v-7dd95ae2><div class="password-shadow password-wrapper-out" style="display:none;" data-v-59e6cb88 data-v-7dd95ae2 data-v-7dd95ae2><h3 class="title" data-v-59e6cb88>寒梦的博客</h3> <p class="description" data-v-59e6cb88>盛年不重来,一日难再晨,及时当勉励,岁月不待人</p> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><!---->
+          
+        <!---->
+        2025
+      </a></span></div></div> <div class="hide" data-v-7dd95ae2><header class="navbar" data-v-7dd95ae2><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/myblog/" class="home-link router-link-active"><!----> <span class="site-name">寒梦的博客</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      JS
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://www.zhihu.com/column/c_1415231566645350400" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  Promise
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://zhuanlan.zhihu.com/p/365044710" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  浏览器对象详解
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/dom.html" class="nav-link"><i class="undefined"></i>
+  DOM操作
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/Closure.html" class="nav-link"><i class="undefined"></i>
+  this指向、闭包、作用域
+</a></li><li class="dropdown-item"><!----> <a href="https://zhuanlan.zhihu.com/p/398609427" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  事件循环
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/bubble-trapping.html" class="nav-link"><i class="undefined"></i>
+  冒泡和捕获
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/throttle-debounce.html" class="nav-link"><i class="undefined"></i>
+  节流防抖
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/clone-deep.html" class="nav-link"><i class="undefined"></i>
+  深浅拷贝
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/es6-esnext.html" class="nav-link"><i class="undefined"></i>
+  ES6及ESNext规范
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/obj-oriented.html" class="nav-link"><i class="undefined"></i>
+  面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/cache.html" class="nav-link"><i class="undefined"></i>
+  前端缓存
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/HTTP.html" class="nav-link"><i class="undefined"></i>
+  前端网络
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/front-security.html" class="nav-link"><i class="undefined"></i>
+  前端安全
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/garbage-collect.html" class="nav-link"><i class="undefined"></i>
+  垃圾回收机制
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/performance-opt.html" class="nav-link"><i class="undefined"></i>
+  前端性能优化
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/if-else-tips.html" class="nav-link"><i class="undefined"></i>
+  减少 if-else 的小技巧
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/fre-questions.html" class="nav-link"><i class="undefined"></i>
+  常见题目
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      工程化
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/webpackstudy/whatIsEngine.html" class="nav-link"><i class="undefined"></i>
+  什么是前端工程化
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/webpackstudy/module.html" class="nav-link"><i class="undefined"></i>
+  前端模块化
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/webpackstudy/webpack-basic.html" class="nav-link"><i class="undefined"></i>
+  webpack基础
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/webpackstudy/webpack.html" class="nav-link"><i class="undefined"></i>
+  webpack构建
+</a></li><li class="dropdown-item"><!----> <a href="https://zhuanlan.zhihu.com/p/408195292" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  webpack 中的module
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://zhuanlan.zhihu.com/p/448738741" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  webpack性能优化
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="/myblog/webpackstudy/principle.html" class="nav-link"><i class="undefined"></i>
+  webpack原理相关
+</a></li><li class="dropdown-item"><!----> <a href="https://zhuanlan.zhihu.com/p/408733746" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  一步步实现webpack打包
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="/myblog/webpackstudy/ts-basics.html" class="nav-link"><i class="undefined"></i>
+  ts基础及使用
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/webpackstudy/husky.html" class="nav-link"><i class="undefined"></i>
+  前端项目husky使用
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Vue
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/vue/basicknowledge.html" class="nav-link"><i class="undefined"></i>
+  Vue2.0基础
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/misnotes.html" class="nav-link"><i class="undefined"></i>
+  Vue2.0进阶
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/ssr.html" class="nav-link"><i class="undefined"></i>
+  Vue ssr
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/vue3.html" class="nav-link"><i class="undefined"></i>
+  Vue3.0
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/vue3-impl.html" class="nav-link"><i class="undefined"></i>
+  Vue3.0进阶
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/vue-router.html" class="nav-link"><i class="undefined"></i>
+  vue-router
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/vuex.html" class="nav-link"><i class="undefined"></i>
+  vuex性能问题
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/compare.html" class="nav-link"><i class="undefined"></i>
+  Vue2.x VS Vue3.x
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/vue-principle.html" class="nav-link"><i class="undefined"></i>
+  vue深入理解
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      React
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/react/react-basic.html" class="nav-link"><i class="undefined"></i>
+  React 基础
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/react/react-advanced.html" class="nav-link"><i class="undefined"></i>
+  React 进阶
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/react/status-manage.html" class="nav-link"><i class="undefined"></i>
+  React 状态管理
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/react/react-context.html" class="nav-link"><i class="undefined"></i>
+  React Context
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/react/react-relation.html" class="nav-link"><i class="undefined"></i>
+  React 相关
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      React Native
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/reactnative/reactnative.html" class="nav-link"><i class="undefined"></i>
+  React Native 环境搭建
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/reactnative/rn-problem.html" class="nav-link"><i class="undefined"></i>
+  React Native 常见问题
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Node.js
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/node/node-basic.html" class="nav-link"><i class="undefined"></i>
+  Node.js基础
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/node/node-frame.html" class="nav-link"><i class="undefined"></i>
+  Node常用框架
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/node/node-network.html" aria-current="page" class="nav-link router-link-exact-active router-link-active"><i class="undefined"></i>
+  Nodejs网络及部署
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      低代码
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/lowcode/drag.html" class="nav-link"><i class="undefined"></i>
+  拖拽
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/lowcode/lowcode.html" class="nav-link"><i class="undefined"></i>
+  低代码平台
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/lowcode/lowcode-impl.html" class="nav-link"><i class="undefined"></i>
+  低代码平台实现
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/lowcode/visualization.html" class="nav-link"><i class="undefined"></i>
+  可视化
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      算法
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/algorithm/sort.html" class="nav-link"><i class="undefined"></i>
+  排序算法
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/double-pointer.html" class="nav-link"><i class="undefined"></i>
+  双指针算法
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/binary-tree.html" class="nav-link"><i class="undefined"></i>
+  二叉树
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/receive-rain.html" class="nav-link"><i class="undefined"></i>
+  接雨水
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/dynamic-plan.html" class="nav-link"><i class="undefined"></i>
+  动态规划
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/greedy.html" class="nav-link"><i class="undefined"></i>
+  贪心算法
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/longasc-sequence.html" class="nav-link"><i class="undefined"></i>
+  最长上升子序列
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/binary-search.html" class="nav-link"><i class="undefined"></i>
+  二分查找
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/other.html" class="nav-link"><i class="undefined"></i>
+  其他
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      其他
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/other/browser-principle.html" class="nav-link"><i class="undefined"></i>
+  浏览器原理与pwa
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/redraw-reflow.html" class="nav-link"><i class="undefined"></i>
+  重绘回流
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/compatibility.html" class="nav-link"><i class="undefined"></i>
+  前端兼容性问题
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/virtual-list.html" class="nav-link"><i class="undefined"></i>
+  虚拟列表
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/data-collection.html" class="nav-link"><i class="undefined"></i>
+  数据采集
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/websocket.html" class="nav-link"><i class="undefined"></i>
+  websocket
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/vue-react.html" class="nav-link"><i class="undefined"></i>
+  vue vs react
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/ESLint.html" class="nav-link"><i class="undefined"></i>
+  ESLint规范
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/ES6.html" class="nav-link"><i class="undefined"></i>
+  ES6 实用语法
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/excellentarticles.html" class="nav-link"><i class="undefined"></i>
+  优秀文章
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/personal-summary.html" class="nav-link"><i class="undefined"></i>
+  个人总结
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/uniapp.html" class="nav-link"><i class="undefined"></i>
+  uni-app
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/handwritten-impl.html" class="nav-link"><i class="undefined"></i>
+  手写实现
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/project-broad.html" class="nav-link"><i class="undefined"></i>
+  项目层面
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      关于我
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/hmyjyghh" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://gitee.com/ghh_" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.zhihu.com/people/cool-62-29/columns" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  知乎
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://hmyjyghh.github.io/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-7dd95ae2></div> <aside class="sidebar" data-v-7dd95ae2><div class="personal-info-wrapper" data-v-1fad0c41 data-v-7dd95ae2><!----> <!----> <div class="num" data-v-1fad0c41><div data-v-1fad0c41><h3 data-v-1fad0c41>70</h3> <h6 data-v-1fad0c41>Articles</h6></div> <div data-v-1fad0c41><h3 data-v-1fad0c41>17</h3> <h6 data-v-1fad0c41>Tags</h6></div></div> <ul class="social-links" data-v-1fad0c41></ul> <hr data-v-1fad0c41></div> <nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      JS
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://www.zhihu.com/column/c_1415231566645350400" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  Promise
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://zhuanlan.zhihu.com/p/365044710" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  浏览器对象详解
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/dom.html" class="nav-link"><i class="undefined"></i>
+  DOM操作
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/Closure.html" class="nav-link"><i class="undefined"></i>
+  this指向、闭包、作用域
+</a></li><li class="dropdown-item"><!----> <a href="https://zhuanlan.zhihu.com/p/398609427" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  事件循环
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/bubble-trapping.html" class="nav-link"><i class="undefined"></i>
+  冒泡和捕获
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/throttle-debounce.html" class="nav-link"><i class="undefined"></i>
+  节流防抖
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/clone-deep.html" class="nav-link"><i class="undefined"></i>
+  深浅拷贝
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/es6-esnext.html" class="nav-link"><i class="undefined"></i>
+  ES6及ESNext规范
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/obj-oriented.html" class="nav-link"><i class="undefined"></i>
+  面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/cache.html" class="nav-link"><i class="undefined"></i>
+  前端缓存
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/HTTP.html" class="nav-link"><i class="undefined"></i>
+  前端网络
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/front-security.html" class="nav-link"><i class="undefined"></i>
+  前端安全
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/garbage-collect.html" class="nav-link"><i class="undefined"></i>
+  垃圾回收机制
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/performance-opt.html" class="nav-link"><i class="undefined"></i>
+  前端性能优化
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/if-else-tips.html" class="nav-link"><i class="undefined"></i>
+  减少 if-else 的小技巧
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/fre-questions.html" class="nav-link"><i class="undefined"></i>
+  常见题目
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      工程化
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/webpackstudy/whatIsEngine.html" class="nav-link"><i class="undefined"></i>
+  什么是前端工程化
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/webpackstudy/module.html" class="nav-link"><i class="undefined"></i>
+  前端模块化
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/webpackstudy/webpack-basic.html" class="nav-link"><i class="undefined"></i>
+  webpack基础
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/webpackstudy/webpack.html" class="nav-link"><i class="undefined"></i>
+  webpack构建
+</a></li><li class="dropdown-item"><!----> <a href="https://zhuanlan.zhihu.com/p/408195292" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  webpack 中的module
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://zhuanlan.zhihu.com/p/448738741" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  webpack性能优化
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="/myblog/webpackstudy/principle.html" class="nav-link"><i class="undefined"></i>
+  webpack原理相关
+</a></li><li class="dropdown-item"><!----> <a href="https://zhuanlan.zhihu.com/p/408733746" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  一步步实现webpack打包
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="/myblog/webpackstudy/ts-basics.html" class="nav-link"><i class="undefined"></i>
+  ts基础及使用
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/webpackstudy/husky.html" class="nav-link"><i class="undefined"></i>
+  前端项目husky使用
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Vue
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/vue/basicknowledge.html" class="nav-link"><i class="undefined"></i>
+  Vue2.0基础
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/misnotes.html" class="nav-link"><i class="undefined"></i>
+  Vue2.0进阶
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/ssr.html" class="nav-link"><i class="undefined"></i>
+  Vue ssr
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/vue3.html" class="nav-link"><i class="undefined"></i>
+  Vue3.0
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/vue3-impl.html" class="nav-link"><i class="undefined"></i>
+  Vue3.0进阶
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/vue-router.html" class="nav-link"><i class="undefined"></i>
+  vue-router
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/vuex.html" class="nav-link"><i class="undefined"></i>
+  vuex性能问题
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/compare.html" class="nav-link"><i class="undefined"></i>
+  Vue2.x VS Vue3.x
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/vue-principle.html" class="nav-link"><i class="undefined"></i>
+  vue深入理解
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      React
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/react/react-basic.html" class="nav-link"><i class="undefined"></i>
+  React 基础
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/react/react-advanced.html" class="nav-link"><i class="undefined"></i>
+  React 进阶
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/react/status-manage.html" class="nav-link"><i class="undefined"></i>
+  React 状态管理
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/react/react-context.html" class="nav-link"><i class="undefined"></i>
+  React Context
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/react/react-relation.html" class="nav-link"><i class="undefined"></i>
+  React 相关
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      React Native
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/reactnative/reactnative.html" class="nav-link"><i class="undefined"></i>
+  React Native 环境搭建
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/reactnative/rn-problem.html" class="nav-link"><i class="undefined"></i>
+  React Native 常见问题
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Node.js
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/node/node-basic.html" class="nav-link"><i class="undefined"></i>
+  Node.js基础
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/node/node-frame.html" class="nav-link"><i class="undefined"></i>
+  Node常用框架
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/node/node-network.html" aria-current="page" class="nav-link router-link-exact-active router-link-active"><i class="undefined"></i>
+  Nodejs网络及部署
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      低代码
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/lowcode/drag.html" class="nav-link"><i class="undefined"></i>
+  拖拽
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/lowcode/lowcode.html" class="nav-link"><i class="undefined"></i>
+  低代码平台
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/lowcode/lowcode-impl.html" class="nav-link"><i class="undefined"></i>
+  低代码平台实现
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/lowcode/visualization.html" class="nav-link"><i class="undefined"></i>
+  可视化
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      算法
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/algorithm/sort.html" class="nav-link"><i class="undefined"></i>
+  排序算法
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/double-pointer.html" class="nav-link"><i class="undefined"></i>
+  双指针算法
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/binary-tree.html" class="nav-link"><i class="undefined"></i>
+  二叉树
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/receive-rain.html" class="nav-link"><i class="undefined"></i>
+  接雨水
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/dynamic-plan.html" class="nav-link"><i class="undefined"></i>
+  动态规划
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/greedy.html" class="nav-link"><i class="undefined"></i>
+  贪心算法
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/longasc-sequence.html" class="nav-link"><i class="undefined"></i>
+  最长上升子序列
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/binary-search.html" class="nav-link"><i class="undefined"></i>
+  二分查找
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/other.html" class="nav-link"><i class="undefined"></i>
+  其他
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      其他
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/other/browser-principle.html" class="nav-link"><i class="undefined"></i>
+  浏览器原理与pwa
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/redraw-reflow.html" class="nav-link"><i class="undefined"></i>
+  重绘回流
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/compatibility.html" class="nav-link"><i class="undefined"></i>
+  前端兼容性问题
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/virtual-list.html" class="nav-link"><i class="undefined"></i>
+  虚拟列表
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/data-collection.html" class="nav-link"><i class="undefined"></i>
+  数据采集
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/websocket.html" class="nav-link"><i class="undefined"></i>
+  websocket
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/vue-react.html" class="nav-link"><i class="undefined"></i>
+  vue vs react
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/ESLint.html" class="nav-link"><i class="undefined"></i>
+  ESLint规范
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/ES6.html" class="nav-link"><i class="undefined"></i>
+  ES6 实用语法
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/excellentarticles.html" class="nav-link"><i class="undefined"></i>
+  优秀文章
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/personal-summary.html" class="nav-link"><i class="undefined"></i>
+  个人总结
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/uniapp.html" class="nav-link"><i class="undefined"></i>
+  uni-app
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/handwritten-impl.html" class="nav-link"><i class="undefined"></i>
+  手写实现
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/project-broad.html" class="nav-link"><i class="undefined"></i>
+  项目层面
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      关于我
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/hmyjyghh" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://gitee.com/ghh_" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.zhihu.com/people/cool-62-29/columns" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  知乎
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://hmyjyghh.github.io/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-59e6cb88 data-v-7dd95ae2><h3 class="title" data-v-59e6cb88>nodejs网络及部署</h3> <!----> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><!---->
+          
+        <!---->
+        2025
+      </a></span></div></div> <div data-v-7dd95ae2><div data-v-7dd95ae2><main class="page"><section style="display:;"><div class="page-title"><h1 class="title">nodejs网络及部署</h1> <div data-v-8a445198><!----> <i class="iconfont reco-date" data-v-8a445198><span data-v-8a445198>11/30/2021</span></i> <!----> <i class="tags iconfont reco-tag" data-v-8a445198><span class="tag-item" data-v-8a445198>nodejs</span></i></div></div> <div class="theme-reco-content content__default"><h2 id="一-网络模型"><a href="#一-网络模型" class="header-anchor">#</a> 一. 网络模型</h2> <h3 id="_1-osi-七层模型"><a href="#_1-osi-七层模型" class="header-anchor">#</a> 1. OSI 七层模型</h3> <ul><li>第 7 层应用层：为操作系统或网络应用程序提供访问网络服务的接口。
+<ul><li>协议包括：https、http、ftp、telnet、ssh、smtp、pops、dns 等</li> <li>html</li></ul></li> <li>第 6 层表示层：把数据转换为接受者能够兼容并且传输的内容，比如数据加密、压缩、格式转换等。</li> <li>第 5 层会话层：负责数据传输中设置和维持网络设置直接的通讯连接。管理主机之间的会话进程，还可以利用在数据中插入校验点来实现数据同步。</li> <li>第 4 层传输层：把传输表头加至数据形成数据包，完成端到端的数据传输，传输表头包含协议等信息。
+<ul><li>协议包括：tcp、udp 协议</li></ul></li> <li>第 3 层网络层：负责对子网间的数据包进行寻址和路由选择，还可以实现阻塞控制和网际互联等功能。
+<ul><li>协议包括：ip、ipx 等</li> <li>路由器</li></ul></li> <li>第 2 层数据链路层：在物理介质上提供可靠的传输，包括物理地址寻址、数据封装成帧、流量控制、数据校验、重发等
+<ul><li>交互机</li></ul></li> <li>第 1 层物理层：在局域网传输数据帧，负责电脑通讯设备和网络媒体之间的互通，包括针脚、电压、线缆规范、集线器、网卡、主机适配。</li></ul> <p><strong>html 在哪一层： 应用层</strong></p> <h3 id="_2-tcp-ip-参考模型"><a href="#_2-tcp-ip-参考模型" class="header-anchor">#</a> 2. TCP/IP 参考模型</h3> <ul><li>应用层：应用层、表示层、会话层</li> <li>传输层：传输层</li> <li>网络层：网络层</li> <li>链路层：数据链路层、物理层</li></ul> <p><img src="/myblog/images/tcp-ip.png" alt="TCP/IP"></p> <h3 id="_3-常见面试题"><a href="#_3-常见面试题" class="header-anchor">#</a> 3. 常见面试题</h3> <h4 id="_3-1-协议是什么"><a href="#_3-1-协议是什么" class="header-anchor">#</a> 3.1 协议是什么？</h4> <p>定义每一层的作用和职责，类似于规范。</p> <h4 id="_3-2-tcp-ip-协议具体指什么"><a href="#_3-2-tcp-ip-协议具体指什么" class="header-anchor">#</a> 3.2 TCP/IP 协议具体指什么？</h4> <p>互联网通讯所需要的协议家族，以 TCP、IP 为核心，包含 HTTP、SMTP、TELNET 等各种协议</p> <h4 id="_3-3-数据包是什么"><a href="#_3-3-数据包是什么" class="header-anchor">#</a> 3.3 数据包是什么？</h4> <p><strong>网络层及以上分层中包的单位。</strong> 每个分层都会对发送的数据添加一个首部，首部包含了该层协议相关的信息，真正发送的内容称为数据，即每个数据包为首部+数据。对于下层来说，上层发送的全部内容，都会被当作本层的数据。</p> <ul><li>传输层 TCP 包：TCP 包首部 + 数据</li> <li>网络层 IP 包：IP 包首部 + （TCP 包首部 + 数据）</li> <li>数据链路层以太网包：以太网包首部 + （IP 包首部 + （TCP 包首部 + 数据））</li></ul> <h4 id="_3-4-每次在接收数据后除了添加首部还会做什么"><a href="#_3-4-每次在接收数据后除了添加首部还会做什么" class="header-anchor">#</a> 3.4 每次在接收数据后除了添加首部还会做什么？</h4> <p>用户 1</p> <ul><li><p>传输层：TCP 模块为保证数据的可靠传输, 需要添加 TCP 首部</p></li> <li><p>网络层：IP 包生成后，参考路由控制表决定接受此 IP 包的路由或主机。</p></li> <li><p>数据链路层：生成的以太网数据包将通过物理层传输给接收端
+用户 2</p></li> <li><p>数据链路层：主机收到以太网包后，首先从以太网包首部找到 MAC 地址判断是否为发送给自己的包，若不是则丢弃数据。 如果是发送给自己的包，则从以太网包首部中的类型确定数据类型，再传给相应的模块，比如 IP.</p></li> <li><p>网络层：从包首部中判断此 IP 地址是否与自己的 IP 地址匹配，如果匹配则根据首部的协议类型将数据发送给对应的模块，比如 TCP</p></li> <li><p>传输层：在 TCP 模块中，首先会计算一下校验和，判断数据是否被破坏。然后检查是否在按照顺序接收数据。最后检查端口号，确定具体的应用程序。数据被完整地接收以后，会传给由端口号识别的应用程序。</p></li></ul> <p>总结一下几个地址：</p> <ul><li>数据链路层的是 MAC 地址, 用来识别同一链路中的不同计算机</li> <li>网络层的是 IP 地址, 用来识别 TCP/IP 网络中互连的主机和路由器</li> <li>传输层的是端口号(程序地址), 用来识别同一台计算机中进行通信的不同应用程序</li></ul> <h4 id="_3-5-通过-mac-地址、ip-地址、端口号是否可识别一次通讯"><a href="#_3-5-通过-mac-地址、ip-地址、端口号是否可识别一次通讯" class="header-anchor">#</a> 3.5 通过 MAC 地址、IP 地址、端口号是否可识别一次通讯？</h4> <p>答案是否定的，我们需要通过以下这几个数据综合来识别一次通信：</p> <ul><li>IP 首部：源 IP 地址</li> <li>IP 首部：目标 IP 地址</li> <li>协议号, TCP 或者 UDP</li> <li>TCP 首部：源端口号</li> <li>TCP 首部：目标端口号</li></ul> <h2 id="二-tcp-和-udp-协议"><a href="#二-tcp-和-udp-协议" class="header-anchor">#</a> 二. TCP 和 UDP 协议</h2> <h3 id="_1-区别和场景"><a href="#_1-区别和场景" class="header-anchor">#</a> 1. 区别和场景</h3> <p>传输层协议：</p> <ul><li><p>UDP 是⽆连接的，TCP 必须三次握⼿建⽴连接</p></li> <li><p>UDP 是⾯向报⽂，没有拥塞控制，所以速度快，适合多媒体通信要求，⽐如及时聊天，⽀持⼀对⼀，⼀对多，多对⼀，多对多。就像⽜客⽹的视频⾯试就是⽤的 UDP</p></li> <li><p>TCP 只能是⼀对⼀的可靠性传输</p></li></ul> <h3 id="_2-tcp-协议"><a href="#_2-tcp-协议" class="header-anchor">#</a> 2. TCP 协议</h3> <h4 id="_2-1-怎么保证其可靠性"><a href="#_2-1-怎么保证其可靠性" class="header-anchor">#</a> 2.1 怎么保证其可靠性?</h4> <ul><li>超时重发，发出报文端要是没有收到及时的确认，会重发</li> <li>数据包的校验，校验首部数据和</li> <li>对失序的数据重新排序</li> <li>进行流量控制，防止缓冲区溢出</li> <li>快重传和快恢复</li> <li>TCP 会将数据截断为合理的长度</li></ul> <h4 id="_2-2-拥堵控制"><a href="#_2-2-拥堵控制" class="header-anchor">#</a> 2.2 拥堵控制</h4> <p>拥塞控制就是防止过多的数据注入网络中，这样可以使网络中的路由器或链路不致过载。</p> <p>发送方维持一个叫做拥塞窗口 cwnd（congestion window）的状态变量和慢开始门限 ssthresh 状态变量：初始设置 ssthresh=16，cwnd=1.</p> <ul><li><p>当 cwnd&lt;ssthresh 时，使⽤慢开始算法，也就是乘法算法，拥塞窗口 cwnd 随着传输次数按指数规律增长。</p></li> <li><p>当 cwnd=ssthresh 时，慢开始与拥塞避免算法任意。</p></li> <li><p>当 cwnd&gt;ssthresh 时，改⽤拥塞避免算法，也就是加法算法，拥塞窗口按线性规律增长。</p></li> <li><p>当出现拥塞的时候就把新的门限值 ssthresh 设为此时窗口大小 cwnd 的一半，窗口大小设置为 1，再重新执行上面的步骤。eg：cwnd 为 24 时拥堵，设置 ssthresh 为 12，cwnd 为 1，再开始慢开始算法。</p></li> <li><p>当收到连续三个重传的时候这就需要快重传和快恢复了，当收到连续三个重传，这个时候发送方就要重传自己的信息，然后门限 ssthresh 减半，但是这个时候并不是网络阻塞，窗口 cwnd 只会减半，执行拥塞避免算法。</p></li></ul> <h4 id="_2-3-三次握手-四次挥手"><a href="#_2-3-三次握手-四次挥手" class="header-anchor">#</a> 2.3 三次握手，四次挥手</h4> <ol><li>第⼀次握⼿：客户端发送连接请求报⽂段，将 SYN 位置为 1，Sequence Number 为 x；然后，客户端进⼊ SYN_SENT 状态，等待服务器的确认；</li> <li>第⼆次握⼿：服务器收到客户端的 SYN 报⽂段，需要对这个 SYN 报⽂段进⾏确认，设置 Acknowledgment Number 为 x+1(Sequence Number+1)；同时，⾃⼰还要发送 SYN 请求信息，将 SYN 位置为 1，Sequence Number 为 y；服务器端将上述的 SYN+ACK 报⽂段⼀并发送给客户端，此时服务器进⼊ SYN_RCVD 状态；</li> <li>第三次握⼿：客户端收到服务器的 SYN+ACK 报⽂段。然后将 Acknowledgment Number 设置为 y+1，向服务器发送 ACK 报⽂段，这个报⽂段发送完毕以后，客户端和服务器端都进⼊ ESTABLISHED 状态，完成 TCP 三次握⼿。</li></ol> <p><img src="/myblog/images/tcp-three.jpg" alt="TCP"></p> <p>四次挥手</p> <ol><li>第一次挥手是浏览器发完数据后，发送 FIN 请求断开连接，Client 端进入 FIN_WAIT_1 状态</li> <li>第二次挥手是服务器收到 FIN 报文，返回 ACK 报文段表示同意，Client 端进入 FIN_WAIT_2 状态</li> <li>第三次挥手是服务器发送 FIN 报文段，请求关闭连接，Client 端进入 LAST_ACK 状态</li> <li>第四次挥手是浏览器收到 FIN 报文段，向服务器发送 ACK 报文段，Client 端进入 TIME_WAIT 状态。服务器接收到 ACK 报文关闭连接，浏览器等待一段时间后，表示服务器已关闭连接，也关闭连接。</li></ol> <p><img src="/myblog/images/tcp-four.jpg" alt="TCP"></p> <p>详细版四次挥手</p> <ul><li>第一次挥手：主机 1（可以使客户端，也可以是服务器端），设置 Sequence Number 和 Acknowledgment Number，向主机 2 发送一个 FIN 报文段；此时，主机 1 进入 FIN_WAIT_1 状态；这表示主机 1 没有数据要发送给主机 2 了；</li> <li>第二次挥手：主机 2 收到了主机 1 发送的 FIN 报文段，向主机 1 回一个 ACK 报文段，Acknowledgment Number 为 Sequence Number 加 1；主机 1 进入 FIN_WAIT_2 状态；主机 2 告诉主机 1，我“同意”你的关闭请求；</li> <li>第三次挥手：主机 2 向主机 1 发送 FIN 报文段，请求关闭连接，同时主机 2 进入 LAST_ACK 状态；</li> <li>第四次挥手：主机 1 收到主机 2 发送的 FIN 报文段，向主机 2 发送 ACK 报文段，然后主机 1 进入 TIME_WAIT 状态；主机 2 收到主机 1 的 ACK 报文段以后，就关闭连接；此时，主机 1 等待 2MSL 后依然没有收到回复，则证明 Server 端已正常关闭，那好，主机 1 也可以关闭连接了。</li></ul> <h2 id="三-ip-地址"><a href="#三-ip-地址" class="header-anchor">#</a> 三. IP 地址</h2> <h3 id="网络层协议"><a href="#网络层协议" class="header-anchor">#</a> 网络层协议</h3> <ul><li><p>IP 地址（IPv4 地址）由 32 位正整数来表示，在计算机内部以二进制方式被处理。</p> <ul><li>将 32 位的 IP 地址以每 8 位为一组，分成 4 组，每组以 “.” 隔开，再将每组数转换成十进制数（0-255）。</li> <li>IP 地址包含网络标识和主机标识，eg：172.112.110.11，172.112.110 就是网络标识,，同一网段内网络标识必须相同。11 就是主机标识,，同一网段内主机标识不能重复。</li></ul></li> <li><p>IPv6：解决 IPv4 地址耗尽的问题而被标准化的网际协议。IPv4 的地址长度为 4 个 8 位字节，即 32 比特，而 IPv6 的地址长度则是原来的 4 倍，即 128 比特，一般写成 8 个 16 位字节。通常写成 8 组，每组为四个十六进制数的形式。比如：AD80:0000:0000:0000:ABAA:0000:00C2:0002</p></li></ul> <h2 id="四-dns"><a href="#四-dns" class="header-anchor">#</a> 四. DNS</h2> <p>应用层协议：DNS 协议是用来将域名转换为 IP 地址（也可以将 IP 地址转换为相应的域名地址）</p> <ul><li>DNS 使用 TCP 和 UDP 端口 53。</li> <li>对于每一级域名长度的限制是 63 个字符，域名总长度则不能超过 253 个字符。</li></ul> <p>客户端发送查询报文&quot;query zh.wikipedia.org&quot;至 DNS 服务器：</p> <ul><li><p>DNS 服务器首先检查自身缓存，如果存在记录则直接返回结果。如果记录老化或不存在，则执行如下步骤：</p></li> <li><p>DNS 服务器向根域名服务器发送查询报文&quot;query zh.wikipedia.org&quot;，根域名服务器返回顶级域 .org 的顶级域名服务器地址。</p></li> <li><p>DNS 服务器向 .org 域的顶级域名服务器发送查询报文&quot;query zh.wikipedia.org&quot;，得到二级域 .wikipedia.org 的权威域名服务器地址。</p></li> <li><p>DNS 服务器向 .wikipedia.org 域的权威域名服务器发送查询报文&quot;query zh.wikipedia.org&quot;，得到主机 zh 的 A 记录，存入自身缓存并返回给客户端。</p></li></ul> <h2 id="五-http"><a href="#五-http" class="header-anchor">#</a> 五. HTTP</h2> <p>HTTP 协议（HyperText Transfer Protocol，超⽂本传输协议）是⽤于从 WWW 服务器传输超⽂本到本地浏览器的传输协议。HTTP 是客户端浏览器或其他程序与 Web 服务器之间的应⽤层通信协议。在 Internet 上的 Web 服务器上存放的都是超⽂本信息，客户机需要通过 HTTP 协议传输所要访问的超⽂本信息。</p> <h3 id="_1-一次完整的-http-通信是什么样子的"><a href="#_1-一次完整的-http-通信是什么样子的" class="header-anchor">#</a> 1. ⼀次完整的 HTTP 通信是什么样⼦的?</h3> <ol><li><p>建⽴ TCP 连接
+在 HTTP ⼯作开始之前，客户端⾸先要通过⽹络与服务器建⽴连接，该连接是通过 TCP 来完成
+的。HTTP 是⽐ TCP 更⾼层次的应⽤层协议，根据规则，只有低层协议建⽴之后，才能进⾏⾼
+层协议的连接，因此，⾸先要建⽴ TCP 连接，⼀般 TCP 连接的端⼝号是 80；</p></li> <li><p>客户端向服务器发送请求命令
+⼀旦建⽴了 TCP 连接，客户端就会向服务器发送请求命令；
+例如：GET/info HTTP/1.1</p></li> <li><p>客户端发送请求头信息
+客户端发送其请求命令之后，还要以头信息的形式向服务器发送⼀些别的信息，之后客户端发
+送了⼀空⽩⾏来通知服务器，它已经结束了该头信息的发送；</p></li> <li><p>服务器应答
+客户端向服务器发出请求后，服务器会客户端返回响应；
+例如： HTTP/1.1 200 OK
+响应的第⼀部分是协议的版本号和响应状态码</p></li> <li><p>服务器返回响应头信息
+正如客户端会随同请求发送关于⾃身的信息⼀样，服务器也会随同响应向⽤户发送关于它⾃⼰
+的数据及被请求的⽂档；</p></li> <li><p>服务器向客户端发送数据
+服务器向客户端发送头信息后，它会发送⼀个空⽩⾏来表示头信息的发送到此为结束，接着，
+它就以 Content-Type 响应头信息所描述的格式发送⽤户所请求的实际数据；</p></li> <li><p>服务器关闭 TCP 连接
+⼀般情况下，⼀旦服务器向客户端返回了请求数据，它就要关闭 TCP 连接，然后如果客户端
+或者服务器在其头信息加⼊了这⾏代码 Connection:keep-alive ，TCP 连接在发送后将仍然保
+持打开状态，于是，客户端可以继续通过相同的连接发送请求。保持连接节省了为每个请求建
+⽴新连接所需的时间，还节约了⽹络带宽。</p></li></ol> <h3 id="_2-http-协议有哪些特点"><a href="#_2-http-协议有哪些特点" class="header-anchor">#</a> 2. HTTP 协议有哪些特点?</h3> <ol><li><p>通过请求和响应的交换达成通信
+协议规定, 请求从客户端发出, 服务端响应请求并返回.</p></li> <li><p>⽆状态
+HTTP 是⼀种⽆状态协议, 在单纯 HTTP 这个层⾯，协议对于发送过的请求或响应都不做持久化处理</p></li> <li><p>使⽤ Cookie 做状态管理
+服务端返回的头信息上有可能会携带 Set-Cookie, 那么当客户端接收到响应后, 就会在本地种上 cookie. 在下⼀次给服务端发送请求的时候, 就会携带上这些 cookie。</p></li> <li><p>通过 URL 定位资源
+这⾥区分⼀下 URI 和 URL 的概念.
+URI: 统⼀资源标识符, ⽐如你身份证号是 xxxxxxx, 在所有⼈中是独⼀⽆⼆的, 这个身份证号就能
+标识你的身份, 那么它就是 URI
+URL: 统⼀资源定位符, ⽐如北京市/朝阳区/xxxx/xxxx/xxxxx, 通过这⼀串信息可以定位到你, 那
+么这个就是 URL
+URL 有点类似于通过定位实现的 URI.
+就像有个⽗类叫做 URI, 他要实现的是唯⼀确定⼀个 id. 有的⼈喜欢继承 URI, 通过 location 来实
+现; 有的⼈喜欢继承 URI, 通过 name 来实现.</p></li> <li><p>通过各种⽅法来标识⾃⼰的意图
+这⾥指的是各种 HTTP ⽅法, ⽐如 GET POST PUT DELETE 等.</p></li> <li><p>持久连接
+HTTP 协议的初始版本中，每进⾏⼀个 HTTP 通信都要断开⼀次 TCP 连接，增加了很多没必要
+的建⽴连接的开销。
+为了解决上述 TCP 连接的问题，HTTP/1.1 ⽀持持久连接。其特点是，只要任意⼀端没有明确
+提出断开连接，则保持 TCP 连接状态。旨在建⽴⼀次 TCP 连接后进⾏多次请求和响应的交
+互。在 HTTP/1.1 中，所有的连接默认都是持久连接。
+也就是说默认情况下建⽴ TCP 连接不会断开，只有在请求报头中声明 Connection: close 才会
+在请求完成后关闭连接。</p></li> <li><p>管道机制
+1.1 版本引⼊ pipelining 机制, 即在同⼀个 TCP 连接⾥⾯，客户端可以同时发送多个请求。
+举例来说，客户端需要请求两个资源。以前的做法是，在同⼀个 TCP 连接⾥⾯，先发送 A 请
+求，然后等待服务器做出回应，收到后再发出 B 请求。管道机制则是允许浏览器同时发出 A 请
+求和 B 请求，但是服务器还是按照顺序，先回应 A 请求，完成后再回应 B 请求。
+但是现代浏览器⼀般没开启这个配置, 这个机制可能会造成队头阻塞. 因为响应是有顺序的, 如
+果⼀个 TCP 连接中的第⼀个 HTTP 请求响应⾮常慢, 那么就会阻塞后续 HTTP 请求的响应.
+所以现实中默认情况下, ⼀个 TCP 连接同⼀时间只发⼀个 HTTP 请求.</p></li></ol> <p>有的同学会问, 我怎么听说 chrome 最⼤⽀持 6 个同域名请求呢？
+那是因为<strong>chrome 最⼤⽀持同时开启 6 个 TCP 连接。</strong></p> <h3 id="_3-http-状态码"><a href="#_3-http-状态码" class="header-anchor">#</a> 3. HTTP 状态码</h3> <p>1xx: 信息性状态码，webscoket</p> <p>2xx: 成功状态码，200、204(No Content) 、206(范围请求,⽐如⾳视频资源)</p> <p>3xx: 重定向， 301(永久) 、302(临时，可能会改变方法) 、304(协商缓存)、 307(临时，不会从 post 变为 get) 、308(永久)</p> <p>4xx: 客户端错误， 400(bad request) 、401(Unauthorized，无 session，未登录认证) 、403(Forbidden) 、404(not found) 、405(Method not allowed)</p> <p>5xx: 服务端错误，500(Internal server error) 、502(Bad Gateway) 、503(Service Unavailable)</p> <h3 id="_4-http-请求头"><a href="#_4-http-请求头" class="header-anchor">#</a> 4. HTTP 请求头</h3> <h4 id="_1、connection"><a href="#_1、connection" class="header-anchor">#</a> 1、Connection</h4> <p>请求头和返回头</p> <p>close：HTTP/1.1 版本的默认连接都是持久连接。当服务器端想明确断开连接时，则指定 Connection ⾸部字段的值为 close</p> <p>Keep-Alive：HTTP/1.1 之前的 HTTP 版本的默认连接都是⾮持久连接。为此，如果想在旧版本的 HTTP 协议上维持持续连接，则需要指定 Connection ⾸部字段的值为 Keep-Alive。</p> <p>#2、Allow
+返回头：⽤于通知客户端能够⽀持 Request-URI 指定资源的所有 HTTP ⽅法。</p> <p>当服务器接收到不⽀持的 HTTP ⽅法时，会以状态码 405 Method Not Allowed 作为响应返回。与此同时，还会把所有能⽀持的 HTTP ⽅法写⼊⾸部字段 Allow 后返回。Allow: GET, HEAD。</p> <p>#3、Host
+请求头，Host: aam.sdc.cs.icbc:11688</p> <p>告知服务器，请求的资源所处的互联⽹主机和端⼝号。</p> <p>Host ⾸部字段是 HTTP/1.1 规范内唯⼀⼀个必须被包含在请求内的⾸部字段。</p> <p>若服务器未设定主机名，那直接发送⼀个空值即可 Host: 。</p> <p>#4、Accept、Accept-Language、Accept-Encoding
+请求头</p> <p>Accept: text/html, application/xhtml+xml, application/xml;</p> <p>Accept ⾸部字段可通知服务器，⽤户代理能够处理的媒体类型及媒体类型的相对优先级。可使⽤ type/subtype 这种形式，⼀次指定多种媒体类型。</p> <p>Accept-Encoding: gzip, deflate</p> <p>Accept-Encoding ⾸部字段⽤来告知服务器⽤户代理⽀持的内容编码及内容编码的优先顺序，并可⼀次性指定多种内容编码，也可使⽤星号（*）作为通配符，指定任意的编码格式。</p> <p>gzip 表明实体采⽤ GNU zip 编码</p> <p>compress 表明实体采⽤ Unix 的⽂件压缩程序</p> <p>deflate 表明实体采⽤ zlib 的格式压缩的</p> <p>identity 表明没有对实体进⾏编码，当没有 Content-Encoding ⾸部字段时，默认采⽤此编码⽅式</p> <p>Accept-Language: zh-cn,zh;q=0.5</p> <p>表示浏览器所支持的语言类型，浏览器支持的语言分别是简体中文和中文，优先支持简体中文。</p> <p>#5、Content-Encoding、Content-Type、Content-language
+响应头</p> <p>Content-Encoding: gzip</p> <p>告知客户端服务器对实体的主体部分选⽤的内容编码⽅式。内容编码是指在不丢失实体信息的前提下所进⾏的压缩。</p> <p>Content-Type: text/html; charset=UTF-8</p> <p>说明了实体主体内对象的媒体类型。和⾸部字段 Accept ⼀样，字段值⽤ type/subtype 形式赋值。</p> <p>Content-language：zh-cn,zh;q=0.5</p> <p>说明了实体主体内对象的语言类型</p> <p>#6、User-Agent
+请求头</p> <p>User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36</p> <p>⾸部字段 User-Agent 会将创建请求的浏览器和⽤户代理名称等信息传达给服务器。由⽹络爬⾍发起请求时，有可能会在字段内添加爬⾍作者的电⼦邮件地址。此外，如果请求经过代理，那么中间也很可能被添加上代理服务器的名称。</p> <p>#7、Set-Cookie、Cookie
+Set-Cookie 返回头、Cookie 请求头</p> <p>Set-Cookie: userId=11111; expires=Mon, 10 Jul 20121 15:50:06 GMT; path=/;</p> <p>NAME=VALUE: cookie 名称和值</p> <p>expires=DATE: Cookie 的有效期（若不明确指定则默认为浏览器关闭前为⽌）</p> <p>path=PATH: ⽤于限制指定 Cookie 的发送范围的⽂件⽬录。</p> <p>domain=域名: cookie 有效的域名 （若不指定则默认为创建 Cookie 的服务器的域名）</p> <p>Secure: 仅在 HTTPS 安全通信时才会发送 Cookie</p> <p>HttpOnly: 使 Cookie 不能被 JavaScript 脚本访问</p> <p>#8、强缓存：Expires、Cache-Control
+Expires：返回头，这是 http1.0 时的规范，Expires: Mon, 10 Jul 2021 15:50:06 GMT</p> <p>⾸部字段 Expires 会将资源失效的⽇期告知客户端。</p> <p>缓存服务器在接收到含有⾸部字段 Expires 的响应后，会以缓存来应答请求，在 Expires 字段值指定的时间之前，响应的副本会⼀直被保存。当超过指定的时间后，缓存服务器在请求发送过来时，会转向源服务器请求资源。</p> <p>Cache-Control：返回头，设置缓存机制</p> <p>Cache-Control: public，可以被所有的用户缓存，包括终端用户和 CDN 等中间代理服务器</p> <p>Cache-Control: private，只能被终端用户的浏览器缓存，不允许 CDN 等中继缓存服务器对其缓存</p> <p>Cache-Control: no-cache，可以在客户端存储资源，每次都必须去服务端做过期校验，来决定从服务端获取新的资源</p> <p>（200）还是使⽤客户端缓存（304）。也就是所谓的协商缓存。</p> <p>Cache-Control: no-store，永远都不要在客户端存储资源，永远都去原始服务器去获取资源。</p> <p>Cache-Control: max-age=604800（单位：秒），当客户端发送的请求中包含 max-age 指令时，如果判定缓存资源的缓存时间数值⽐指定的时间更⼩，那么客户端就接收缓存的资源。另外，当指定 max-age 的值为 0，那么缓存服务器通常需要将请求转发给源服务器。HTTP/1.1 版本的缓存服务器遇到同时存在 Expires ⾸部字段的情况时，会优先处理 max-age 指令，并忽略 Expires ⾸部字段</p> <p>Cache-Control: s-maxage=604800（单位：秒），s-maxage 指令的功能和 max-age 指令的相同，它们的不同点是 s-maxage 指令只适⽤于供多位⽤户使⽤的公共缓存服务器（⼀般指代理）。当使⽤ s-maxage 指令后，则直接忽略对 Expires ⾸部字段及 max-age 指令的处理</p> <p>#9、协商缓存：ETag、If-None-Match、Last-Modified、If-Modified-Since
+If-Modified-Since: Mon, 10 Jul 2021 15:50:06 GMT，请求头。</p> <p>⽤于确认代理或客户端拥有的本地资源的有效性。
+在指定 If-Modified-Since 字段值的⽇期时间之后，如果请求的资源都没有过更新，则返回状态码 304 Not Modified 的响应
+If-None-Match: “lubai”，请求头。⽤于指定 If-None-Match 字段值的实体标记（ETag）值与请求资源的 ETag 不⼀致时，它就告</p> <p>知服务器处理该请求。</p> <p>ETag: “aaaa-1234”，返回头，⾸部字段 ETag 能告知客户端实体标识。它是⼀种可将资源以字符串形式做唯⼀性标识的⽅式。服务器会为每份资源分配对应的 ETag 值。另外，当资源更新时，ETag 值也需要更新。⽣成 ETag 值时，并没有统⼀的算法规则，⽽仅仅是由服务器来分配。</p> <p>Last-Modified : Fri , 12 May 2006 18:53:33 GMT，返回头。在浏览器第一次请求某一个 URL 时，服务器端的返回状态会是 200，内容是客户端请求的资源，同时有一个 Last-Modified 的属性标记此文件在服务器端最后被修改的时间。</p> <h2 id="六-网络和并发"><a href="#六-网络和并发" class="header-anchor">#</a> 六. 网络和并发</h2> <h3 id="_1-http-1-0-1-1-2-0-在并发请求上主要区别是什么"><a href="#_1-http-1-0-1-1-2-0-在并发请求上主要区别是什么" class="header-anchor">#</a> 1. HTTP 1.0/1.1/2.0 在并发请求上主要区别是什么?</h3> <ol><li><p>HTTP/1.0
+每次<code>TCP连接</code>只能发送⼀个请求，当服务器响应后就会关闭这次连接，下⼀个请求需要再次建
+⽴ TCP 连接.</p></li> <li><p>HTTP/1.1</p></li></ol> <ul><li>默认采⽤持续连接(TCP 连接默认不关闭，可以被多个请求复⽤，不⽤声明 Connection: keep-alive).</li> <li>增加了管道机制，在同⼀个 TCP 连接⾥，允许多个请求同时发送，增加了并发性，进⼀步改善
+了 HTTP 协议的效率
+但是同⼀个 TCP 连接⾥，所有的数据通信是按次序进⾏的。回应慢，会有许多请求排队，造成”队头堵塞”。 (一问一答)</li></ul> <ol start="3"><li>HTTP/2.0</li></ol> <ul><li>加了双⼯模式，即不仅客户端能够同时发送多个请求，服务端也能同时处理多个请求，解决了队头堵塞的问题。</li> <li>使⽤了多路复⽤的技术，做到同⼀个连接并发处理多个请求，⽽且并发请求的数量⽐ HTTP1.1
+⼤了好⼏个数量级。</li> <li>增加服务器推送的功能，不经请求服务端主动向客户端发送数据。</li></ul> <h3 id="_2-http-1-1-长连接和-http-2-0-的多路复用技术有什么区别"><a href="#_2-http-1-1-长连接和-http-2-0-的多路复用技术有什么区别" class="header-anchor">#</a> 2. HTTP/1.1 长连接和 HTTP/2.0 的多路复用技术有什么区别?</h3> <p>1.1: 同一时间一个 TCP 连接只能处理一个请求, 采用一问一答的形式. 上一个请求响应后才能处理下一个请求.</p> <p>chrome 浏览器支持最大 6 个同域名请求的并发
+因为 chrome 浏览器支持最大开启 6 个 TCP 连接</p> <p>2.0: 同域名上的所有请求都在单个 TCP 连接上完成. 单个连接上可以并行交错的进行请求和响应.</p> <h3 id="_3-为什么-http-1-1-不能实现多路复用呢"><a href="#_3-为什么-http-1-1-不能实现多路复用呢" class="header-anchor">#</a> 3. 为什么 HTTP/1.1 不能实现多路复用呢?</h3> <p>HTTP/2.0 是基于二进制帧的协议, HTTP/1.1 是基于文本分隔解析的协议.</p> <p>1.1 的报文结构里, 服务器需要不断地读入字节, 直到遇到换行符.
+处理的顺序是串行的, 一个请求和一个响应需要通过一问一答的形式才能对应起来.</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token constant">GET</span> <span class="token operator">/</span> <span class="token constant">HTTP</span><span class="token operator">/</span><span class="token number">1.1</span>
+<span class="token literal-property property">Accept</span><span class="token operator">:</span>text<span class="token operator">/</span>html<span class="token punctuation">,</span>application<span class="token operator">/</span>xhtml<span class="token operator">+</span>xml<span class="token punctuation">,</span>application<span class="token operator">/</span>xml<span class="token punctuation">;</span>q<span class="token operator">=</span><span class="token number">0.9</span><span class="token punctuation">,</span>image<span class="token operator">/</span>webp<span class="token punctuation">,</span>image<span class="token operator">/</span>apng<span class="token punctuation">,</span><span class="token operator">*</span><span class="token comment">/*;q=0.8
+Accept-Encoding:gzip, deflate, br
+Accept-Language:zh-CN,zh;q=0.9,en;q=0.8
+Cache-Control:max-age=0
+Connection:keep-alive
+Host:www.imooc.com
+Referer:https://www.baidu.com/
+</span></code></pre></div><p>2.0 以帧为最小数据单位, 每个帧都会标识自己属于哪个流, 多个帧组成一个流.</p> <p>多路复用, 其实就是一个 TCP 里存在多条流</p> <h2 id="七-nodejs-网络模块"><a href="#七-nodejs-网络模块" class="header-anchor">#</a> 七. Nodejs 网络模块</h2> <ul><li><p>socket 套接字，socket 是在应用层和传输层之间的一个抽象层，它把 TCP/IP 层复杂的操作抽象为几个简单的接口供应用层调用，来实现进程在网络中通信，比如 create，listen，accept，connect，read 和 write 等等。</p></li> <li><p>http 为应用层模块，主要按照特定协议编解码数据；</p></li> <li><p>net 为传输层模块，主要负责传输编码后的应用层数据；</p></li> <li><p>https 是个综合模块（涵盖了 http/tls/crypto 等），主要用于确保数据安全性</p></li></ul> <h3 id="_1-tcp-模块"><a href="#_1-tcp-模块" class="header-anchor">#</a> 1. TCP 模块</h3> <ul><li>tcp 客户端</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> net <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'net'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> <span class="token constant">HOST</span> <span class="token operator">=</span> <span class="token string">'127.0.0.1'</span>
+<span class="token keyword">const</span> <span class="token constant">PORT</span> <span class="token operator">=</span> <span class="token number">7777</span>
+
+<span class="token comment">// 创建一个TCP服务器实例，调用listen函数开始监听指定端口</span>
+<span class="token comment">// net.createServer()有一个参数, 是监听连接建立的回调</span>
+net
+  <span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">socket</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> remoteName <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>socket<span class="token punctuation">.</span>remoteAddress<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>socket<span class="token punctuation">.</span>remotePort<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span>
+    <span class="token comment">// 建立成功了一个连接, 这个回调函数里返回一个socket对象.</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>remoteName<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> 连接到本服务器</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+
+    <span class="token comment">// 接收消息</span>
+    socket<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'data'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>remoteName<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> - </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>data<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+      <span class="token comment">// 给客户端发消息</span>
+      socket<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">你刚才说啥？是</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>data<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">吗？</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token comment">// 关闭</span>
+    socket<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'close'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>remoteName<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> 连接关闭</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token constant">PORT</span><span class="token punctuation">,</span> <span class="token constant">HOST</span><span class="token punctuation">)</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Server listening on </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token constant">HOST</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token constant">PORT</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+</code></pre></div><ul><li>tcp 服务端</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> net <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'net'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> <span class="token constant">HOST</span> <span class="token operator">=</span> <span class="token string">'127.0.0.1'</span>
+<span class="token keyword">const</span> <span class="token constant">PORT</span> <span class="token operator">=</span> <span class="token number">7777</span>
+<span class="token keyword">const</span> client <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">net<span class="token punctuation">.</span>Socket</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> ServerName <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token constant">HOST</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token constant">PORT</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span>
+<span class="token keyword">let</span> count <span class="token operator">=</span> <span class="token number">0</span>
+client<span class="token punctuation">.</span><span class="token function">connect</span><span class="token punctuation">(</span><span class="token constant">PORT</span><span class="token punctuation">,</span> <span class="token constant">HOST</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">成功连接到 </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>ServerName<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+  <span class="token comment">// 向服务端发送数据</span>
+  <span class="token keyword">const</span> timer <span class="token operator">=</span> <span class="token function">setInterval</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>count <span class="token operator">&gt;</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      client<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">'我没事了, 告辞'</span><span class="token punctuation">)</span>
+      <span class="token function">clearInterval</span><span class="token punctuation">(</span>timer<span class="token punctuation">)</span>
+      <span class="token keyword">return</span>
+    <span class="token punctuation">}</span>
+    client<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">'⻢冬梅'</span> <span class="token operator">+</span> count<span class="token operator">++</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token comment">// 接收消息</span>
+client<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'data'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>ServerName<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> - </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>data<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+  <span class="token comment">// 关闭连接</span>
+  <span class="token comment">// client.destroy();</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token comment">// 关闭事件</span>
+client<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'close'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Connection closed'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+client<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'error'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">error</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="_2-udp-模块"><a href="#_2-udp-模块" class="header-anchor">#</a> 2. UDP 模块</h3> <ul><li>服务端</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> dgram <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'dgram'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> server <span class="token operator">=</span> dgram<span class="token punctuation">.</span><span class="token function">createSocket</span><span class="token punctuation">(</span><span class="token string">'udp4'</span><span class="token punctuation">)</span>
+server<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'message'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">msg<span class="token punctuation">,</span> remote</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>remote<span class="token punctuation">.</span>address<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>remote<span class="token punctuation">.</span>port<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> - </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>msg<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+  server<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">收到！</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> remote<span class="token punctuation">.</span>port<span class="token punctuation">,</span> remote<span class="token punctuation">.</span>address<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+server<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'listening'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> address <span class="token operator">=</span> server<span class="token punctuation">.</span><span class="token function">address</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Server listening on </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>address<span class="token punctuation">.</span>address<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>address<span class="token punctuation">.</span>port<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token function">server</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token number">44444</span><span class="token punctuation">)</span>
+</code></pre></div><ul><li>客户端</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> dgram <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'dgram'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> message <span class="token operator">=</span> Buffer<span class="token punctuation">.</span><span class="token function">alloc</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token string">'lubai'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> client <span class="token operator">=</span> dgram<span class="token punctuation">.</span><span class="token function">createSocket</span><span class="token punctuation">(</span><span class="token string">'udp4'</span><span class="token punctuation">)</span>
+client<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span>message<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> message<span class="token punctuation">.</span>length<span class="token punctuation">,</span> <span class="token number">44444</span><span class="token punctuation">,</span> <span class="token string">'localhost'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> bytes</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">发送成功</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>bytes<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">字节</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+  <span class="token comment">// client.close()</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+client<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'message'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">buffer</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>buffer<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="_3-http-模块"><a href="#_3-http-模块" class="header-anchor">#</a> 3. HTTP 模块</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">//server</span>
+<span class="token keyword">const</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'http'</span><span class="token punctuation">)</span>
+http
+  <span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    res<span class="token punctuation">.</span><span class="token function">writeHead</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      <span class="token string-property property">'Content-Type'</span><span class="token operator">:</span> <span class="token string">'text/plain'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token string">'Hello World'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">80</span><span class="token punctuation">,</span> <span class="token string">'127.0.0.1'</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Server running at http://127.0.0.1:80/'</span><span class="token punctuation">)</span>
+
+<span class="token comment">//client</span>
+<span class="token keyword">const</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'http'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> options <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">hostname</span><span class="token operator">:</span> <span class="token string">'127.0.0.1'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">port</span><span class="token operator">:</span> <span class="token number">80</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'/'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">method</span><span class="token operator">:</span> <span class="token string">'GET'</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">const</span> req <span class="token operator">=</span> http<span class="token punctuation">.</span><span class="token function">request</span><span class="token punctuation">(</span>options<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Status=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>res<span class="token punctuation">.</span>statusCode<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">, Headers=$ {JSON.stringify(res.headers)}</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+  res<span class="token punctuation">.</span><span class="token function">setEncoding</span><span class="token punctuation">(</span><span class="token string">'utf8'</span><span class="token punctuation">)</span>
+  res<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'data'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+req<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">//浏览器访问：http://127.0.0.1:80/</span>
+<span class="token comment">//curl访问：curl -v http://127.0.0.1:80</span>
+
+<span class="token comment">// 三次握⼿</span>
+<span class="token operator">*</span> Rebuilt <span class="token constant">URL</span> <span class="token literal-property property">to</span><span class="token operator">:</span> http<span class="token operator">:</span><span class="token operator">/</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">127.0.0.1:80</span><span class="token regex-delimiter">/</span></span>
+<span class="token operator">*</span> Trying <span class="token number">127.0</span><span class="token number">.0</span><span class="token number">.1</span><span class="token operator">...</span>
+<span class="token operator">*</span> <span class="token constant">TCP_NODELAY</span> set
+<span class="token operator">*</span> Connected to <span class="token number">127.0</span><span class="token number">.0</span><span class="token number">.1</span> <span class="token punctuation">(</span><span class="token number">127.0</span><span class="token number">.0</span><span class="token number">.1</span><span class="token punctuation">)</span> port <span class="token number">80</span> <span class="token punctuation">(</span>#<span class="token number">0</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 客户端向服务端发送请求报⽂</span>
+<span class="token operator">&gt;</span> <span class="token constant">GET</span> <span class="token operator">/</span> <span class="token constant">HTTP</span><span class="token operator">/</span><span class="token number">1.1</span>
+<span class="token operator">&gt;</span> Host<span class="token operator">:</span> <span class="token number">127.0</span><span class="token number">.0</span><span class="token number">.1</span><span class="token operator">:</span><span class="token number">80</span>
+<span class="token operator">&gt;</span> User<span class="token operator">-</span>Agent<span class="token operator">:</span> curl<span class="token operator">/</span><span class="token number">7.54</span><span class="token number">.0</span>
+<span class="token operator">&gt;</span> Accept<span class="token operator">:</span> <span class="token operator">*</span><span class="token comment">/*
+&gt;
+
+// 服务端响应客户端内容
+&lt; HTTP/1.1 200 OK
+&lt; Content-Type: text/plain
+&lt; Date: Wed, 04 Aug 2021 15:55:55 GMT
+&lt; Connection: keep-alive
+&lt; Keep-Alive: timeout=5
+&lt; Transfer-Encoding: chunked
+&lt;
+* Connection #0 to host 127.0.0.1 left intact
+Hello World%
+
+</span></code></pre></div><h3 id="_4-rpc调用"><a href="#_4-rpc调用" class="header-anchor">#</a> 4. rpc调用</h3> <p>Remote Procedure Call(远程过程调⽤)</p> <ul><li><p>与http调⽤的区别</p> <ul><li>不⼀定使⽤ DNS 作为寻址服务，可使用内部协议存储
+<ul><li>http传输时：http://test.com/aa -&gt; ip</li> <li>rpc传输时：可使用内部协议存储，v1://dd.ccc -&gt; ip</li></ul></li> <li>基于TCP或UDP协议</li> <li>使⽤⼆进制协议(更⼩的体积，更快的解码速率)
+<ul><li>http传输时：明文一般为json格式</li> <li>使用二进制，eg：定义1-4位为name、5-9位为age，使用buffer库进行解析，也可使用protocol-buffers库进行处理，像使⽤JSON⼀样简单</li></ul></li></ul></li> <li><p>tcp通信⽅式</p> <ul><li>单⼯：只能由一方向另一方发送数据另一方不可以，客户端向服务端发送数据或服务端向客户端发送数据</li> <li>半双⼯：独木桥，双向都可发送数据，但每次只能传输一种数据，客户端向服务端发送数据后，服务端向客户端发送数据</li> <li>全双⼯：双方可同时发送数据
+<ul><li>错乱问题、粘包</li> <li>制定了⼀条协议规则，即 包序号（1-2字节）+ 包⻓度（3-6字节） + 包主体内容。</li></ul></li></ul></li></ul> <h2 id="八-网络部署及应用"><a href="#八-网络部署及应用" class="header-anchor">#</a> 八. 网络部署及应用</h2> <p>使用阿里云服务器，基于linux系统：</p> <h3 id="_1-下载安装包"><a href="#_1-下载安装包" class="header-anchor">#</a> 1. 下载安装包</h3> <p><code>wget https://nodejs.org/dist/v10.9.0/node-v10.9.0-linux-x64.tar.xz</code></p> <h3 id="_2-解压"><a href="#_2-解压" class="header-anchor">#</a> 2. 解压</h3> <p><code>tar xf node-v10.9.0-linux-x64.tar.xz</code></p> <h3 id="_3-设置软链接"><a href="#_3-设置软链接" class="header-anchor">#</a> 3. 设置软链接</h3> <p><code>ln -s /root/node-v10.9.0-linux-x64/bin/node /usr/local/bin/node ln -s /root/node-v10.9.0-linux-x64/bin/npm /usr/local/bin/npm</code></p> <h3 id="_4-查看node版本和npm版本"><a href="#_4-查看node版本和npm版本" class="header-anchor">#</a> 4. 查看Node版本和npm版本</h3> <p><code>node -v</code> <code>npm -v</code></p> <h3 id="_5-设置npm-淘宝源"><a href="#_5-设置npm-淘宝源" class="header-anchor">#</a> 5. 设置npm 淘宝源</h3> <p><code>npm config set registry https://registry.npm.taobao.org</code></p> <h3 id="_6-服务器安装pm2"><a href="#_6-服务器安装pm2" class="header-anchor">#</a> 6. 服务器安装pm2</h3> <p>PM2 是一个带有负载均衡功能的 Node 应用进程管理器</p> <div class="language-js extra-class"><pre class="language-js"><code>npm install <span class="token operator">-</span>g pm2 
+
+ln <span class="token operator">-</span>s <span class="token operator">/</span>root<span class="token operator">/</span>node<span class="token operator">-</span>v10<span class="token punctuation">.</span><span class="token number">9.0</span><span class="token operator">-</span>linux<span class="token operator">-</span>x64<span class="token operator">/</span>bin<span class="token operator">/</span>pm2 <span class="token operator">/</span>usr<span class="token operator">/</span>local<span class="token operator">/</span>bin<span class="token operator">/</span>
+</code></pre></div><h3 id="_7-配置ssh"><a href="#_7-配置ssh" class="header-anchor">#</a> 7. 配置ssh</h3> <ul><li>本地生成秘钥对: <code>ssh-keygen -t rsa</code> demo_id_rsa</li> <li>将公钥放到服务器上: <code>scp ~/.ssh/demo_id_rsa.pub root@39.107.238.161:/root/.ssh/authorized_keys</code></li> <li>修改ssh配置 <code>vi ~/.ssh/config</code></li></ul> <div class="language- extra-class"><pre class="language-text"><code>Host lubai
+HostName 39.107.238.161
+User root
+Port 22
+IdentityFile ~/.ssh/demo_id_rsa
+</code></pre></div><ul><li>服务器上修改ssh配置 <code>vim /etc/ssh/sshd_config</code></li></ul> <p>PubkeyAuthentication yes AuthorizedKeysFile .ssh/authorized_keys</p> <ul><li>最后就可以ssh登录了!
+<code>ssh xx</code></li></ul> <h3 id="_8-将本地代码同步到服务器"><a href="#_8-将本地代码同步到服务器" class="header-anchor">#</a> 8. 将本地代码同步到服务器</h3> <p>rsync是linux可以实现增量备份的工具</p> <p><code>rsync -avzp -e &quot;ssh&quot; ./Internet/ lubai:/root/app</code></p> <h3 id="_9-服务器上启动http"><a href="#_9-服务器上启动http" class="header-anchor">#</a> 9. 服务器上启动http</h3> <p><code>pm2 start /root/app/http-server.js</code></p> <h3 id="_10-本地修改发布命令"><a href="#_10-本地修改发布命令" class="header-anchor">#</a> 10. 本地修改发布命令</h3> <h4 id="_10-1-新建deploy-sh文件"><a href="#_10-1-新建deploy-sh文件" class="header-anchor">#</a> 10.1 新建deploy.sh文件</h4> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token shebang important">#!/bin/bash</span>
+
+<span class="token assign-left variable">HOST</span><span class="token operator">=</span>xx
+
+<span class="token function">rsync</span> <span class="token parameter variable">-avzp</span> <span class="token parameter variable">-e</span> <span class="token string">&quot;ssh&quot;</span> ./Internet/ <span class="token variable">$HOST</span>:/root/app
+<span class="token function">ssh</span> <span class="token variable">$HOST</span> <span class="token string">&quot;pm2 restart /root/app/http-server.js&quot;</span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">'deploy success'</span>
+</code></pre></div><h4 id="_10-2-初始化npm命令"><a href="#_10-2-初始化npm命令" class="header-anchor">#</a> 10.2 初始化npm命令</h4> <p><code>npm init</code>，新增 scripts &quot;deploy&quot;: &quot;./deploy.sh&quot;</p> <h4 id="_10-3-发布"><a href="#_10-3-发布" class="header-anchor">#</a> 10.3 发布</h4> <p><code>npm run deploy</code></p> <h3 id="_11-修改http-server的监听host"><a href="#_11-修改http-server的监听host" class="header-anchor">#</a> 11. 修改http-server的监听host</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'http'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> host <span class="token operator">=</span> <span class="token string">'0.0.0.0'</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> port <span class="token operator">=</span> <span class="token number">80</span><span class="token punctuation">;</span>
+http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    res<span class="token punctuation">.</span><span class="token function">writeHead</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+        <span class="token string-property property">'Content-Type'</span><span class="token operator">:</span> <span class="token string">'text/plain'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token string">'Hello World'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span>port<span class="token punctuation">,</span> host<span class="token punctuation">)</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Server running at http://</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>host<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>port<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="_12-ecs安全组添加80端口"><a href="#_12-ecs安全组添加80端口" class="header-anchor">#</a> 12. ECS安全组添加80端口</h3> <h3 id="_13-查看服务器上是否已正常监听80端口-netstat-tpln"><a href="#_13-查看服务器上是否已正常监听80端口-netstat-tpln" class="header-anchor">#</a> 13. 查看服务器上是否已正常监听80端口 <code>netstat -tpln</code></h3> <h3 id="_14-通过ip-端口访问-39-107-238-161-80"><a href="#_14-通过ip-端口访问-39-107-238-161-80" class="header-anchor">#</a> 14. 通过ip+端口访问：39.107.238.161:80</h3></div></section> <footer class="page-edit"><!----> <!----></footer> <!----> <div class="comments-wrapper"><!----></div></main></div> <!----></div> <ul class="sub-sidebar sub-sidebar-wrapper" style="width:12rem;" data-v-b57cc07c data-v-7dd95ae2><li class="level-2" data-v-b57cc07c><a href="/myblog/node/node-network.html#一-网络模型" class="sidebar-link reco-side-一-网络模型" data-v-b57cc07c>一. 网络模型</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/node/node-network.html#_1-osi-七层模型" class="sidebar-link reco-side-_1-osi-七层模型" data-v-b57cc07c>1. OSI 七层模型</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/node/node-network.html#_2-tcp-ip-参考模型" class="sidebar-link reco-side-_2-tcp-ip-参考模型" data-v-b57cc07c>2. TCP/IP 参考模型</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/node/node-network.html#_3-常见面试题" class="sidebar-link reco-side-_3-常见面试题" data-v-b57cc07c>3. 常见面试题</a></li><li class="level-2" data-v-b57cc07c><a href="/myblog/node/node-network.html#二-tcp-和-udp-协议" class="sidebar-link reco-side-二-tcp-和-udp-协议" data-v-b57cc07c>二. TCP 和 UDP 协议</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/node/node-network.html#_1-区别和场景" class="sidebar-link reco-side-_1-区别和场景" data-v-b57cc07c>1. 区别和场景</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/node/node-network.html#_2-tcp-协议" class="sidebar-link reco-side-_2-tcp-协议" data-v-b57cc07c>2. TCP 协议</a></li><li class="level-2" data-v-b57cc07c><a href="/myblog/node/node-network.html#三-ip-地址" class="sidebar-link reco-side-三-ip-地址" data-v-b57cc07c>三. IP 地址</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/node/node-network.html#网络层协议" class="sidebar-link reco-side-网络层协议" data-v-b57cc07c>网络层协议</a></li><li class="level-2" data-v-b57cc07c><a href="/myblog/node/node-network.html#四-dns" class="sidebar-link reco-side-四-dns" data-v-b57cc07c>四. DNS</a></li><li class="level-2" data-v-b57cc07c><a href="/myblog/node/node-network.html#五-http" class="sidebar-link reco-side-五-http" data-v-b57cc07c>五. HTTP</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/node/node-network.html#_1-一次完整的-http-通信是什么样子的" class="sidebar-link reco-side-_1-一次完整的-http-通信是什么样子的" data-v-b57cc07c>1. ⼀次完整的 HTTP 通信是什么样⼦的?</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/node/node-network.html#_2-http-协议有哪些特点" class="sidebar-link reco-side-_2-http-协议有哪些特点" data-v-b57cc07c>2. HTTP 协议有哪些特点?</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/node/node-network.html#_3-http-状态码" class="sidebar-link reco-side-_3-http-状态码" data-v-b57cc07c>3. HTTP 状态码</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/node/node-network.html#_4-http-请求头" class="sidebar-link reco-side-_4-http-请求头" data-v-b57cc07c>4. HTTP 请求头</a></li><li class="level-2" data-v-b57cc07c><a href="/myblog/node/node-network.html#六-网络和并发" class="sidebar-link reco-side-六-网络和并发" data-v-b57cc07c>六. 网络和并发</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/node/node-network.html#_1-http-1-0-1-1-2-0-在并发请求上主要区别是什么" class="sidebar-link reco-side-_1-http-1-0-1-1-2-0-在并发请求上主要区别是什么" data-v-b57cc07c>1. HTTP 1.0/1.1/2.0 在并发请求上主要区别是什么?</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/node/node-network.html#_2-http-1-1-长连接和-http-2-0-的多路复用技术有什么区别" class="sidebar-link reco-side-_2-http-1-1-长连接和-http-2-0-的多路复用技术有什么区别" data-v-b57cc07c>2. HTTP/1.1 长连接和 HTTP/2.0 的多路复用技术有什么区别?</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/node/node-network.html#_3-为什么-http-1-1-不能实现多路复用呢" class="sidebar-link reco-side-_3-为什么-http-1-1-不能实现多路复用呢" data-v-b57cc07c>3. 为什么 HTTP/1.1 不能实现多路复用呢?</a></li><li class="level-2" data-v-b57cc07c><a href="/myblog/node/node-network.html#七-nodejs-网络模块" class="sidebar-link reco-side-七-nodejs-网络模块" data-v-b57cc07c>七. Nodejs 网络模块</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/node/node-network.html#_1-tcp-模块" class="sidebar-link reco-side-_1-tcp-模块" data-v-b57cc07c>1. TCP 模块</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/node/node-network.html#_2-udp-模块" class="sidebar-link reco-side-_2-udp-模块" data-v-b57cc07c>2. UDP 模块</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/node/node-network.html#_3-http-模块" class="sidebar-link reco-side-_3-http-模块" data-v-b57cc07c>3. HTTP 模块</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/node/node-network.html#_4-rpc调用" class="sidebar-link reco-side-_4-rpc调用" data-v-b57cc07c>4. rpc调用</a></li><li class="level-2" data-v-b57cc07c><a href="/myblog/node/node-network.html#八-网络部署及应用" class="sidebar-link reco-side-八-网络部署及应用" data-v-b57cc07c>八. 网络部署及应用</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/node/node-network.html#_1-下载安装包" class="sidebar-link reco-side-_1-下载安装包" data-v-b57cc07c>1. 下载安装包</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/node/node-network.html#_2-解压" class="sidebar-link reco-side-_2-解压" data-v-b57cc07c>2. 解压</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/node/node-network.html#_3-设置软链接" class="sidebar-link reco-side-_3-设置软链接" data-v-b57cc07c>3. 设置软链接</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/node/node-network.html#_4-查看node版本和npm版本" class="sidebar-link reco-side-_4-查看node版本和npm版本" data-v-b57cc07c>4. 查看Node版本和npm版本</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/node/node-network.html#_5-设置npm-淘宝源" class="sidebar-link reco-side-_5-设置npm-淘宝源" data-v-b57cc07c>5. 设置npm 淘宝源</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/node/node-network.html#_6-服务器安装pm2" class="sidebar-link reco-side-_6-服务器安装pm2" data-v-b57cc07c>6. 服务器安装pm2</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/node/node-network.html#_7-配置ssh" class="sidebar-link reco-side-_7-配置ssh" data-v-b57cc07c>7. 配置ssh</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/node/node-network.html#_8-将本地代码同步到服务器" class="sidebar-link reco-side-_8-将本地代码同步到服务器" data-v-b57cc07c>8. 将本地代码同步到服务器</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/node/node-network.html#_9-服务器上启动http" class="sidebar-link reco-side-_9-服务器上启动http" data-v-b57cc07c>9. 服务器上启动http</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/node/node-network.html#_10-本地修改发布命令" class="sidebar-link reco-side-_10-本地修改发布命令" data-v-b57cc07c>10. 本地修改发布命令</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/node/node-network.html#_11-修改http-server的监听host" class="sidebar-link reco-side-_11-修改http-server的监听host" data-v-b57cc07c>11. 修改http-server的监听host</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/node/node-network.html#_12-ecs安全组添加80端口" class="sidebar-link reco-side-_12-ecs安全组添加80端口" data-v-b57cc07c>12. ECS安全组添加80端口</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/node/node-network.html#_13-查看服务器上是否已正常监听80端口-netstat-tpln" class="sidebar-link reco-side-_13-查看服务器上是否已正常监听80端口-netstat-tpln" data-v-b57cc07c>13. 查看服务器上是否已正常监听80端口 netstat -tpln</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/node/node-network.html#_14-通过ip-端口访问-39-107-238-161-80" class="sidebar-link reco-side-_14-通过ip-端口访问-39-107-238-161-80" data-v-b57cc07c>14. 通过ip+端口访问：39.107.238.161:80</a></li></ul></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><!----></div></div>
+    <script src="/myblog/assets/js/app.d2862463.js" defer></script><script src="/myblog/assets/js/7.8c1c7106.js" defer></script><script src="/myblog/assets/js/2.63d4cf60.js" defer></script><script src="/myblog/assets/js/1.0779a93f.js" defer></script><script src="/myblog/assets/js/73.1a5c8381.js" defer></script><script src="/myblog/assets/js/34.6c011227.js" defer></script>
+  </body>
+</html>

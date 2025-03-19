@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>HTTP | 寒梦的博客</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/myblog/logo.png">
+    <meta name="description" content="盛年不重来,一日难再晨,及时当勉励,岁月不待人">
+    
+    <link rel="preload" href="/myblog/assets/css/0.styles.1b9a275a.css" as="style"><link rel="preload" href="/myblog/assets/js/app.d2862463.js" as="script"><link rel="preload" href="/myblog/assets/js/7.8c1c7106.js" as="script"><link rel="preload" href="/myblog/assets/js/2.63d4cf60.js" as="script"><link rel="preload" href="/myblog/assets/js/1.0779a93f.js" as="script"><link rel="preload" href="/myblog/assets/js/51.12b7a969.js" as="script"><link rel="preload" href="/myblog/assets/js/34.6c011227.js" as="script"><link rel="prefetch" href="/myblog/assets/js/10.2eea7893.js"><link rel="prefetch" href="/myblog/assets/js/100.a2449e8c.js"><link rel="prefetch" href="/myblog/assets/js/101.6ae6de59.js"><link rel="prefetch" href="/myblog/assets/js/102.5cfb0e80.js"><link rel="prefetch" href="/myblog/assets/js/103.7ad3c200.js"><link rel="prefetch" href="/myblog/assets/js/104.585300fc.js"><link rel="prefetch" href="/myblog/assets/js/105.928adf09.js"><link rel="prefetch" href="/myblog/assets/js/106.cfe6d2e2.js"><link rel="prefetch" href="/myblog/assets/js/107.c9a11b9e.js"><link rel="prefetch" href="/myblog/assets/js/108.b49d6b8d.js"><link rel="prefetch" href="/myblog/assets/js/109.982a43f3.js"><link rel="prefetch" href="/myblog/assets/js/11.0257b50f.js"><link rel="prefetch" href="/myblog/assets/js/110.377d88ca.js"><link rel="prefetch" href="/myblog/assets/js/111.5c85d12e.js"><link rel="prefetch" href="/myblog/assets/js/112.7fa892ec.js"><link rel="prefetch" href="/myblog/assets/js/14.fbbe67a2.js"><link rel="prefetch" href="/myblog/assets/js/15.fabd129b.js"><link rel="prefetch" href="/myblog/assets/js/16.a75762da.js"><link rel="prefetch" href="/myblog/assets/js/17.52d53386.js"><link rel="prefetch" href="/myblog/assets/js/18.4db27d01.js"><link rel="prefetch" href="/myblog/assets/js/19.7ec664ce.js"><link rel="prefetch" href="/myblog/assets/js/20.4d3becdd.js"><link rel="prefetch" href="/myblog/assets/js/21.52432b7c.js"><link rel="prefetch" href="/myblog/assets/js/22.74a3d5cb.js"><link rel="prefetch" href="/myblog/assets/js/23.e37427da.js"><link rel="prefetch" href="/myblog/assets/js/24.cce6e76c.js"><link rel="prefetch" href="/myblog/assets/js/25.9c2608bc.js"><link rel="prefetch" href="/myblog/assets/js/26.f98d65f7.js"><link rel="prefetch" href="/myblog/assets/js/27.07f61f11.js"><link rel="prefetch" href="/myblog/assets/js/28.903ea730.js"><link rel="prefetch" href="/myblog/assets/js/29.48153eff.js"><link rel="prefetch" href="/myblog/assets/js/3.ffd383a2.js"><link rel="prefetch" href="/myblog/assets/js/30.b8eb1a62.js"><link rel="prefetch" href="/myblog/assets/js/31.1d9e1333.js"><link rel="prefetch" href="/myblog/assets/js/32.8cfae0d1.js"><link rel="prefetch" href="/myblog/assets/js/33.0ab00c4f.js"><link rel="prefetch" href="/myblog/assets/js/35.c763ccbb.js"><link rel="prefetch" href="/myblog/assets/js/36.3d1c91e9.js"><link rel="prefetch" href="/myblog/assets/js/37.94c7db86.js"><link rel="prefetch" href="/myblog/assets/js/38.5a93b916.js"><link rel="prefetch" href="/myblog/assets/js/39.afa39eec.js"><link rel="prefetch" href="/myblog/assets/js/4.16621f4e.js"><link rel="prefetch" href="/myblog/assets/js/40.cc5df847.js"><link rel="prefetch" href="/myblog/assets/js/41.d1798563.js"><link rel="prefetch" href="/myblog/assets/js/42.9922ccd5.js"><link rel="prefetch" href="/myblog/assets/js/43.7b56eecd.js"><link rel="prefetch" href="/myblog/assets/js/44.d31d5d49.js"><link rel="prefetch" href="/myblog/assets/js/45.7c773855.js"><link rel="prefetch" href="/myblog/assets/js/46.6b26755e.js"><link rel="prefetch" href="/myblog/assets/js/47.5301a690.js"><link rel="prefetch" href="/myblog/assets/js/48.f0982275.js"><link rel="prefetch" href="/myblog/assets/js/49.f14d0716.js"><link rel="prefetch" href="/myblog/assets/js/5.a36bfdf4.js"><link rel="prefetch" href="/myblog/assets/js/50.5f887e21.js"><link rel="prefetch" href="/myblog/assets/js/52.3875ac50.js"><link rel="prefetch" href="/myblog/assets/js/53.3d2fe07f.js"><link rel="prefetch" href="/myblog/assets/js/54.13d1d9fe.js"><link rel="prefetch" href="/myblog/assets/js/55.35011435.js"><link rel="prefetch" href="/myblog/assets/js/56.a5c7bb84.js"><link rel="prefetch" href="/myblog/assets/js/57.81140db0.js"><link rel="prefetch" href="/myblog/assets/js/58.67bd80d7.js"><link rel="prefetch" href="/myblog/assets/js/59.e8a48a17.js"><link rel="prefetch" href="/myblog/assets/js/6.e968d4fe.js"><link rel="prefetch" href="/myblog/assets/js/60.f3a7e603.js"><link rel="prefetch" href="/myblog/assets/js/61.2f3e255c.js"><link rel="prefetch" href="/myblog/assets/js/62.5b1d140c.js"><link rel="prefetch" href="/myblog/assets/js/63.8000b783.js"><link rel="prefetch" href="/myblog/assets/js/64.cbb6886f.js"><link rel="prefetch" href="/myblog/assets/js/65.acb989fb.js"><link rel="prefetch" href="/myblog/assets/js/66.9c0ec9ec.js"><link rel="prefetch" href="/myblog/assets/js/67.d702d650.js"><link rel="prefetch" href="/myblog/assets/js/68.d291a141.js"><link rel="prefetch" href="/myblog/assets/js/69.1ec0f097.js"><link rel="prefetch" href="/myblog/assets/js/70.6240be36.js"><link rel="prefetch" href="/myblog/assets/js/71.5fb1626d.js"><link rel="prefetch" href="/myblog/assets/js/72.e2a4909c.js"><link rel="prefetch" href="/myblog/assets/js/73.1a5c8381.js"><link rel="prefetch" href="/myblog/assets/js/74.0a23a67f.js"><link rel="prefetch" href="/myblog/assets/js/75.f83c4804.js"><link rel="prefetch" href="/myblog/assets/js/76.d4cb15ac.js"><link rel="prefetch" href="/myblog/assets/js/77.4beb5b94.js"><link rel="prefetch" href="/myblog/assets/js/78.19b18076.js"><link rel="prefetch" href="/myblog/assets/js/79.e14ea9bd.js"><link rel="prefetch" href="/myblog/assets/js/8.836d3617.js"><link rel="prefetch" href="/myblog/assets/js/80.210591e4.js"><link rel="prefetch" href="/myblog/assets/js/81.953fc439.js"><link rel="prefetch" href="/myblog/assets/js/82.f020d9ca.js"><link rel="prefetch" href="/myblog/assets/js/83.1339f723.js"><link rel="prefetch" href="/myblog/assets/js/84.3b889bc1.js"><link rel="prefetch" href="/myblog/assets/js/85.7a11c167.js"><link rel="prefetch" href="/myblog/assets/js/86.751b2c22.js"><link rel="prefetch" href="/myblog/assets/js/87.e5069b1e.js"><link rel="prefetch" href="/myblog/assets/js/88.cbbf0e41.js"><link rel="prefetch" href="/myblog/assets/js/89.2995403a.js"><link rel="prefetch" href="/myblog/assets/js/9.acb95ff1.js"><link rel="prefetch" href="/myblog/assets/js/90.b7bdeb07.js"><link rel="prefetch" href="/myblog/assets/js/91.02d5ca94.js"><link rel="prefetch" href="/myblog/assets/js/92.73d61eb1.js"><link rel="prefetch" href="/myblog/assets/js/93.4804dc07.js"><link rel="prefetch" href="/myblog/assets/js/94.b327897b.js"><link rel="prefetch" href="/myblog/assets/js/95.92167d88.js"><link rel="prefetch" href="/myblog/assets/js/96.224927b6.js"><link rel="prefetch" href="/myblog/assets/js/97.27937175.js"><link rel="prefetch" href="/myblog/assets/js/98.b444e916.js"><link rel="prefetch" href="/myblog/assets/js/99.37993ae1.js"><link rel="prefetch" href="/myblog/assets/js/vendors~docsearch.a3a80f00.js">
+    <link rel="stylesheet" href="/myblog/assets/css/0.styles.1b9a275a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-7dd95ae2><div data-v-7dd95ae2><div class="password-shadow password-wrapper-out" style="display:none;" data-v-59e6cb88 data-v-7dd95ae2 data-v-7dd95ae2><h3 class="title" data-v-59e6cb88>寒梦的博客</h3> <p class="description" data-v-59e6cb88>盛年不重来,一日难再晨,及时当勉励,岁月不待人</p> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><!---->
+          
+        <!---->
+        2025
+      </a></span></div></div> <div class="hide" data-v-7dd95ae2><header class="navbar" data-v-7dd95ae2><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/myblog/" class="home-link router-link-active"><!----> <span class="site-name">寒梦的博客</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      JS
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://www.zhihu.com/column/c_1415231566645350400" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  Promise
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://zhuanlan.zhihu.com/p/365044710" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  浏览器对象详解
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/dom.html" class="nav-link"><i class="undefined"></i>
+  DOM操作
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/Closure.html" class="nav-link"><i class="undefined"></i>
+  this指向、闭包、作用域
+</a></li><li class="dropdown-item"><!----> <a href="https://zhuanlan.zhihu.com/p/398609427" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  事件循环
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/bubble-trapping.html" class="nav-link"><i class="undefined"></i>
+  冒泡和捕获
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/throttle-debounce.html" class="nav-link"><i class="undefined"></i>
+  节流防抖
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/clone-deep.html" class="nav-link"><i class="undefined"></i>
+  深浅拷贝
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/es6-esnext.html" class="nav-link"><i class="undefined"></i>
+  ES6及ESNext规范
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/obj-oriented.html" class="nav-link"><i class="undefined"></i>
+  面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/cache.html" class="nav-link"><i class="undefined"></i>
+  前端缓存
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/HTTP.html" aria-current="page" class="nav-link router-link-exact-active router-link-active"><i class="undefined"></i>
+  前端网络
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/front-security.html" class="nav-link"><i class="undefined"></i>
+  前端安全
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/garbage-collect.html" class="nav-link"><i class="undefined"></i>
+  垃圾回收机制
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/performance-opt.html" class="nav-link"><i class="undefined"></i>
+  前端性能优化
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/if-else-tips.html" class="nav-link"><i class="undefined"></i>
+  减少 if-else 的小技巧
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/fre-questions.html" class="nav-link"><i class="undefined"></i>
+  常见题目
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      工程化
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/webpackstudy/whatIsEngine.html" class="nav-link"><i class="undefined"></i>
+  什么是前端工程化
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/webpackstudy/module.html" class="nav-link"><i class="undefined"></i>
+  前端模块化
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/webpackstudy/webpack-basic.html" class="nav-link"><i class="undefined"></i>
+  webpack基础
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/webpackstudy/webpack.html" class="nav-link"><i class="undefined"></i>
+  webpack构建
+</a></li><li class="dropdown-item"><!----> <a href="https://zhuanlan.zhihu.com/p/408195292" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  webpack 中的module
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://zhuanlan.zhihu.com/p/448738741" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  webpack性能优化
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="/myblog/webpackstudy/principle.html" class="nav-link"><i class="undefined"></i>
+  webpack原理相关
+</a></li><li class="dropdown-item"><!----> <a href="https://zhuanlan.zhihu.com/p/408733746" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  一步步实现webpack打包
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="/myblog/webpackstudy/ts-basics.html" class="nav-link"><i class="undefined"></i>
+  ts基础及使用
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/webpackstudy/husky.html" class="nav-link"><i class="undefined"></i>
+  前端项目husky使用
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Vue
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/vue/basicknowledge.html" class="nav-link"><i class="undefined"></i>
+  Vue2.0基础
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/misnotes.html" class="nav-link"><i class="undefined"></i>
+  Vue2.0进阶
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/ssr.html" class="nav-link"><i class="undefined"></i>
+  Vue ssr
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/vue3.html" class="nav-link"><i class="undefined"></i>
+  Vue3.0
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/vue3-impl.html" class="nav-link"><i class="undefined"></i>
+  Vue3.0进阶
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/vue-router.html" class="nav-link"><i class="undefined"></i>
+  vue-router
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/vuex.html" class="nav-link"><i class="undefined"></i>
+  vuex性能问题
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/compare.html" class="nav-link"><i class="undefined"></i>
+  Vue2.x VS Vue3.x
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/vue-principle.html" class="nav-link"><i class="undefined"></i>
+  vue深入理解
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      React
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/react/react-basic.html" class="nav-link"><i class="undefined"></i>
+  React 基础
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/react/react-advanced.html" class="nav-link"><i class="undefined"></i>
+  React 进阶
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/react/status-manage.html" class="nav-link"><i class="undefined"></i>
+  React 状态管理
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/react/react-context.html" class="nav-link"><i class="undefined"></i>
+  React Context
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/react/react-relation.html" class="nav-link"><i class="undefined"></i>
+  React 相关
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      React Native
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/reactnative/reactnative.html" class="nav-link"><i class="undefined"></i>
+  React Native 环境搭建
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/reactnative/rn-problem.html" class="nav-link"><i class="undefined"></i>
+  React Native 常见问题
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Node.js
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/node/node-basic.html" class="nav-link"><i class="undefined"></i>
+  Node.js基础
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/node/node-frame.html" class="nav-link"><i class="undefined"></i>
+  Node常用框架
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/node/node-network.html" class="nav-link"><i class="undefined"></i>
+  Nodejs网络及部署
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      低代码
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/lowcode/drag.html" class="nav-link"><i class="undefined"></i>
+  拖拽
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/lowcode/lowcode.html" class="nav-link"><i class="undefined"></i>
+  低代码平台
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/lowcode/lowcode-impl.html" class="nav-link"><i class="undefined"></i>
+  低代码平台实现
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/lowcode/visualization.html" class="nav-link"><i class="undefined"></i>
+  可视化
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      算法
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/algorithm/sort.html" class="nav-link"><i class="undefined"></i>
+  排序算法
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/double-pointer.html" class="nav-link"><i class="undefined"></i>
+  双指针算法
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/binary-tree.html" class="nav-link"><i class="undefined"></i>
+  二叉树
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/receive-rain.html" class="nav-link"><i class="undefined"></i>
+  接雨水
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/dynamic-plan.html" class="nav-link"><i class="undefined"></i>
+  动态规划
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/greedy.html" class="nav-link"><i class="undefined"></i>
+  贪心算法
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/longasc-sequence.html" class="nav-link"><i class="undefined"></i>
+  最长上升子序列
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/binary-search.html" class="nav-link"><i class="undefined"></i>
+  二分查找
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/other.html" class="nav-link"><i class="undefined"></i>
+  其他
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      其他
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/other/browser-principle.html" class="nav-link"><i class="undefined"></i>
+  浏览器原理与pwa
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/redraw-reflow.html" class="nav-link"><i class="undefined"></i>
+  重绘回流
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/compatibility.html" class="nav-link"><i class="undefined"></i>
+  前端兼容性问题
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/virtual-list.html" class="nav-link"><i class="undefined"></i>
+  虚拟列表
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/data-collection.html" class="nav-link"><i class="undefined"></i>
+  数据采集
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/websocket.html" class="nav-link"><i class="undefined"></i>
+  websocket
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/vue-react.html" class="nav-link"><i class="undefined"></i>
+  vue vs react
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/ESLint.html" class="nav-link"><i class="undefined"></i>
+  ESLint规范
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/ES6.html" class="nav-link"><i class="undefined"></i>
+  ES6 实用语法
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/excellentarticles.html" class="nav-link"><i class="undefined"></i>
+  优秀文章
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/personal-summary.html" class="nav-link"><i class="undefined"></i>
+  个人总结
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/uniapp.html" class="nav-link"><i class="undefined"></i>
+  uni-app
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/handwritten-impl.html" class="nav-link"><i class="undefined"></i>
+  手写实现
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/project-broad.html" class="nav-link"><i class="undefined"></i>
+  项目层面
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      关于我
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/hmyjyghh" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://gitee.com/ghh_" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.zhihu.com/people/cool-62-29/columns" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  知乎
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://hmyjyghh.github.io/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-7dd95ae2></div> <aside class="sidebar" data-v-7dd95ae2><div class="personal-info-wrapper" data-v-1fad0c41 data-v-7dd95ae2><!----> <!----> <div class="num" data-v-1fad0c41><div data-v-1fad0c41><h3 data-v-1fad0c41>70</h3> <h6 data-v-1fad0c41>Articles</h6></div> <div data-v-1fad0c41><h3 data-v-1fad0c41>17</h3> <h6 data-v-1fad0c41>Tags</h6></div></div> <ul class="social-links" data-v-1fad0c41></ul> <hr data-v-1fad0c41></div> <nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      JS
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://www.zhihu.com/column/c_1415231566645350400" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  Promise
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://zhuanlan.zhihu.com/p/365044710" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  浏览器对象详解
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/dom.html" class="nav-link"><i class="undefined"></i>
+  DOM操作
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/Closure.html" class="nav-link"><i class="undefined"></i>
+  this指向、闭包、作用域
+</a></li><li class="dropdown-item"><!----> <a href="https://zhuanlan.zhihu.com/p/398609427" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  事件循环
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/bubble-trapping.html" class="nav-link"><i class="undefined"></i>
+  冒泡和捕获
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/throttle-debounce.html" class="nav-link"><i class="undefined"></i>
+  节流防抖
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/clone-deep.html" class="nav-link"><i class="undefined"></i>
+  深浅拷贝
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/es6-esnext.html" class="nav-link"><i class="undefined"></i>
+  ES6及ESNext规范
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/obj-oriented.html" class="nav-link"><i class="undefined"></i>
+  面向对象
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/cache.html" class="nav-link"><i class="undefined"></i>
+  前端缓存
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/HTTP.html" aria-current="page" class="nav-link router-link-exact-active router-link-active"><i class="undefined"></i>
+  前端网络
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/front-security.html" class="nav-link"><i class="undefined"></i>
+  前端安全
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/garbage-collect.html" class="nav-link"><i class="undefined"></i>
+  垃圾回收机制
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/performance-opt.html" class="nav-link"><i class="undefined"></i>
+  前端性能优化
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/if-else-tips.html" class="nav-link"><i class="undefined"></i>
+  减少 if-else 的小技巧
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/jsstudy/fre-questions.html" class="nav-link"><i class="undefined"></i>
+  常见题目
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      工程化
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/webpackstudy/whatIsEngine.html" class="nav-link"><i class="undefined"></i>
+  什么是前端工程化
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/webpackstudy/module.html" class="nav-link"><i class="undefined"></i>
+  前端模块化
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/webpackstudy/webpack-basic.html" class="nav-link"><i class="undefined"></i>
+  webpack基础
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/webpackstudy/webpack.html" class="nav-link"><i class="undefined"></i>
+  webpack构建
+</a></li><li class="dropdown-item"><!----> <a href="https://zhuanlan.zhihu.com/p/408195292" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  webpack 中的module
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://zhuanlan.zhihu.com/p/448738741" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  webpack性能优化
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="/myblog/webpackstudy/principle.html" class="nav-link"><i class="undefined"></i>
+  webpack原理相关
+</a></li><li class="dropdown-item"><!----> <a href="https://zhuanlan.zhihu.com/p/408733746" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  一步步实现webpack打包
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="/myblog/webpackstudy/ts-basics.html" class="nav-link"><i class="undefined"></i>
+  ts基础及使用
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/webpackstudy/husky.html" class="nav-link"><i class="undefined"></i>
+  前端项目husky使用
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Vue
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/vue/basicknowledge.html" class="nav-link"><i class="undefined"></i>
+  Vue2.0基础
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/misnotes.html" class="nav-link"><i class="undefined"></i>
+  Vue2.0进阶
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/ssr.html" class="nav-link"><i class="undefined"></i>
+  Vue ssr
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/vue3.html" class="nav-link"><i class="undefined"></i>
+  Vue3.0
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/vue3-impl.html" class="nav-link"><i class="undefined"></i>
+  Vue3.0进阶
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/vue-router.html" class="nav-link"><i class="undefined"></i>
+  vue-router
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/vuex.html" class="nav-link"><i class="undefined"></i>
+  vuex性能问题
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/compare.html" class="nav-link"><i class="undefined"></i>
+  Vue2.x VS Vue3.x
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/vue/vue-principle.html" class="nav-link"><i class="undefined"></i>
+  vue深入理解
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      React
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/react/react-basic.html" class="nav-link"><i class="undefined"></i>
+  React 基础
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/react/react-advanced.html" class="nav-link"><i class="undefined"></i>
+  React 进阶
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/react/status-manage.html" class="nav-link"><i class="undefined"></i>
+  React 状态管理
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/react/react-context.html" class="nav-link"><i class="undefined"></i>
+  React Context
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/react/react-relation.html" class="nav-link"><i class="undefined"></i>
+  React 相关
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      React Native
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/reactnative/reactnative.html" class="nav-link"><i class="undefined"></i>
+  React Native 环境搭建
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/reactnative/rn-problem.html" class="nav-link"><i class="undefined"></i>
+  React Native 常见问题
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Node.js
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/node/node-basic.html" class="nav-link"><i class="undefined"></i>
+  Node.js基础
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/node/node-frame.html" class="nav-link"><i class="undefined"></i>
+  Node常用框架
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/node/node-network.html" class="nav-link"><i class="undefined"></i>
+  Nodejs网络及部署
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      低代码
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/lowcode/drag.html" class="nav-link"><i class="undefined"></i>
+  拖拽
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/lowcode/lowcode.html" class="nav-link"><i class="undefined"></i>
+  低代码平台
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/lowcode/lowcode-impl.html" class="nav-link"><i class="undefined"></i>
+  低代码平台实现
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/lowcode/visualization.html" class="nav-link"><i class="undefined"></i>
+  可视化
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      算法
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/algorithm/sort.html" class="nav-link"><i class="undefined"></i>
+  排序算法
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/double-pointer.html" class="nav-link"><i class="undefined"></i>
+  双指针算法
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/binary-tree.html" class="nav-link"><i class="undefined"></i>
+  二叉树
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/receive-rain.html" class="nav-link"><i class="undefined"></i>
+  接雨水
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/dynamic-plan.html" class="nav-link"><i class="undefined"></i>
+  动态规划
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/greedy.html" class="nav-link"><i class="undefined"></i>
+  贪心算法
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/longasc-sequence.html" class="nav-link"><i class="undefined"></i>
+  最长上升子序列
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/binary-search.html" class="nav-link"><i class="undefined"></i>
+  二分查找
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/algorithm/other.html" class="nav-link"><i class="undefined"></i>
+  其他
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      其他
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myblog/other/browser-principle.html" class="nav-link"><i class="undefined"></i>
+  浏览器原理与pwa
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/redraw-reflow.html" class="nav-link"><i class="undefined"></i>
+  重绘回流
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/compatibility.html" class="nav-link"><i class="undefined"></i>
+  前端兼容性问题
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/virtual-list.html" class="nav-link"><i class="undefined"></i>
+  虚拟列表
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/data-collection.html" class="nav-link"><i class="undefined"></i>
+  数据采集
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/websocket.html" class="nav-link"><i class="undefined"></i>
+  websocket
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/vue-react.html" class="nav-link"><i class="undefined"></i>
+  vue vs react
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/ESLint.html" class="nav-link"><i class="undefined"></i>
+  ESLint规范
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/ES6.html" class="nav-link"><i class="undefined"></i>
+  ES6 实用语法
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/excellentarticles.html" class="nav-link"><i class="undefined"></i>
+  优秀文章
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/personal-summary.html" class="nav-link"><i class="undefined"></i>
+  个人总结
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/uniapp.html" class="nav-link"><i class="undefined"></i>
+  uni-app
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/handwritten-impl.html" class="nav-link"><i class="undefined"></i>
+  手写实现
+</a></li><li class="dropdown-item"><!----> <a href="/myblog/other/project-broad.html" class="nav-link"><i class="undefined"></i>
+  项目层面
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      关于我
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/hmyjyghh" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://gitee.com/ghh_" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.zhihu.com/people/cool-62-29/columns" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  知乎
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://hmyjyghh.github.io/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-59e6cb88 data-v-7dd95ae2><h3 class="title" data-v-59e6cb88>HTTP</h3> <!----> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><!---->
+          
+        <!---->
+        2025
+      </a></span></div></div> <div data-v-7dd95ae2><div data-v-7dd95ae2><main class="page"><section style="display:;"><div class="page-title"><h1 class="title">HTTP</h1> <div data-v-8a445198><!----> <i class="iconfont reco-date" data-v-8a445198><span data-v-8a445198>12/10/2021</span></i> <!----> <i class="tags iconfont reco-tag" data-v-8a445198><span class="tag-item" data-v-8a445198>HTTP</span></i></div></div> <div class="theme-reco-content content__default"><h2 id="http协议"><a href="#http协议" class="header-anchor">#</a> HTTP协议</h2> <ol><li>（HyperText Transfer Protocol，超⽂本传输协议）是⽤于从WWW服务器传输超⽂本到本地浏览器的传输协议。它可以使浏览器更加⾼效，使⽹络传输减少。它不仅保证计算机正确快速地传输超⽂本⽂档，还确定传输⽂档中的哪⼀部分，以及哪部分内容⾸先显示(如⽂本先于图形)等。</li> <li>HTTP是客户端浏览器或其他程序与Web服务器之间的应⽤层通信协议。在Internet上的Web
+服务器上存放的都是超⽂本信息，客户机需要通过HTTP协议传输所要访问的超⽂本信息。
+HTTP包含命令和传输信息，不仅可⽤于Web访问，也可以⽤于其他因特⽹/内联⽹应⽤系统之
+间的通信，从⽽实现各类应⽤资源超媒体访问的集成。</li> <li>我们在浏览器的地址栏⾥输⼊的⽹站地址叫做URL (Uniform Resource Locator，统⼀资源定位
+符)。就像每家每户都有⼀个⻔牌地址⼀样，每个⽹⻚也都有⼀个Internet地址。当你在浏览器
+的地址框中输⼊⼀个URL或是单击⼀个超级链接时，URL就确定了要浏览的地址。浏览器通过
+超⽂本传输协议(HTTP)，将Web服务器上站点的⽹⻚代码提取出来，并翻译成漂亮的⽹⻚。</li></ol> <h3 id="_1-一次完整的http通信是什么样子的"><a href="#_1-一次完整的http通信是什么样子的" class="header-anchor">#</a> 1. ⼀次完整的HTTP通信是什么样⼦的?</h3> <ol><li>建⽴ TCP 连接</li></ol> <p>在HTTP⼯作开始之前，客户端⾸先要通过⽹络与服务器建⽴连接，该连接是通过 TCP 来完成
+的。HTTP 是⽐ TCP 更⾼层次的应⽤层协议，根据规则，只有低层协议建⽴之后，才能进⾏⾼
+层协议的连接，因此，⾸先要建⽴ TCP 连接，⼀般 TCP 连接的端⼝号是80；</p> <ol start="2"><li>客户端向服务器发送请求命令</li></ol> <p>⼀旦建⽴了TCP连接，客户端就会向服务器发送请求命令；
+例如：GET/info HTTP/1.1</p> <ol start="3"><li>客户端发送请求头信息</li></ol> <p>客户端发送其请求命令之后，还要以头信息的形式向服务器发送⼀些别的信息，之后客户端发
+送了⼀空⽩⾏来通知服务器，它已经结束了该头信息的发送；</p> <ol start="4"><li>服务器应答</li></ol> <p>客户端向服务器发出请求后，服务器会客户端返回响应；
+例如： HTTP/1.1 200 OK
+响应的第⼀部分是协议的版本号和响应状态码</p> <ol start="5"><li>服务器返回响应头信息</li></ol> <p>正如客户端会随同请求发送关于⾃身的信息⼀样，服务器也会随同响应向⽤户发送关于它⾃⼰
+的数据及被请求的⽂档；</p> <ol start="6"><li>服务器向客户端发送数据</li></ol> <p>服务器向客户端发送头信息后，它会发送⼀个空⽩⾏来表示头信息的发送到此为结束，接着，
+它就以 Content-Type 响应头信息所描述的格式发送⽤户所请求的实际数据；</p> <ol start="7"><li>服务器关闭 TCP 连接</li></ol> <p>⼀般情况下，⼀旦服务器向客户端返回了请求数据，它就要关闭 TCP 连接，然后如果客户端
+或者服务器在其头信息加⼊了这⾏代码 Connection:keep-alive ，TCP 连接在发送后将仍然保
+持打开状态，于是，客户端可以继续通过相同的连接发送请求。保持连接节省了为每个请求建
+⽴新连接所需的时间，还节约了⽹络带宽。</p> <h3 id="_2-http协议有哪些特点"><a href="#_2-http协议有哪些特点" class="header-anchor">#</a> 2. HTTP协议有哪些特点?</h3> <p><strong>1. 通过请求和响应的交换达成通信</strong></p> <p>协议规定, 请求从客户端发出, 服务端响应请求并返回.</p> <p><strong>2. ⽆状态</strong></p> <p>HTTP 是⼀种⽆状态协议, 在单纯HTTP这个层⾯，协议对于发送过的请求或响应都不做持久化处理</p> <p><strong>3. 使⽤Cookie做状态管理</strong></p> <p>服务端返回的头信息上有可能会携带Set-Cookie, 那么当客户端接收到响应后, 就会在本地种上cookie. 在下⼀次给服务端发送请求的时候, 就会携带上这些cookie。</p> <p><strong>4. 通过URL定位资源</strong></p> <p>这⾥区分⼀下URI和URL的概念.
+URI: 统⼀资源标识符, ⽐如你身份证号是xxxxxxx, 在所有⼈中是独⼀⽆⼆的, 这个身份证号就能
+标识你的身份, 那么它就是URI
+URL: 统⼀资源定位符, ⽐如北京市/朝阳区/xxxx/xxxx/xxxxx, 通过这⼀串信息可以定位到你, 那
+么这个就是URL
+URL有点类似于通过定位实现的URI.
+就像有个⽗类叫做URI, 他要实现的是唯⼀确定⼀个id. 有的⼈喜欢继承URI, 通过location来实
+现; 有的⼈喜欢继承URI, 通过name来实现.</p> <p><strong>5. 通过各种⽅法来标识⾃⼰的意图</strong></p> <p>这⾥指的是各种HTTP⽅法, ⽐如GET POST PUT DELETE等.</p> <p><strong>6. 持久连接</strong></p> <ul><li>HTTP 协议的初始版本中，每进⾏⼀个 HTTP 通信都要断开⼀次 TCP 连接，增加了很多没必要
+的建⽴连接的开销。</li> <li>为了解决上述 TCP 连接的问题，HTTP/1.1 ⽀持持久连接。其特点是，只要任意⼀端没有明确提出断开连接，则保持 TCP 连接状态。旨在建⽴⼀次 TCP 连接后进⾏多次请求和响应的交互。</li> <li>在 HTTP/1.1 中，所有的连接默认都是持久连接。也就是说默认情况下建⽴ TCP 连接不会断开，只有在请求报头中声明 Connection: close 才会在请求完成后关闭连接。</li></ul> <p><strong>7. 管道机制</strong></p> <ul><li>1.1版本引⼊pipelining机制, 即在同⼀个TCP连接⾥⾯，客户端可以同时发送多个请求。
+举例来说，客户端需要请求两个资源。</li> <li>以前的做法是，在同⼀个TCP连接⾥⾯，先发送A请
+求，然后等待服务器做出回应，收到后再发出B请求。</li> <li>管道机制则是允许浏览器同时发出A请求和B请求，但是服务器还是按照顺序，先回应A请求，完成后再回应B请求。</li> <li>但是现代浏览器⼀般没开启这个配置, 这个机制可能会造成队头阻塞. 因为响应是有顺序的, 如果⼀个TCP连接中的第⼀个HTTP请求响应⾮常慢, 那么就会阻塞后续HTTP请求的响应.</li> <li>所以现实中默认情况下, ⼀个TCP连接同⼀时间只发⼀个HTTP请求.</li></ul> <p>有的同学会问, 我怎么听说chrome最⼤⽀持6个同域名请求呢？</p> <p><strong>那是因为chrome最⼤⽀持同时开启6个TCP连接。</strong></p> <h2 id="网络和并发"><a href="#网络和并发" class="header-anchor">#</a> 网络和并发</h2> <h3 id="_1-http-1-0-1-1-2-0在并发请求上主要区别是什么"><a href="#_1-http-1-0-1-1-2-0在并发请求上主要区别是什么" class="header-anchor">#</a> 1. HTTP 1.0/1.1/2.0在并发请求上主要区别是什么?</h3> <ol><li><p>HTTP/1.0
+每个<code>TCP连接</code>只能发送⼀个请求，当服务器响应后就会关闭这次连接，下⼀个请求需要再次建⽴TCP连接.</p></li> <li><p>HTTP/1.1</p></li></ol> <ul><li>默认采⽤持久连接(TCP连接默认不关闭，可以被多个请求复⽤，不⽤声明Connection: keep-alive).</li> <li>增加了管道机制，在同⼀个TCP连接⾥，允许多个请求同时发送，增加了并发性，进⼀步改善了HTTP协议的效率
+但是同⼀个TCP连接⾥，所有的数据通信是按次序进⾏的。回应慢，会有许多请求排队，造成”队头堵塞”。 (一问一答)</li></ul> <ol start="3"><li>HTTP/2.0</li></ol> <ul><li>加了双⼯模式，即不仅客户端能够同时发送多个请求，服务端也能同时处理多个请求，解决了队头堵塞的问题。</li> <li>使⽤了多路复⽤的技术，做到同⼀个连接并发处理多个请求，⽽且并发请求的数量⽐HTTP1.1⼤了好⼏个数量级。</li> <li>增加服务器推送的功能，不经请求服务端主动向客户端发送数据。</li></ul> <h3 id="_2-http-1-1长连接和http-2-0的多路复用技术有什么区别"><a href="#_2-http-1-1长连接和http-2-0的多路复用技术有什么区别" class="header-anchor">#</a> 2. HTTP/1.1长连接和HTTP/2.0的多路复用技术有什么区别?</h3> <p>1.1: 同一时间一个TCP连接只能处理一个请求, 采用一问一答的形式. 上一个请求响应后才能处理下一个请求.</p> <p>chrome浏览器支持最大6个同域名请求的并发
+因为chrome浏览器支持最大开启6个TCP连接</p> <p>2.0: 同域名上的所有请求都在单个TCP连接上完成. 单个连接上可以并行交错的进行请求和响应.</p> <h3 id="_3-为什么http-1-1不能实现多路复用呢"><a href="#_3-为什么http-1-1不能实现多路复用呢" class="header-anchor">#</a> 3. 为什么HTTP/1.1不能实现多路复用呢?</h3> <p>HTTP/2.0是基于二进制帧的协议, HTTP/1.1是基于文本分隔解析的协议.</p> <p>1.1的报文结构里, 服务器需要不断地读入字节, 直到遇到换行符.
+处理的顺序是串行的, 一个请求和一个响应需要通过一问一答的形式才能对应起来.</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token constant">GET</span> <span class="token operator">/</span> <span class="token constant">HTTP</span><span class="token operator">/</span><span class="token number">1.1</span>
+<span class="token literal-property property">Accept</span><span class="token operator">:</span>text<span class="token operator">/</span>html<span class="token punctuation">,</span>application<span class="token operator">/</span>xhtml<span class="token operator">+</span>xml<span class="token punctuation">,</span>application<span class="token operator">/</span>xml<span class="token punctuation">;</span>q<span class="token operator">=</span><span class="token number">0.9</span><span class="token punctuation">,</span>image<span class="token operator">/</span>webp<span class="token punctuation">,</span>image<span class="token operator">/</span>apng<span class="token punctuation">,</span><span class="token operator">*</span><span class="token comment">/*;q=0.8
+Accept-Encoding:gzip, deflate, br
+Accept-Language:zh-CN,zh;q=0.9,en;q=0.8
+Cache-Control:max-age=0
+Connection:keep-alive
+Host:www.imooc.com
+Referer:https://www.baidu.com/
+</span></code></pre></div><p>2.0以帧为最小数据单位, 每个帧都会标识自己属于哪个流, 多个帧组成一个流.</p> <p>多路复用, 其实就是一个TCP里存在多条流</p> <h3 id="_4-https是什么"><a href="#_4-https是什么" class="header-anchor">#</a> 4. HTTPS是什么？</h3> <p><strong>HTTPS 协议是由 HTTP 加上 SSL/TLS 协议构建的可进行加密传输、身份认证的网络协议</strong></p> <p>主要通过数字证书、加密算法、非对称密钥等技术完成互联网数据传输加密，实现互联网传输安全保护。设计目标主要有三个。</p> <ol><li>数据保密性：保证数据内容在传输的过程中不会被第三方查看。就像快递员传递包裹一样，都进行了封装，别人无法获知里面装了什么。</li> <li>数据完整性：及时发现被第三方篡改的传输内容。就像快递员虽然不知道包裹里装了什么东西，但他有可能中途掉包，数据完整性就是指如果被掉包，我们能轻松发现并拒收。</li> <li>身份校验安全性：保证数据到达用户期望的目的地。就像我们邮寄包裹时，虽然是一个封装好的未掉包的包裹，但必须确定这个包裹不会送错地方，通过身份校验来确保送对了地方。</li></ol> <h3 id="_5-https-工作原理"><a href="#_5-https-工作原理" class="header-anchor">#</a> 5. HTTPS 工作原理</h3> <p>HTTPS在传输数据之前需要客户端（浏览器）与服务端（网站）之间进行一次握手，在握手过程中将确立双方加密传输数据的密码信息。</p> <p>TLS/SSL协议不仅仅是一套加密传输的协议，更是一件经过艺术家精心设计的艺术品，TLS/SSL中使用了非对称加密，对称加密以及HASH算法。</p> <h3 id="_6-https协议和http协议的区别是什么"><a href="#_6-https协议和http协议的区别是什么" class="header-anchor">#</a> 6. HTTPS协议和HTTP协议的区别是什么？</h3> <ul><li>https协议需要到ca申请证书，一般免费证书很少，需要交费。</li> <li>http是超文本传输协议，信息是明文传输，https 则是具有安全性的ssl加密传输协议。</li> <li>http和https使用的是完全不同的连接方式,用的端口也不一样,前者是80,后者是443。</li> <li>http的连接很简单,是无状态的。</li> <li>HTTPS协议是由HTTP+SSL协议构建的可进行加密传输、身份认证的网络协议， 要比http协议安全。</li></ul> <h3 id="_7-http2-多路复用"><a href="#_7-http2-多路复用" class="header-anchor">#</a> 7. HTTP2 多路复用</h3> <ul><li>HTTP2采用二进制格式传输，取代了HTTP1.x的文本格式，二进制格式解析更高效。</li> <li>多路复用代替了HTTP1.x的序列和阻塞机制，所有的相同域名请求都通过同一个TCP连接并发完成。</li> <li>HTTP2中同域名下所有通信都在单个连接上完成，消除了因多个TCP连接而带来的延时和内存消耗。单个连接上可以并行交错的请求和响应，之间互不干扰</li></ul> <p>https://www.runoob.com/w3cnote/https-ssl-intro.html</p> <h2 id="常⻅的浏览器请求-响应头-错误码解析"><a href="#常⻅的浏览器请求-响应头-错误码解析" class="header-anchor">#</a> 常⻅的浏览器请求/响应头/错误码解析</h2> <h3 id="请求头"><a href="#请求头" class="header-anchor">#</a> 请求头</h3> <ul><li>request header</li></ul> <p>Accept: application/json, text/plain, <em>/</em></p> <p>Accept-Encoding: gzip, deflate, br</p> <p>Cache-Control: no-cache</p> <p>Connection: keep-alive</p> <p>Cookie: SESSION=19c09f61-4dcc-4786-a025-9c166084d58e; JSESSIONID=05E5103C41D985A450B469AEA85D659D; Hm_lvt_ff8d2c4152fbe13646e0c6b015950a3b=1642829300</p> <p>Host: localhost:8080</p> <p>Pragma: no-cache</p> <p>Referer: http://localhost:8080/dsfa/page.html</p> <p>User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36 Edg/98.0.1108.62</p> <h3 id="响应头"><a href="#响应头" class="header-anchor">#</a> 响应头</h3> <ul><li>response header</li></ul> <p>access-control-allow-credentials:</p> <p>access-control-allow-origin:</p> <p>cache-control: private, must-revalidate, no-cache, no-store, max-age=0</p> <p>content-encoding:</p> <p>content-type: application/json</p> <p>date:</p> <p>set-cookie:</p> <h3 id="常见状态码-错误码"><a href="#常见状态码-错误码" class="header-anchor">#</a> 常见状态码/错误码</h3> <ul><li><p>200 get 成功</p></li> <li><p>201 post 成功</p></li> <li><p>301 永久重定向</p></li> <li><p>302 临时重定向</p></li> <li><p>304 协商缓存 服务器⽂件未修改</p></li> <li><p>400 客⼾端请求有语法错误，不能被服务器识别</p></li> <li><p>403 服务器受到请求，但是拒绝提供服务，可能是跨域</p></li> <li><p>404 请求的资源不存在</p></li> <li><p>405 请求的method不允许</p></li> <li><p>500 服务器发⽣不可预期的错误</p></li></ul></div></section> <footer class="page-edit"><!----> <!----></footer> <!----> <div class="comments-wrapper"><!----></div></main></div> <!----></div> <ul class="sub-sidebar sub-sidebar-wrapper" style="width:12rem;" data-v-b57cc07c data-v-7dd95ae2><li class="level-2" data-v-b57cc07c><a href="/myblog/jsstudy/HTTP.html#http协议" class="sidebar-link reco-side-http协议" data-v-b57cc07c>HTTP协议</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/jsstudy/HTTP.html#_1-一次完整的http通信是什么样子的" class="sidebar-link reco-side-_1-一次完整的http通信是什么样子的" data-v-b57cc07c>1. ⼀次完整的HTTP通信是什么样⼦的?</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/jsstudy/HTTP.html#_2-http协议有哪些特点" class="sidebar-link reco-side-_2-http协议有哪些特点" data-v-b57cc07c>2. HTTP协议有哪些特点?</a></li><li class="level-2" data-v-b57cc07c><a href="/myblog/jsstudy/HTTP.html#网络和并发" class="sidebar-link reco-side-网络和并发" data-v-b57cc07c>网络和并发</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/jsstudy/HTTP.html#_1-http-1-0-1-1-2-0在并发请求上主要区别是什么" class="sidebar-link reco-side-_1-http-1-0-1-1-2-0在并发请求上主要区别是什么" data-v-b57cc07c>1. HTTP 1.0/1.1/2.0在并发请求上主要区别是什么?</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/jsstudy/HTTP.html#_2-http-1-1长连接和http-2-0的多路复用技术有什么区别" class="sidebar-link reco-side-_2-http-1-1长连接和http-2-0的多路复用技术有什么区别" data-v-b57cc07c>2. HTTP/1.1长连接和HTTP/2.0的多路复用技术有什么区别?</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/jsstudy/HTTP.html#_3-为什么http-1-1不能实现多路复用呢" class="sidebar-link reco-side-_3-为什么http-1-1不能实现多路复用呢" data-v-b57cc07c>3. 为什么HTTP/1.1不能实现多路复用呢?</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/jsstudy/HTTP.html#_4-https是什么" class="sidebar-link reco-side-_4-https是什么" data-v-b57cc07c>4. HTTPS是什么？</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/jsstudy/HTTP.html#_5-https-工作原理" class="sidebar-link reco-side-_5-https-工作原理" data-v-b57cc07c>5. HTTPS 工作原理</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/jsstudy/HTTP.html#_6-https协议和http协议的区别是什么" class="sidebar-link reco-side-_6-https协议和http协议的区别是什么" data-v-b57cc07c>6. HTTPS协议和HTTP协议的区别是什么？</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/jsstudy/HTTP.html#_7-http2-多路复用" class="sidebar-link reco-side-_7-http2-多路复用" data-v-b57cc07c>7. HTTP2 多路复用</a></li><li class="level-2" data-v-b57cc07c><a href="/myblog/jsstudy/HTTP.html#常⻅的浏览器请求-响应头-错误码解析" class="sidebar-link reco-side-常⻅的浏览器请求-响应头-错误码解析" data-v-b57cc07c>常⻅的浏览器请求/响应头/错误码解析</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/jsstudy/HTTP.html#请求头" class="sidebar-link reco-side-请求头" data-v-b57cc07c>请求头</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/jsstudy/HTTP.html#响应头" class="sidebar-link reco-side-响应头" data-v-b57cc07c>响应头</a></li><li class="level-3" data-v-b57cc07c><a href="/myblog/jsstudy/HTTP.html#常见状态码-错误码" class="sidebar-link reco-side-常见状态码-错误码" data-v-b57cc07c>常见状态码/错误码</a></li></ul></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><!----></div></div>
+    <script src="/myblog/assets/js/app.d2862463.js" defer></script><script src="/myblog/assets/js/7.8c1c7106.js" defer></script><script src="/myblog/assets/js/2.63d4cf60.js" defer></script><script src="/myblog/assets/js/1.0779a93f.js" defer></script><script src="/myblog/assets/js/51.12b7a969.js" defer></script><script src="/myblog/assets/js/34.6c011227.js" defer></script>
+  </body>
+</html>
